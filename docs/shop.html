@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collection — APEX Haute Horlogerie & Atelier</title>
+  <meta name="description" content="Explore handcrafted precision wristwatches engineered for everyday excellence. Discover Signature, Apex Sport, Meridian, and Heritage collections.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- Top announcement bar -->
+  <div class="top-bar">
+    <div class="apex-container">
+      <span>Complimentary Express Shipping Across India • 2-Year International Atelier Warranty</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-nav">
+    <div class="apex-container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
+        <span class="brand-logo-text">APEX</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link active">Collection</a></li>
+          <li><a href="about.html" class="nav-link">Atelier</a></li>
+          <li><a href="journal.html" class="nav-link">Journal</a></li>
+          <li><a href="contact.html" class="nav-link">Concierge</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Admin Link (shown only if admin) -->
+        <a href="admin/index.html" class="btn btn-outline btn-sm" data-auth-admin style="display:none; font-size:11px; padding:6px 12px; border-color:var(--color-gold);">Admin</a>
+
+        <!-- Account / Login -->
+        <a href="account.html" class="nav-btn" title="My Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+
+        <!-- Wishlist -->
+        <a href="wishlist.html" class="nav-btn" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="nav-badge" data-wish-count style="display:none;">0</span>
+        </a>
+
+        <!-- Cart Bag -->
+        <button class="nav-btn" onclick="ApexStore.openDrawer()" title="Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="nav-badge" data-cart-count style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Hero Banner -->
+  <section style="background: radial-gradient(circle at center, #151722 0%, #070709 100%); padding: 60px 0 40px; border-bottom: 1px solid var(--color-border);">
+    <div class="apex-container text-center">
+      <span class="section-tag">HOROLOGICAL CATALOGUE</span>
+      <h1 class="section-title">The Complete APEX Collection</h1>
+      <p class="section-desc">Designed with architectural precision, powered by mechanical and automatic engines, and engineered to endure generations.</p>
+    </div>
+  </section>
+
+  <!-- Main Shop Section -->
+  <main class="apex-container">
+    <div class="shop-layout">
+      <!-- Sidebar Filters -->
+      <aside class="filter-card">
+        <div class="filter-group">
+          <h4 class="filter-heading">Collection</h4>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <label><input type="radio" name="collection" value="" checked onchange="filterProducts()"> All Timepieces</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="collection" value="Signature" onchange="filterProducts()"> Signature (Dress)</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="collection" value="Apex Sport" onchange="filterProducts()"> Apex Sport (Chrono & Diver)</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="collection" value="Meridian" onchange="filterProducts()"> Meridian (Everyday Slim)</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="collection" value="Heritage" onchange="filterProducts()"> Heritage (Patina & Cushion)</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h4 class="filter-heading">Price Range</h4>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <label><input type="radio" name="pricerange" value="all" checked onchange="filterProducts()"> Any Price</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="pricerange" value="under-7k" onchange="filterProducts()"> Under ₹7,000</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="pricerange" value="7k-9k" onchange="filterProducts()"> ₹7,000 – ₹9,000</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="radio" name="pricerange" value="above-9k" onchange="filterProducts()"> ₹9,000 & Above</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h4 class="filter-heading">Movement</h4>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <label><input type="checkbox" value="automatic" class="movement-filter" onchange="filterProducts()"> Automatic Mechanical</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="checkbox" value="quartz" class="movement-filter" onchange="filterProducts()"> High-Precision Quartz</label>
+            </li>
+            <li class="filter-item">
+              <label><input type="checkbox" value="chronograph" class="movement-filter" onchange="filterProducts()"> Column-Wheel Chrono</label>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn btn-outline btn-block btn-sm" onclick="resetFilters()" style="margin-top:20px;">Clear Filters</button>
+      </aside>
+
+      <!-- Products Grid & Controls -->
+      <section>
+        <div class="shop-top-controls">
+          <span class="shop-counter" id="shop-item-counter">Loading timepieces...</span>
+          <div class="shop-sort">
+            <label for="sort-select" style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; margin-right:8px; color:var(--color-text-dim);">Sort By:</label>
+            <select id="sort-select" onchange="filterProducts()">
+              <option value="featured">Featured First</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid" id="products-catalog-grid">
+          <!-- Injected via API -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="apex-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
+            <span class="brand-logo-text">APEX</span>
+          </a>
+          <p>Engineered at the summit. Crafted for those who understand that true luxury is not loud — it is unwavering precision.</p>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Collections</h5>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=Signature">Signature</a></li>
+            <li><a href="shop.html?cat=Apex+Sport">Apex Sport</a></li>
+            <li><a href="shop.html?cat=Meridian">Meridian</a></li>
+            <li><a href="shop.html?cat=Heritage">Heritage</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Atelier</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Brand Story</a></li>
+            <li><a href="journal.html">Journal & Horology</a></li>
+            <li><a href="contact.html">Concierge & Boutique</a></li>
+            <li><a href="faq.html">FAQ & Movements</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Customer Care</h5>
+          <ul class="footer-links">
+            <li><a href="shipping.html">Shipping & Returns</a></li>
+            <li><a href="account.html">My Orders</a></li>
+            <li><a href="wishlist.html">Saved Timepieces</a></li>
+            <li><a href="shipping.html#warranty">2-Year Warranty</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">VIP Newsletter</h5>
+          <p style="font-size:13px; color:var(--color-text-dim); margin-bottom:12px;">Receive private allocation invites for limited series drops.</p>
+          <div style="display:flex; gap:8px;">
+            <input type="email" placeholder="Enter your email" class="form-control" style="font-size:13px; padding:10px 12px;">
+            <button class="btn btn-primary btn-sm" onclick="ApexStore.toast('Subscribed to VIP dispatch', 'success')">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 APEX Haute Horlogerie Pvt Ltd. All rights reserved.</span>
+        <span>Curated & Assembled in India • Worldwide Components</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+
+  <script>
+    let allProducts = [];
+
+    async function loadProducts() {
+      try {
+        const res = await API.products.list({ limit: 100 });
+        allProducts = res.products || [];
+        
+        // Check URL parameters for preset collection
+        const urlParams = new URLSearchParams(window.location.search);
+        const cat = urlParams.get('cat');
+        if (cat) {
+          const radio = document.querySelector(`input[name="collection"][value="${cat}"]`);
+          if (radio) radio.checked = true;
+        }
+
+        filterProducts();
+      } catch (err) {
+        document.getElementById('products-catalog-grid').innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:60px;">
+            <p style="color:var(--color-danger)">Unable to load products. Make sure the APEX server is running.</p>
+          </div>
+        `;
+      }
+    }
+
+    function filterProducts() {
+      const selectedCat = document.querySelector('input[name="collection"]:checked')?.value || '';
+      const selectedPrice = document.querySelector('input[name="pricerange"]:checked')?.value || 'all';
+      const sort = document.getElementById('sort-select').value;
+      const checkedMovements = Array.from(document.querySelectorAll('.movement-filter:checked')).map(cb => cb.value);
+
+      let filtered = [...allProducts];
+
+      // Filter by Collection
+      if (selectedCat) {
+        filtered = filtered.filter(p => p.category.toLowerCase() === selectedCat.toLowerCase());
+      }
+
+      // Filter by Price
+      if (selectedPrice === 'under-7k') {
+        filtered = filtered.filter(p => p.price < 7000);
+      } else if (selectedPrice === '7k-9k') {
+        filtered = filtered.filter(p => p.price >= 7000 && p.price <= 9000);
+      } else if (selectedPrice === 'above-9k') {
+        filtered = filtered.filter(p => p.price > 9000);
+      }
+
+      // Filter by Movement tags
+      if (checkedMovements.length > 0) {
+        filtered = filtered.filter(p => {
+          const tags = p.tags || [];
+          return checkedMovements.some(m => tags.includes(m));
+        });
+      }
+
+      // Sort
+      if (sort === 'price_asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === 'price_desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sort === 'name') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else {
+        // Featured
+        filtered.sort((a, b) => (b.featured || 0) - (a.featured || 0));
+      }
+
+      // Render
+      const grid = document.getElementById('products-catalog-grid');
+      const counter = document.getElementById('shop-item-counter');
+      counter.textContent = `Showing ${filtered.length} of ${allProducts.length} Timepieces`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:80px 20px;">
+            <h4 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">No timepieces match your criteria</h4>
+            <p style="color:var(--color-text-dim); margin-bottom:20px;">Try adjusting your collection or price filter options.</p>
+            <button class="btn btn-secondary btn-sm" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = filtered.map(p => ApexStore.renderProductCard(p)).join('');
+      }
+
+      ApexStore.updateWishlistIcons();
+    }
+
+    function resetFilters() {
+      document.querySelector('input[name="collection"][value=""]').checked = true;
+      document.querySelector('input[name="pricerange"][value="all"]').checked = true;
+      document.querySelectorAll('.movement-filter').forEach(cb => cb.checked = false);
+      document.getElementById('sort-select').value = 'featured';
+      filterProducts();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProducts);
+  </script>
+</body>
+</html>

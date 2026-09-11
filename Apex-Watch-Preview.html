@@ -1,0 +1,3521 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX | Haute Horlogerie GenÃ¨ve â€” The Architecture of Precision</title>
+  <meta name="description" content="Discover APEX Haute Horlogerie. Uncompromising Swiss craftsmanship, in-house calibres, and architectural mechanical complications handcrafted in Geneva.">
+  <meta name="theme-color" content="#060608">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="APEX | Haute Horlogerie GenÃ¨ve">
+  <meta property="og:description" content="The Architecture of Precision. Handcrafted in Geneva with relentless pursuit of mechanical perfection.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <style>
+/* ==========================================================================
+   APEX HAUTE HORLOGERIE â€” DESIGN SYSTEM & CORE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. THREE-TIER DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* --- Primitive Tokens: Color Palette --- */
+  --raw-black-950: #060608;
+  --raw-black-900: #0a0b0e;
+  --raw-black-850: #101217;
+  --raw-black-800: #171920;
+  --raw-black-700: #222530;
+
+  --raw-gold-300: #f6e8cc;
+  --raw-gold-400: #dfcaa0;
+  --raw-gold-500: #c5a059;
+  --raw-gold-600: #a98239;
+  --raw-gold-700: #856325;
+  --raw-gold-glow: rgba(197, 160, 89, 0.28);
+
+  --raw-silver-200: #f1f5f9;
+  --raw-silver-400: #cbd5e1;
+  --raw-silver-600: #64748b;
+  --raw-silver-800: #334155;
+
+  --raw-ruby-500: #e11d48;
+  --raw-emerald-500: #10b981;
+
+  /* --- Primitive Tokens: Typography --- */
+  --raw-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --raw-font-display: 'Playfair Display', serif;
+  --raw-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --raw-font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* --- Semantic Tokens --- */
+  --bg-app: var(--raw-black-950);
+  --bg-surface: var(--raw-black-900);
+  --bg-surface-elevated: var(--raw-black-850);
+  --bg-surface-card: var(--raw-black-800);
+  --bg-glass: rgba(16, 18, 23, 0.72);
+  --bg-glass-strong: rgba(10, 11, 14, 0.88);
+
+  --text-primary: #fcfcfd;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-gold: var(--raw-gold-400);
+  --text-gold-light: var(--raw-gold-300);
+
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --border-gold: rgba(197, 160, 89, 0.35);
+  --border-gold-strong: var(--raw-gold-500);
+
+  --accent-gold: var(--raw-gold-500);
+  --accent-gold-hover: var(--raw-gold-400);
+  --accent-gold-pressed: var(--raw-gold-600);
+
+  --focus-ring: 0 0 0 2px var(--bg-app), 0 0 0 4px var(--raw-gold-400);
+
+  /* --- Spacing Scale --- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+
+  /* --- Radii & Transitions --- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --nav-height: 84px;
+  --container-max: 1320px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & GLOBAL FOUNDATION
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--raw-font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse at 50% -20%, rgba(197, 160, 89, 0.12) 0%, transparent 65%),
+    radial-gradient(circle at 15% 45%, rgba(169, 130, 57, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(197, 160, 89, 0.04) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--raw-gold-600);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--raw-font-serif);
+}
+
+.font-display {
+  font-family: var(--raw-font-display);
+}
+
+.font-mono {
+  font-family: var(--raw-font-mono);
+}
+
+.text-gold {
+  color: var(--text-gold);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffffff 10%, #f6e8cc 40%, #c5a059 85%, #856325 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #ffffff 20%, #cbd5e1 70%, #64748b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section-padding {
+  padding-block: var(--space-24);
+}
+
+/* Section Header Shared */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--raw-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-gold);
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-pill);
+  background: rgba(197, 160, 89, 0.05);
+}
+
+.section-tag::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  box-shadow: 0 0 8px var(--accent-gold);
+}
+
+.section-title {
+  font-family: var(--raw-font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0.95rem 1.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--raw-gold-400), var(--raw-gold-600));
+  color: #000000;
+  border: 1px solid var(--raw-gold-300);
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fff2d8, var(--raw-gold-500));
+  box-shadow: 0 6px 28px rgba(197, 160, 89, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--border-gold);
+  color: var(--text-gold-light);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--text-gold);
+  padding-inline: 0;
+}
+
+.btn-ghost:hover {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVIGATION & HEADER
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: background-color var(--transition-normal), backdrop-filter var(--transition-normal), border-color var(--transition-normal);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.scrolled {
+  background-color: var(--bg-glass-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--border-hairline);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Brand Identity */
+.brand-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: var(--raw-font-display);
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  color: #ffffff;
+  margin-right: -0.28em;
+}
+
+.brand-subtext {
+  font-family: var(--raw-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-gold);
+  margin-top: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  position: relative;
+  padding-block: var(--space-2);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--raw-gold-400);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Escapement Sound Button */
+.sound-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--raw-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all var(--transition-fast);
+}
+
+.sound-toggle-btn:hover {
+  color: var(--text-gold);
+  border-color: var(--border-gold);
+}
+
+.sound-toggle-btn.active {
+  color: var(--text-gold);
+  border-color: var(--accent-gold);
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+  width: 14px;
+}
+
+.sound-bar {
+  width: 2px;
+  height: 4px;
+  background-color: currentColor;
+  transition: height 0.1s ease;
+}
+
+.sound-toggle-btn.active .sound-bar:nth-child(1) { animation: soundPulse 0.5s infinite alternate; }
+.sound-toggle-btn.active .sound-bar:nth-child(2) { animation: soundPulse 0.4s infinite alternate 0.1s; }
+.sound-toggle-btn.active .sound-bar:nth-child(3) { animation: soundPulse 0.6s infinite alternate 0.2s; }
+
+@keyframes soundPulse {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #ffffff;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + var(--space-8));
+  padding-bottom: var(--space-16);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.hero-title {
+  font-family: var(--raw-font-display);
+  font-size: clamp(3rem, 6.2vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-block: var(--space-4) var(--space-6);
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  font-weight: 300;
+  margin-bottom: var(--space-8);
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+}
+
+/* Horological Badges */
+.specs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-value {
+  font-family: var(--raw-font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-gold-light);
+}
+
+.spec-label {
+  font-family: var(--raw-font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Interactive Watch Stage */
+.hero-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-canvas-wrapper {
+  position: relative;
+  width: min(520px, 90vw);
+  height: min(520px, 90vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-ambient-glow {
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.22) 0%, rgba(197, 160, 89, 0.05) 50%, transparent 75%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#heroWatchCanvas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  cursor: grab;
+}
+
+#heroWatchCanvas:active {
+  cursor: grabbing;
+}
+
+.canvas-live-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(10, 11, 14, 0.85);
+  border: 1px solid var(--border-gold);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--raw-font-mono);
+  font-size: 0.72rem;
+  color: var(--text-gold);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--raw-emerald-500);
+  box-shadow: 0 0 8px var(--raw-emerald-500);
+  animation: emeraldPulse 2s infinite ease-in-out;
+}
+
+@keyframes emeraldPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* --------------------------------------------------------------------------
+   5. BESPOKE CONFIGURATOR & 3-ANGLE TIMEPIECE INSPECTOR
+   -------------------------------------------------------------------------- */
+.configurator-section {
+  background: linear-gradient(180deg, var(--bg-app) 0%, var(--bg-surface) 50%, var(--bg-app) 100%);
+  position: relative;
+}
+
+.configurator-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-12);
+  align-items: center;
+  margin-top: var(--space-12);
+}
+
+.stage-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(30, 34, 45, 0.4) 0%, rgba(10, 11, 14, 0.8) 70%);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.angle-selector-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  margin-bottom: var(--space-6);
+  z-index: 10;
+}
+
+.angle-btn {
+  padding: 8px 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.angle-btn.active {
+  background: var(--bg-surface-card);
+  color: var(--text-gold);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.configurator-canvas-wrapper {
+  position: relative;
+  width: min(440px, 85vw);
+  height: min(440px, 85vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#configWatchCanvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+}
+
+/* Config Controls Panel */
+.config-panel {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  backdrop-filter: blur(12px);
+}
+
+.config-group {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.config-group:last-of-type {
+  border-bottom: none;
+}
+
+.config-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.config-selected-value {
+  font-family: var(--raw-font-mono);
+  font-size: 0.8rem;
+  color: var(--text-gold);
+  text-transform: none;
+}
+
+/* Option Chips & Swatches */
+.option-swatches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.swatch-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all var(--transition-fast);
+}
+
+.swatch-btn:hover {
+  border-color: var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.swatch-btn.active {
+  border-color: var(--accent-gold);
+  background: rgba(197, 160, 89, 0.08);
+}
+
+.swatch-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.swatch-gold { background: linear-gradient(135deg, #f6e8cc, #c5a059, #856325); }
+.swatch-titanium { background: linear-gradient(135deg, #e2e8f0, #94a3b8, #475569); }
+.swatch-carbon { background: linear-gradient(135deg, #333338, #1c1c1f, #0a0a0b); }
+
+.swatch-alligator { background: #0c0d10; border: 1px dashed rgba(255,255,255,0.3); }
+.swatch-calfskin { background: #5c3a21; }
+.swatch-mesh { background: repeating-linear-gradient(45deg, #94a3b8, #94a3b8 2px, #64748b 2px, #64748b 4px); }
+.swatch-rubber { background: #18181b; }
+
+.swatch-name {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+/* Config Price & Order Bar */
+.config-summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-gold);
+}
+
+.config-price-block .price-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.config-price-block .price-amount {
+  font-family: var(--raw-font-display);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   6. MASTER COLLECTIONS SHOWCASE
+   -------------------------------------------------------------------------- */
+.collections-section {
+  position: relative;
+}
+
+.collection-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block: var(--space-8) var(--space-12);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.filter-btn.active {
+  color: var(--text-gold);
+  border-color: var(--border-gold);
+  background: rgba(197, 160, 89, 0.08);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-8);
+}
+
+.collection-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(197, 160, 89, 0.15);
+}
+
+.card-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--raw-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-gold);
+  padding: 3px 8px;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xs);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card-visual {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.card-visual svg {
+  max-height: 100%;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+  transition: transform var(--transition-slow);
+}
+
+.collection-card:hover .card-visual svg {
+  transform: scale(1.05);
+}
+
+.card-meta {
+  font-family: var(--raw-font-mono);
+  font-size: 0.75rem;
+  color: var(--text-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-1);
+}
+
+.card-title {
+  font-family: var(--raw-font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: var(--space-2);
+}
+
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
+}
+
+.card-specs-list {
+  list-style: none;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-4);
+  margin-bottom: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.card-spec-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-k {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.spec-v {
+  font-family: var(--raw-font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-price {
+  font-family: var(--raw-font-display);
+  font-size: 1.3rem;
+  color: var(--text-gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   7. THE ATELIER: FOUR PILLARS OF CRAFTSMANSHIP
+   -------------------------------------------------------------------------- */
+.craftsmanship-section {
+  background: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.craft-tabs-nav {
+  display: flex;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-top: var(--space-10);
+  overflow-x: auto;
+}
+
+.craft-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.craft-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.craft-tab-btn.active {
+  color: var(--text-gold);
+  border-bottom-color: var(--accent-gold);
+  background: rgba(197, 160, 89, 0.03);
+}
+
+.craft-tab-content {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  padding-top: var(--space-12);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.craft-tab-content.active {
+  display: grid;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.craft-editorial-title {
+  font-family: var(--raw-font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.craft-editorial-p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+  font-weight: 300;
+}
+
+.craft-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-block: var(--space-6);
+  padding: var(--space-6);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-gold);
+}
+
+.craft-metric-item .metric-digit {
+  font-family: var(--raw-font-display);
+  font-size: 2.2rem;
+  color: var(--text-gold-light);
+  line-height: 1;
+}
+
+.craft-metric-item .metric-caption {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.craft-visual-panel {
+  position: relative;
+  height: 420px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.craft-visual-panel svg {
+  width: 90%;
+  height: 90%;
+}
+
+/* --------------------------------------------------------------------------
+   8. HERITAGE & THE ATELIER
+   -------------------------------------------------------------------------- */
+.heritage-section {
+  position: relative;
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.timeline-list {
+  list-style: none;
+  position: relative;
+  padding-left: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent-gold) 0%, rgba(197, 160, 89, 0.1) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-8);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(-1 * var(--space-8) - 4px);
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--bg-app);
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 0 8px var(--raw-gold-glow);
+}
+
+.timeline-year {
+  font-family: var(--raw-font-mono);
+  font-size: 0.85rem;
+  color: var(--text-gold);
+  margin-bottom: 2px;
+}
+
+.timeline-heading {
+  font-family: var(--raw-font-display);
+  font-size: 1.35rem;
+  color: #ffffff;
+  margin-bottom: var(--space-2);
+}
+
+.timeline-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   9. VIP CONCIERGE MODAL & PRIVATE APPOINTMENT
+   -------------------------------------------------------------------------- */
+.concierge-dialog {
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  max-width: 640px;
+  width: 90vw;
+  padding: var(--space-10);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9), 0 0 50px rgba(197, 160, 89, 0.2);
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.concierge-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.modal-close-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+  border-color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent-gold);
+  background: rgba(10, 11, 14, 0.9);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.confirmation-card {
+  display: none;
+  text-align: center;
+  padding-block: var(--space-8);
+}
+
+.confirmation-card.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+.confirm-icon {
+  width: 64px;
+  height: 64px;
+  margin-inline: auto;
+  margin-bottom: var(--space-4);
+  color: var(--accent-gold);
+}
+
+/* --------------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--raw-black-950);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-12);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+.footer-col-title {
+  font-family: var(--raw-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-gold);
+  margin-bottom: var(--space-6);
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.boutiques-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.boutique-item {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.boutique-item span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent-gold);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-hairline);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   11. ACCESSIBILITY & RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-10);
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .specs-bar {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  .configurator-grid, .craft-tab-content, .heritage-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-app);
+    padding: var(--space-8);
+    gap: var(--space-6);
+    z-index: 999;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .specs-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .sound-bars, .pulse-dot {
+    animation: none !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-mark" aria-label="Apex Haute Horlogerie Home">
+        <span class="brand-name">APEX</span>
+        <span class="brand-subtext">HAUTE HORLOGERIE GENÃˆVE</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#configurator" class="nav-link">Bespoke Studio</a></li>
+          <li><a href="#craftsmanship" class="nav-link">The Atelier</a></li>
+          <li><a href="#heritage" class="nav-link">Heritage</a></li>
+          <li><a href="#boutiques" class="nav-link">Boutiques</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Escapement Sound Generator -->
+        <button id="soundToggleBtn" class="sound-toggle-btn" aria-pressed="false" aria-label="Toggle mechanical watch escapement audio">
+          <div class="sound-bars" aria-hidden="true">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </div>
+          <span class="sound-label">Escapement: Silent</span>
+        </button>
+
+        <!-- VIP Concierge CTA -->
+        <button class="btn btn-secondary open-concierge-btn" aria-haspopup="dialog">
+          Private Viewing
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         HERO SECTION: THE MONUMENT OF TIME
+         ======================================================================== -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Narrative Content -->
+          <div class="hero-content">
+            <div class="section-tag">Manufacture VallÃ©e de Joux â€¢ No. 001/100</div>
+            <h1 id="hero-heading" class="hero-title">
+              The Architecture of <span class="text-gold-gradient">Precision.</span>
+            </h1>
+            <p class="hero-description">
+              Handcrafted in the Swiss Jura with uncompromising devotion to haute horlogerie. Where microscopic mechanical excellence converges with eternal sculptural grandeur.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#configurator" class="btn btn-primary">
+                Explore The Studio
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#collections" class="btn btn-secondary">
+                View Flagship Pieces
+              </a>
+            </div>
+
+            <!-- Horological Technical Specs Bar -->
+            <div class="specs-bar" role="region" aria-label="Calibre Specifications">
+              <div class="spec-item">
+                <span class="spec-value">28,800</span>
+                <span class="spec-label">Vibrations / Hour</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-value">72 Hours</span>
+                <span class="spec-label">Power Reserve</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-value">Cal. APX-01</span>
+                <span class="spec-label">In-House Movement</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-value">PoinÃ§on</span>
+                <span class="spec-label">Geneva Seal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Timepiece Stage -->
+          <div class="hero-stage">
+            <div class="watch-canvas-wrapper">
+              <div class="watch-ambient-glow" aria-hidden="true"></div>
+              <!-- HTML5 Interactive Canvas Watch -->
+              <canvas id="heroWatchCanvas" width="520" height="520" aria-label="Interactive real-time mechanical watch face ticking at 8 beats per second with active flying tourbillon.">
+                Your browser does not support high-definition canvas rendering.
+              </canvas>
+              
+              <div class="canvas-live-badge" aria-live="polite">
+                <span class="pulse-dot"></span>
+                <span>Calibre APX-01 â€¢ Live Continuous Beat</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         BESPOKE STUDIO & 3-ANGLE TIMEPIECE INSPECTOR
+         ======================================================================== -->
+    <section class="configurator-section section-padding" id="configurator" aria-labelledby="config-heading">
+      <div class="container">
+        
+        <div class="section-tag">Interactive Manufacture Studio</div>
+        <h2 id="config-heading" class="section-title">
+          Bespoke Commission & <span class="text-gold-gradient">Mechanical Anatomy</span>
+        </h2>
+        <p class="section-subtitle">
+          Examine the timepiece from three horological perspectives. Select noble metals, hand-beveled bridges, and bespoke strap options crafted specifically for your collection.
+        </p>
+
+        <div class="configurator-grid">
+          
+          <!-- Left: 3-Angle Stage -->
+          <div class="stage-wrapper">
+            <!-- Angle Switcher -->
+            <div class="angle-selector-bar" role="tablist" aria-label="Watch Perspective Angles">
+              <button class="angle-btn active" role="tab" aria-selected="true" data-angle="dial">
+                Dial Face
+              </button>
+              <button class="angle-btn" role="tab" aria-selected="false" data-angle="caseback">
+                Exhibition Caseback
+              </button>
+              <button class="angle-btn" role="tab" aria-selected="false" data-angle="profile">
+                9.8mm Profile
+              </button>
+            </div>
+
+            <div class="configurator-canvas-wrapper">
+              <canvas id="configWatchCanvas" width="440" height="440" aria-label="Reactive watch configurator rendering the selected angles and precious materials.">
+              </canvas>
+            </div>
+          </div>
+
+          <!-- Right: Bespoke Options Panel -->
+          <div class="config-panel" role="form" aria-label="Timepiece Configurator Options">
+            
+            <!-- Case Metallurgy -->
+            <div class="config-group">
+              <div class="config-label">
+                <span>Case Metallurgy</span>
+                <span id="selectedMaterialLabel" class="config-selected-value">18K Honey Gold (Manufacture Alloy)</span>
+              </div>
+              <div class="option-swatches" role="radiogroup" aria-label="Select Case Material">
+                <button type="button" class="swatch-btn mat-swatch-btn active" data-material="gold" aria-label="18K Honey Gold">
+                  <span class="swatch-circle swatch-gold"></span>
+                  <span class="swatch-name">18K Honey Gold</span>
+                </button>
+                <button type="button" class="swatch-btn mat-swatch-btn" data-material="titanium" aria-label="Grade 5 Titanium">
+                  <span class="swatch-circle swatch-titanium"></span>
+                  <span class="swatch-name">Grade 5 Titanium</span>
+                </button>
+                <button type="button" class="swatch-btn mat-swatch-btn" data-material="carbon" aria-label="Forged Carbon DLC">
+                  <span class="swatch-circle swatch-carbon"></span>
+                  <span class="swatch-name">Forged Carbon DLC</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Handcrafted Strap -->
+            <div class="config-group">
+              <div class="config-label">
+                <span>Strap & Clasp System</span>
+                <span id="selectedStrapLabel" class="config-selected-value">Hand-Stitched Mississippiensis Alligator</span>
+              </div>
+              <div class="option-swatches" role="radiogroup" aria-label="Select Strap Option">
+                <button type="button" class="swatch-btn strap-swatch-btn active" data-strap="alligator" aria-label="Mississippiensis Alligator">
+                  <span class="swatch-circle swatch-alligator"></span>
+                  <span class="swatch-name">Noir Alligator</span>
+                </button>
+                <button type="button" class="swatch-btn strap-swatch-btn" data-strap="calfskin" aria-label="Saddle Calfskin">
+                  <span class="swatch-circle swatch-calfskin"></span>
+                  <span class="swatch-name">Saddle Calfskin</span>
+                </button>
+                <button type="button" class="swatch-btn strap-swatch-btn" data-strap="mesh" aria-label="Milanese Titanium Mesh">
+                  <span class="swatch-circle swatch-mesh"></span>
+                  <span class="swatch-name">Milanese Mesh</span>
+                </button>
+                <button type="button" class="swatch-btn strap-swatch-btn" data-strap="rubber" aria-label="Vulcanized FKM Rubber">
+                  <span class="swatch-circle swatch-rubber"></span>
+                  <span class="swatch-name">FKM Tech Rubber</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Calibre Guarantee Summary -->
+            <div class="config-group">
+              <div class="config-label">
+                <span>Manufacture Specification</span>
+                <span class="config-selected-value">Calibre APX-01 Automatic</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+                Equipped with silicon balance spring, 22K solid gold oscillating weight, 39 jewel bearings, and Certified Chronometer rating (-2/+2 sec/day).
+              </p>
+            </div>
+
+            <!-- Price & Order Action -->
+            <div class="config-summary-bar">
+              <div class="config-price-block">
+                <span class="price-label">Estimated Valuation</span>
+                <div id="configPriceDisplay" class="price-amount">$84,500</div>
+              </div>
+
+              <button class="btn btn-primary open-concierge-btn">
+                Commission Allocation
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         FLAGSHIP MASTERPIECE COLLECTIONS
+         ======================================================================== -->
+    <section class="collections-section section-padding" id="collections" aria-labelledby="collections-heading">
+      <div class="container">
+        
+        <div class="section-tag">Haute Horlogerie Portfolio</div>
+        <h2 id="collections-heading" class="section-title">
+          The Flagship <span class="text-gold-gradient">Masterpieces</span>
+        </h2>
+        <p class="section-subtitle">
+          Each timepiece represents months of meticulous hand-finishing, chronometric regulation, and individual assembly by a single master watchmaker.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="collection-filter-bar" role="tablist" aria-label="Filter collections by complication">
+          <button class="filter-btn active" data-filter="all">All Timepieces</button>
+          <button class="filter-btn" data-filter="complication">Grand Complications</button>
+          <button class="filter-btn" data-filter="skeleton">Architectural Skeleton</button>
+          <button class="filter-btn" data-filter="chronometer">Precision Chronometers</button>
+        </div>
+
+        <!-- Collections Grid -->
+        <div class="collection-grid">
+          
+          <!-- Piece 1: Chrono-Tourbillon -->
+          <article class="collection-card" data-category="complication">
+            <span class="card-badge">Limited Edition 25 pcs</span>
+            <div class="card-visual">
+              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="85" stroke="#c5a059" stroke-width="6"/>
+                <circle cx="100" cy="100" r="75" fill="#0d0e12" stroke="#dfcaa0" stroke-width="1.5"/>
+                <!-- Tourbillon cage at 6 -->
+                <circle cx="100" cy="140" r="26" stroke="#c5a059" stroke-width="1.5" fill="#08080a"/>
+                <path d="M78 140 L122 140" stroke="#f6e8cc" stroke-width="2"/>
+                <circle cx="100" cy="140" r="4" fill="#e11d48"/>
+                <!-- Hands -->
+                <line x1="100" y1="100" x2="60" y2="70" stroke="#dfcaa0" stroke-width="3" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="140" y2="60" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="100" cy="100" r="5" fill="#c5a059"/>
+              </svg>
+            </div>
+            <span class="card-meta">Calibre APX-01T</span>
+            <h3 class="card-title">Apex Chrono-Tourbillon</h3>
+            <p class="card-desc">
+              Single-pusher column-wheel chronograph with flying 60-second tourbillon cage, hand-beveled internal angles in 18K Honey Gold.
+            </p>
+            <ul class="card-specs-list">
+              <li class="card-spec-row">
+                <span class="spec-k">Dimensions</span>
+                <span class="spec-v">41.5mm Ã— 11.2mm</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Power Reserve</span>
+                <span class="spec-v">72 Hours</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Frequency</span>
+                <span class="spec-v">28,800 vph</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Water Resistance</span>
+                <span class="spec-v">50 Meters</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <div class="card-price">$128,000</div>
+              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+            </div>
+          </article>
+
+          <!-- Piece 2: Architecture Skeleton -->
+          <article class="collection-card" data-category="skeleton">
+            <span class="card-badge">Openworked Masterpiece</span>
+            <div class="card-visual">
+              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="85" stroke="#94a3b8" stroke-width="6"/>
+                <circle cx="100" cy="100" r="75" fill="#08090d" stroke="#cbd5e1" stroke-width="1.5"/>
+                <!-- Openworked skeleton bridges -->
+                <path d="M40 80 Q100 60 160 80 T130 150 Q100 120 70 150 Z" stroke="#c5a059" stroke-width="2" fill="rgba(197,160,89,0.06)"/>
+                <circle cx="80" cy="90" r="18" stroke="#dfcaa0" stroke-width="1.5"/>
+                <circle cx="120" cy="115" r="22" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="95" cy="135" r="14" stroke="#c5a059" stroke-width="1.5"/>
+                <!-- Ruby Jewels -->
+                <circle cx="80" cy="90" r="4" fill="#e11d48"/>
+                <circle cx="120" cy="115" r="4" fill="#e11d48"/>
+                <!-- Hands -->
+                <line x1="100" y1="100" x2="80" y2="50" stroke="#f6e8cc" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="145" y2="85" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="card-meta">Calibre APX-02S</span>
+            <h3 class="card-title">Apex Architecture Skeleton</h3>
+            <p class="card-desc">
+              Three-dimensional sculptural openworking exposing the entire geartrain, anthracite NAC-coated bridges, and double mainspring barrel.
+            </p>
+            <ul class="card-specs-list">
+              <li class="card-spec-row">
+                <span class="spec-k">Dimensions</span>
+                <span class="spec-v">40.0mm Ã— 9.4mm</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Power Reserve</span>
+                <span class="spec-v">80 Hours</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Frequency</span>
+                <span class="spec-v">21,600 vph</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Water Resistance</span>
+                <span class="spec-v">100 Meters</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <div class="card-price">$84,500</div>
+              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+            </div>
+          </article>
+
+          <!-- Piece 3: Meridian Perpetual -->
+          <article class="collection-card" data-category="complication">
+            <span class="card-badge">Grand Complication</span>
+            <div class="card-visual">
+              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="85" stroke="#c5a059" stroke-width="6"/>
+                <circle cx="100" cy="100" r="75" fill="#07080b" stroke="#dfcaa0" stroke-width="1.5"/>
+                <!-- Aventurine Moonphase at 12 -->
+                <circle cx="100" cy="65" r="22" stroke="#3b82f6" stroke-width="1.5" fill="#0f172a"/>
+                <path d="M92 65 A8 8 0 0 0 108 65 A8 8 0 0 1 92 65" fill="#f6e8cc"/>
+                <!-- Subdials at 3, 6, 9 -->
+                <circle cx="138" cy="105" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <circle cx="62" cy="105" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <circle cx="100" cy="142" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <!-- Hands -->
+                <line x1="100" y1="100" x2="120" y2="70" stroke="#f6e8cc" stroke-width="2.5"/>
+                <line x1="100" y1="100" x2="70" y2="120" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="card-meta">Calibre APX-03QP</span>
+            <h3 class="card-title">Apex Meridian Perpetual</h3>
+            <p class="card-desc">
+              Secular perpetual calendar synchronized to astronomical cycles with hand-engraved gold moonphase on midnight aventurine.
+            </p>
+            <ul class="card-specs-list">
+              <li class="card-spec-row">
+                <span class="spec-k">Dimensions</span>
+                <span class="spec-v">42.0mm Ã— 10.8mm</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Power Reserve</span>
+                <span class="spec-v">65 Hours</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Frequency</span>
+                <span class="spec-v">28,800 vph</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Water Resistance</span>
+                <span class="spec-v">30 Meters</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <div class="card-price">$145,000</div>
+              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+            </div>
+          </article>
+
+          <!-- Piece 4: DeepSea Chronometer -->
+          <article class="collection-card" data-category="chronometer">
+            <span class="card-badge">COSC Chronometer</span>
+            <div class="card-visual">
+              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="85" stroke="#27272a" stroke-width="8"/>
+                <circle cx="100" cy="100" r="74" fill="#090a0d" stroke="#c5a059" stroke-width="2"/>
+                <!-- Diver Bezel Markers -->
+                <polygon points="100,28 95,36 105,36" fill="#c5a059"/>
+                <circle cx="160" cy="100" r="4" fill="#ffffff"/>
+                <circle cx="100" cy="160" r="4" fill="#ffffff"/>
+                <circle cx="40" cy="100" r="4" fill="#ffffff"/>
+                <!-- Bold Diver Hands -->
+                <line x1="100" y1="100" x2="70" y2="70" stroke="#f6e8cc" stroke-width="4" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="135" y2="100" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="100" cy="100" r="6" fill="#e11d48"/>
+              </svg>
+            </div>
+            <span class="card-meta">Calibre APX-04D</span>
+            <h3 class="card-title">Apex DeepSea Carbon</h3>
+            <p class="card-desc">
+              Forged carbon monobloc architecture with titanium inner capsule, automatic helium escape valve, and 300-meter hydrostatic integrity.
+            </p>
+            <ul class="card-specs-list">
+              <li class="card-spec-row">
+                <span class="spec-k">Dimensions</span>
+                <span class="spec-v">43.0mm Ã— 12.8mm</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Power Reserve</span>
+                <span class="spec-v">70 Hours</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Frequency</span>
+                <span class="spec-v">28,800 vph</span>
+              </li>
+              <li class="card-spec-row">
+                <span class="spec-k">Water Resistance</span>
+                <span class="spec-v">300 Meters</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <div class="card-price">$46,000</div>
+              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         THE ATELIER: FOUR PILLARS OF CRAFTSMANSHIP
+         ======================================================================== -->
+    <section class="craftsmanship-section section-padding" id="craftsmanship" aria-labelledby="craft-heading">
+      <div class="container">
+        
+        <div class="section-tag">Genevan Manufacture Heritage</div>
+        <h2 id="craft-heading" class="section-title">
+          The Four Pillars of <span class="text-gold-gradient">Mastery</span>
+        </h2>
+        <p class="section-subtitle">
+          In our VallÃ©e de Joux atelier, machines only prepare the metal. Every surface, inward angle, and balance hairspring is brought to life through the patient touch of human hands.
+        </p>
+
+        <!-- Craftsmanship Tab Navigation -->
+        <div class="craft-tabs-nav" role="tablist" aria-label="Craftsmanship Pillars">
+          <button class="craft-tab-btn active" role="tab" aria-selected="true" data-tab="anglage">
+            I. Hand Anglage & Polish
+          </button>
+          <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="calibre">
+            II. In-House Calibre APX-01
+          </button>
+          <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="metallurgy">
+            III. Metallurgy & Materials
+          </button>
+          <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="seal">
+            IV. The PoinÃ§on de GenÃ¨ve
+          </button>
+        </div>
+
+        <!-- Tab Content 1: Anglage -->
+        <div id="tab-anglage" class="craft-tab-content active" role="tabpanel">
+          <div class="craft-editorial">
+            <h3 class="craft-editorial-title">45 Hours of Patient Beveling Per Movement</h3>
+            <p class="craft-editorial-p">
+              The internal angles of every bridge are hand-filed using boxwood pegwood and diamond paste to achieve a flawless 45-degree mirror sheen. No CNC machine in the world can replicate the razor-sharp interior vertices produced by our master artisans.
+            </p>
+            <div class="craft-metrics">
+              <div class="craft-metric-item">
+                <div class="metric-digit">0.02 mm</div>
+                <div class="metric-caption">Chamfer Precision Tolerance</div>
+              </div>
+              <div class="craft-metric-item">
+                <div class="metric-digit">100%</div>
+                <div class="metric-caption">Hand-Finished Components</div>
+              </div>
+            </div>
+            <button class="btn btn-secondary open-concierge-btn">Schedule Atelier Tour</button>
+          </div>
+          <div class="craft-visual-panel">
+            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
+              <rect width="400" height="300" fill="#0d0f14"/>
+              <!-- Hand Beveled Bridge Macro Motif -->
+              <path d="M40 220 L120 80 L280 80 L360 220 L240 220 L200 160 L160 220 Z" stroke="#c5a059" stroke-width="4" fill="rgba(197, 160, 89, 0.12)"/>
+              <!-- Mirror Anglage Highlight Ridge -->
+              <path d="M40 220 L120 80 L280 80" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="200" cy="120" r="14" fill="#e11d48" stroke="#c5a059" stroke-width="2"/>
+              <text x="200" y="270" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 1: HAND-CHAMFERED BRIDGES (BERYLLIUM COPPER)</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Tab Content 2: In-House Calibre -->
+        <div id="tab-calibre" class="craft-tab-content" role="tabpanel">
+          <div class="craft-editorial">
+            <h3 class="craft-editorial-title">Calibre APX-01: Pure Kinetic Architecture</h3>
+            <p class="craft-editorial-p">
+              Designed and assembled entirely within Geneva, Calibre APX-01 features a free-sprung balance wheel with four gold inertia regulating blocks, a paramagnetic silicon escape wheel, and twin mainspring barrels delivering a constant torque 72-hour power reserve.
+            </p>
+            <div class="craft-metrics">
+              <div class="craft-metric-item">
+                <div class="metric-digit">4 Hz</div>
+                <div class="metric-caption">Frequency (28,800 VPH)</div>
+              </div>
+              <div class="craft-metric-item">
+                <div class="metric-digit">39</div>
+                <div class="metric-caption">Faceted Synthetic Rubies</div>
+              </div>
+            </div>
+            <button class="btn btn-secondary open-concierge-btn">Download Calibre Blueprint</button>
+          </div>
+          <div class="craft-visual-panel">
+            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
+              <rect width="400" height="300" fill="#0d0f14"/>
+              <circle cx="200" cy="140" r="95" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
+              <!-- Gear Assembly Diagram -->
+              <circle cx="160" cy="120" r="45" stroke="#c5a059" stroke-width="2"/>
+              <circle cx="240" cy="140" r="35" stroke="#dfcaa0" stroke-width="1.8"/>
+              <circle cx="190" cy="180" r="25" stroke="#94a3b8" stroke-width="1.5"/>
+              <circle cx="160" cy="120" r="6" fill="#e11d48"/>
+              <circle cx="240" cy="140" r="6" fill="#e11d48"/>
+              <circle cx="190" cy="180" r="6" fill="#e11d48"/>
+              <text x="200" y="270" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 2: CALIBRE APX-01 KINEMATIC GEAR TRAIN</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Tab Content 3: Metallurgy -->
+        <div id="tab-metallurgy" class="craft-tab-content" role="tabpanel">
+          <div class="craft-editorial">
+            <h3 class="craft-editorial-title">18K Honey Gold & Aerospace Grade 5 Titanium</h3>
+            <p class="craft-editorial-p">
+              We smelt our proprietary Honey Gold alloy in small sealed crucibles, infusing precise ratios of platinum to ensure color stability that will never oxidize over centuries. For our sport instruments, forged aeronautic carbon is fused at 300 bars of pressure with Grade 5 titanium.
+            </p>
+            <div class="craft-metrics">
+              <div class="craft-metric-item">
+                <div class="metric-digit">Grade 5</div>
+                <div class="metric-caption">Titanium (Ti-6Al-4V)</div>
+              </div>
+              <div class="craft-metric-item">
+                <div class="metric-digit">18 Karat</div>
+                <div class="metric-caption">Proprietary Honey Gold</div>
+              </div>
+            </div>
+            <button class="btn btn-secondary open-concierge-btn">Explore Materials Lab</button>
+          </div>
+          <div class="craft-visual-panel">
+            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
+              <rect width="400" height="300" fill="#0d0f14"/>
+              <!-- Crystal Lattice Graphic -->
+              <polygon points="200,50 280,100 280,200 200,250 120,200 120,100" stroke="#c5a059" stroke-width="2" fill="rgba(197,160,89,0.08)"/>
+              <line x1="200" y1="50" x2="200" y2="250" stroke="#c5a059" stroke-width="1.5"/>
+              <line x1="120" y1="100" x2="280" y2="200" stroke="#c5a059" stroke-width="1.5"/>
+              <line x1="120" y1="200" x2="280" y2="100" stroke="#c5a059" stroke-width="1.5"/>
+              <circle cx="200" cy="150" r="10" fill="#ffffff"/>
+              <text x="200" y="280" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 3: HONEY GOLD ATOMIC INTERFACE</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Tab Content 4: Geneva Seal -->
+        <div id="tab-seal" class="craft-tab-content" role="tabpanel">
+          <div class="craft-editorial">
+            <h3 class="craft-editorial-title">The PoinÃ§on de GenÃ¨ve: Ultimate Certification</h3>
+            <p class="craft-editorial-p">
+              Every Apex timepiece bears the prestigious Geneva Sealâ€”an independent statutory guarantee of origin, craftsmanship, and performance awarded only to watches designed, assembled, and chronometrically adjusted within the Canton of Geneva.
+            </p>
+            <div class="craft-metrics">
+              <div class="craft-metric-item">
+                <div class="metric-digit">-2 / +2</div>
+                <div class="metric-caption">Seconds / Day Strict Tolerance</div>
+              </div>
+              <div class="craft-metric-item">
+                <div class="metric-digit">100%</div>
+                <div class="metric-caption">Canton of Geneva Regulation</div>
+              </div>
+            </div>
+            <button class="btn btn-secondary open-concierge-btn">View Certification Standards</button>
+          </div>
+          <div class="craft-visual-panel">
+            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
+              <rect width="400" height="300" fill="#0d0f14"/>
+              <!-- Geneva Seal Inscription Emblem -->
+              <circle cx="200" cy="140" r="85" stroke="#c5a059" stroke-width="3" stroke-dasharray="6 3"/>
+              <circle cx="200" cy="140" r="76" stroke="#dfcaa0" stroke-width="1.5"/>
+              <path d="M200 80 L230 100 L230 150 C230 175 200 195 200 195 C200 195 170 175 170 150 L170 100 Z" stroke="#c5a059" stroke-width="2" fill="rgba(197, 160, 89, 0.2)"/>
+              <path d="M190 110 L210 110 M200 110 L200 160 M188 150 L212 150" stroke="#f6e8cc" stroke-width="2" stroke-linecap="round"/>
+              <text x="200" y="265" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 4: POINÃ‡ON DE GENÃˆVE HALLMARK</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         HERITAGE & MANUFACTURE TIMELINE
+         ======================================================================== -->
+    <section class="heritage-section section-padding" id="heritage" aria-labelledby="heritage-heading">
+      <div class="container">
+        
+        <div class="heritage-grid">
+          
+          <div>
+            <div class="section-tag">Since 1894</div>
+            <h2 id="heritage-heading" class="section-title">
+              Born in Geneva, <br>
+              <span class="text-gold-gradient">Mastered for Eternity</span>
+            </h2>
+            <p class="section-subtitle" style="margin-bottom: var(--space-8);">
+              Founded in 1894 along the shores of Lake Geneva by master horologist Henri de Lâ€™Apex, our manufacture has remained staunchly independent for over a century. We answer solely to our craft.
+            </p>
+            <div style="padding: var(--space-6); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); background: rgba(197, 160, 89, 0.04);">
+              <p style="font-family: var(--raw-font-serif); font-size: 1.25rem; font-style: italic; color: #f6e8cc; line-height: 1.6;">
+                "We do not merely measure time. We sculpt the seconds into enduring physical monuments."
+              </p>
+              <span style="display: block; font-family: var(--raw-font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); margin-top: var(--space-3); letter-spacing: 0.15em;">
+                â€” Laurent de Lâ€™Apex, Master Watchmaker
+              </span>
+            </div>
+          </div>
+
+          <!-- Chronology Timeline -->
+          <div>
+            <ul class="timeline-list">
+              
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1894</div>
+                <h3 class="timeline-heading">Founding of the Atelier</h3>
+                <p class="timeline-desc">
+                  Henri de Lâ€™Apex registers his initial patent for an ultra-flat pocket watch tourbillon in Geneva, winning the Grand Prix de ChronomÃ©trie.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1952</div>
+                <h3 class="timeline-heading">The Meridian Calibre Breakthrough</h3>
+                <p class="timeline-desc">
+                  Creation of the legendary high-beat automatic movement with patented bi-directional ceramic ball bearings.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2008</div>
+                <h3 class="timeline-heading">The Silicon Escapement Era</h3>
+                <p class="timeline-desc">
+                  Pioneering zero-lubrication silicon hairsprings and escape wheels impervious to magnetic fields up to 15,000 Gauss.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">Present Day</div>
+                <h3 class="timeline-heading">The Architecture Series</h3>
+                <p class="timeline-desc">
+                  Unveiling Calibre APX-01: integrating space-grade materials with classical hand-finishing for modern connoisseurs.
+                </p>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       VIP CONCIERGE & PRIVATE VIEWING MODAL DIALOG
+       ======================================================================== -->
+  <dialog id="conciergeModal" class="concierge-dialog" aria-labelledby="modalTitle">
+    
+    <div class="modal-header">
+      <div>
+        <div class="section-tag" style="margin-bottom: 6px;">Private Client Services</div>
+        <h2 id="modalTitle" class="section-title" style="font-size: 1.8rem; margin-bottom: 0;">
+          Request a Private Viewing
+        </h2>
+      </div>
+      <button id="closeConciergeBtn" class="modal-close-btn" aria-label="Close Dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Booking Form -->
+    <form id="conciergeForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="conciergeName" class="form-label">Full Name</label>
+          <input type="text" id="conciergeName" class="form-input" placeholder="e.g. Lord Alistair Vance" required>
+        </div>
+        <div class="form-group">
+          <label for="conciergeEmail" class="form-label">Private Email</label>
+          <input type="email" id="conciergeEmail" class="form-input" placeholder="client@domain.com" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="conciergeSalon" class="form-label">Boutique Salon</label>
+          <select id="conciergeSalon" class="form-select" required>
+            <option value="Geneva Salon (Rue du RhÃ´ne)">Geneva Salon (Rue du RhÃ´ne)</option>
+            <option value="London Salon (New Bond Street)">London Salon (New Bond Street)</option>
+            <option value="New York Salon (Madison Avenue)">New York Salon (Madison Avenue)</option>
+            <option value="Tokyo Salon (Ginza 6-Chome)">Tokyo Salon (Ginza 6-Chome)</option>
+            <option value="Dubai Salon (DIFC Gate Precinct)">Dubai Salon (DIFC Gate Precinct)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="conciergeInterest" class="form-label">Timepiece of Interest</label>
+          <select id="conciergeInterest" class="form-select">
+            <option value="Apex Chrono-Tourbillon">Apex Chrono-Tourbillon</option>
+            <option value="Apex Architecture Skeleton">Apex Architecture Skeleton</option>
+            <option value="Apex Meridian Perpetual">Apex Meridian Perpetual</option>
+            <option value="Apex DeepSea Carbon">Apex DeepSea Carbon</option>
+            <option value="Bespoke Studio Piece">Bespoke Studio Piece</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="conciergeNotes" class="form-label">Bespoke Requirements or Notes</label>
+        <textarea id="conciergeNotes" class="form-textarea" rows="3" placeholder="Engraving preferences, custom dial configurations, or private viewing dates..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-4);">
+        Confirm Consultation Request
+      </button>
+    </form>
+
+    <!-- Success Confirmation State -->
+    <div id="conciergeConfirmation" class="confirmation-card">
+      <svg class="confirm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <h3 style="font-family: var(--raw-font-display); font-size: 1.8rem; margin-bottom: var(--space-2); color: #ffffff;">
+        Viewing Confirmed
+      </h3>
+      <p style="color: var(--text-secondary); max-width: 440px; margin-inline: auto; font-size: 0.95rem; margin-bottom: var(--space-6);">
+        Thank you, <strong id="confirmClientName">Client</strong>. A private concierge director at our <strong id="confirmSalon">Geneva Salon</strong> will contact you within 4 hours to arrange your confidential appointment.
+      </p>
+      <div style="font-family: var(--raw-font-mono); font-size: 0.85rem; color: var(--text-gold); padding: var(--space-3); border: 1px dashed var(--border-gold); display: inline-block;">
+        Dossier Reference: <span id="confirmRefCode">APX-982314</span>
+      </div>
+    </div>
+
+  </dialog>
+
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" id="boutiques" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Col 1: Brand & Manifesto -->
+        <div>
+          <div class="brand-mark" style="margin-bottom: var(--space-4);">
+            <span class="brand-name">APEX</span>
+            <span class="brand-subtext">HAUTE HORLOGERIE GENÃˆVE</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 320px; margin-bottom: var(--space-6);">
+            Apex Manufacture SA. An independent Genevan manufacture dedicated to the highest orders of Swiss mechanical horology and architectural finishing.
+          </p>
+          <div class="section-tag">Swiss Made â€¢ Geneva Seal No. 418</div>
+        </div>
+
+        <!-- Col 2: Flagship Salons -->
+        <div>
+          <h4 class="footer-col-title">Flagship Boutiques</h4>
+          <ul class="boutiques-list">
+            <li class="boutique-item">
+              <strong>Geneva</strong>
+              <span>Rue du RhÃ´ne 42, 1204 GenÃ¨ve</span>
+            </li>
+            <li class="boutique-item">
+              <strong>London</strong>
+              <span>14 New Bond Street, Mayfair</span>
+            </li>
+            <li class="boutique-item">
+              <strong>New York</strong>
+              <span>645 Madison Avenue</span>
+            </li>
+            <li class="boutique-item">
+              <strong>Tokyo</strong>
+              <span>6-10-1 Ginza, Chuo-ku</span>
+            </li>
+            <li class="boutique-item">
+              <strong>Dubai</strong>
+              <span>Gate Precinct 4, DIFC</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Manufacture -->
+        <div>
+          <h4 class="footer-col-title">The Manufacture</h4>
+          <ul class="footer-links-list">
+            <li><a href="#craftsmanship" class="footer-link">Calibre APX-01 Blueprint</a></li>
+            <li><a href="#craftsmanship" class="footer-link">Hand Anglage Workshop</a></li>
+            <li><a href="#craftsmanship" class="footer-link">The Geneva Seal Standards</a></li>
+            <li><a href="#heritage" class="footer-link">Manufacture Archives</a></li>
+            <li><a href="#configurator" class="footer-link">Bespoke Commissions</a></li>
+            <li><a href="#" class="footer-link open-concierge-btn">VIP Concierge Desk</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Gazette Newsletter -->
+        <div>
+          <h4 class="footer-col-title">The Apex Gazette</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Subscribe to receive private allocations, technical papers, and invitations to private salon viewings.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Your subscription to The Apex Gazette has been registered.');">
+            <input type="email" class="newsletter-input" placeholder="Your private email" aria-label="Email address for Apex Gazette" required>
+            <button type="submit" class="btn btn-primary" style="padding: 0.65rem 1rem; min-height: unset;">
+              Join
+            </button>
+          </form>
+          <span style="font-size: 0.72rem; color: var(--text-muted); display: block; margin-top: 8px;">
+            Strict confidentiality assured. Dispatches issued quarterly.
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal -->
+      <div class="footer-bottom-bar">
+        <div>
+          Â© 2026 APEX Haute Horlogerie SA. All Rights Reserved. Handcrafted in Switzerland.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Manufacture</a>
+          <a href="#" class="footer-link">5-Year International Guarantee</a>
+          <a href="#" class="footer-link">Traceability & Ethics</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+/**
+ * ============================================================================
+ * APEX HAUTE HORLOGERIE â€” INTERACTIVE WATCH ENGINE & WEB EXPERIENCE
+ * ============================================================================
+ */
+
+(function () {
+  'use strict';
+
+  /* --------------------------------------------------------------------------
+     1. HOROLOGICAL STATE & CONFIGURATION
+     -------------------------------------------------------------------------- */
+  const STATE = {
+    // Current live time
+    hours: 10,
+    minutes: 10,
+    seconds: 36,
+    subsecond: 0,
+
+    // Configurator state
+    material: 'gold', // 'gold' | 'titanium' | 'carbon'
+    strap: 'alligator', // 'alligator' | 'calfskin' | 'mesh' | 'rubber'
+    angle: 'dial', // 'dial' | 'caseback' | 'profile'
+
+    // Sound state
+    soundEnabled: false,
+    audioCtx: null,
+    tickTimer: null,
+    tickAlt: false,
+
+    // Pricing matrix
+    basePrices: {
+      gold: 78000,
+      titanium: 62000,
+      carbon: 66000
+    },
+    strapPrices: {
+      alligator: 6500,
+      calfskin: 3200,
+      mesh: 4800,
+      rubber: 2400
+    },
+
+    // Collections Data
+    collections: [
+      {
+        id: 'chrono-tourbillon',
+        title: 'Apex Chrono-Tourbillon',
+        category: 'complication',
+        caliber: 'Calibre APX-01T',
+        price: '$128,000',
+        badge: 'Limited Edition 25 pcs',
+        desc: 'Single-pusher column-wheel chronograph paired with a flying 60-second tourbillon, hand-beveled in 18K Honey Gold.',
+        specs: {
+          diameter: '41.5 mm',
+          thickness: '11.2 mm',
+          power: '72 Hours',
+          frequency: '28,800 vph (4 Hz)',
+          water: '50 Meters',
+          jewels: '39 Rubies'
+        }
+      },
+      {
+        id: 'nautilus-skeleton',
+        title: 'Apex Architecture Skeleton',
+        category: 'skeleton',
+        caliber: 'Calibre APX-02S',
+        price: '$84,500',
+        badge: 'Openworked Haute Horlogerie',
+        desc: 'Three-dimensional sculptural openworking exposing the entire geartrain, anthracite NAC-coated bridges, and double barrel.',
+        specs: {
+          diameter: '40.0 mm',
+          thickness: '9.4 mm',
+          power: '80 Hours',
+          frequency: '21,600 vph (3 Hz)',
+          water: '100 Meters',
+          jewels: '33 Rubies'
+        }
+      },
+      {
+        id: 'meridian-perpetual',
+        title: 'Apex Meridian Perpetual',
+        category: 'complication',
+        caliber: 'Calibre APX-03QP',
+        price: '$145,000',
+        badge: 'Grand Complication',
+        desc: 'Secular perpetual calendar with aventurine sky disc, realistic hand-engraved gold moonphase, and leap year indicator.',
+        specs: {
+          diameter: '42.0 mm',
+          thickness: '10.8 mm',
+          power: '65 Hours',
+          frequency: '28,800 vph (4 Hz)',
+          water: '30 Meters',
+          jewels: '44 Rubies'
+        }
+      },
+      {
+        id: 'deepsea-chronometer',
+        title: 'Apex DeepSea Forged Carbon',
+        category: 'chronometer',
+        caliber: 'Calibre APX-04D',
+        price: '$46,000',
+        badge: 'COSC Certified Chronometer',
+        desc: 'Monolithic forged carbon case with Grade 5 titanium inner capsule, automatic helium escape valve, and ceramic bezel.',
+        specs: {
+          diameter: '43.0 mm',
+          thickness: '12.8 mm',
+          power: '70 Hours',
+          frequency: '28,800 vph (4 Hz)',
+          water: '300 Meters',
+          jewels: '31 Rubies'
+        }
+      }
+    ]
+  };
+
+  /* --------------------------------------------------------------------------
+     2. MECHANICAL ESCAPEMENT AUDIO SYNTHESIS (Web Audio API)
+     -------------------------------------------------------------------------- */
+  function initAudio() {
+    if (!STATE.audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) {
+        STATE.audioCtx = new AudioContext();
+      }
+    }
+    if (STATE.audioCtx && STATE.audioCtx.state === 'suspended') {
+      STATE.audioCtx.resume();
+    }
+  }
+
+  function playEscapementTick() {
+    if (!STATE.soundEnabled || !STATE.audioCtx) return;
+
+    try {
+      const now = STATE.audioCtx.currentTime;
+      // High-beat alternating frequency: pallet jewel impact simulation
+      const baseFreq = STATE.tickAlt ? 2400 : 3100;
+      STATE.tickAlt = !STATE.tickAlt;
+
+      // 1. Noise impulse for the crisp metallic click
+      const bufferSize = STATE.audioCtx.sampleRate * 0.008; // 8ms burst
+      const buffer = STATE.audioCtx.createBuffer(1, bufferSize, STATE.audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+      }
+
+      const noise = STATE.audioCtx.createBufferSource();
+      noise.buffer = buffer;
+
+      // Bandpass filter centered at horological strike timbre
+      const filter = STATE.audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(baseFreq, now);
+      filter.Q.setValueAtTime(12, now);
+
+      // Amplitude envelope
+      const gain = STATE.audioCtx.createGain();
+      gain.gain.setValueAtTime(0.08, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.015);
+
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(STATE.audioCtx.destination);
+
+      noise.start(now);
+      noise.stop(now + 0.02);
+
+      // 2. Subtle jewel resonance ring
+      const osc = STATE.audioCtx.createOscillator();
+      const oscGain = STATE.audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(baseFreq * 1.5, now);
+      oscGain.gain.setValueAtTime(0.03, now);
+      oscGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.025);
+
+      osc.connect(oscGain);
+      oscGain.connect(STATE.audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.03);
+    } catch (e) {
+      console.warn('Audio tick playback error:', e);
+    }
+  }
+
+  function toggleSound(btn) {
+    initAudio();
+    STATE.soundEnabled = !STATE.soundEnabled;
+
+    if (STATE.soundEnabled) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      btn.querySelector('.sound-label').textContent = 'Escapement: Active';
+      // 4 Hz = 8 ticks/second -> 125ms intervals
+      if (!STATE.tickTimer) {
+        STATE.tickTimer = setInterval(playEscapementTick, 125);
+      }
+    } else {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
+      btn.querySelector('.sound-label').textContent = 'Escapement: Silent';
+      if (STATE.tickTimer) {
+        clearInterval(STATE.tickTimer);
+        STATE.tickTimer = null;
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     3. HIGH-PRECISION WATCH CANVAS RENDERER
+     -------------------------------------------------------------------------- */
+  function getMaterialColors(material) {
+    switch (material) {
+      case 'titanium':
+        return {
+          caseGrad1: '#cbd5e1',
+          caseGrad2: '#94a3b8',
+          caseGrad3: '#475569',
+          bezelRim: '#e2e8f0',
+          accent: '#cbd5e1',
+          highlight: '#ffffff'
+        };
+      case 'carbon':
+        return {
+          caseGrad1: '#27272a',
+          caseGrad2: '#18181b',
+          caseGrad3: '#09090b',
+          bezelRim: '#3f3f46',
+          accent: '#c5a059',
+          highlight: '#71717a'
+        };
+      case 'gold':
+      default:
+        return {
+          caseGrad1: '#f6e8cc',
+          caseGrad2: '#c5a059',
+          caseGrad3: '#856325',
+          bezelRim: '#dfcaa0',
+          accent: '#c5a059',
+          highlight: '#fff7e6'
+        };
+    }
+  }
+
+  function getStrapColor(strap) {
+    switch (strap) {
+      case 'calfskin': return '#4a2c16';
+      case 'mesh': return '#788292';
+      case 'rubber': return '#121316';
+      case 'alligator':
+      default:
+        return '#0d0e12';
+    }
+  }
+
+  /**
+   * Draw the Dial Face
+   */
+  function drawWatchDial(ctx, width, height, time, material, strap) {
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = Math.min(width, height) * 0.44;
+    const colors = getMaterialColors(material);
+
+    ctx.clearRect(0, 0, width, height);
+
+    // --- 1. Strap preview top & bottom ---
+    const strapW = radius * 0.76;
+    const strapH = radius * 0.4;
+    ctx.save();
+    ctx.fillStyle = getStrapColor(strap);
+    // Top strap
+    ctx.fillRect(cx - strapW / 2, cy - radius * 1.12, strapW, strapH);
+    // Bottom strap
+    ctx.fillRect(cx - strapW / 2, cy + radius * 0.72, strapW, strapH);
+    // Strap stitches
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+    ctx.setLineDash([4, 4]);
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(cx - strapW / 2 + 4, cy - radius * 1.12, strapW - 8, strapH);
+    ctx.strokeRect(cx - strapW / 2 + 4, cy + radius * 0.72, strapW - 8, strapH);
+    ctx.restore();
+
+    // --- 2. Outer Case & Bezel ---
+    const caseGrad = ctx.createLinearGradient(cx - radius, cy - radius, cx + radius, cy + radius);
+    caseGrad.addColorStop(0, colors.caseGrad1);
+    caseGrad.addColorStop(0.3, colors.caseGrad2);
+    caseGrad.addColorStop(0.7, colors.caseGrad3);
+    caseGrad.addColorStop(1, colors.caseGrad1);
+
+    // Case drop shadow
+    ctx.save();
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 30;
+    ctx.shadowOffsetY = 15;
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.05, 0, Math.PI * 2);
+    ctx.fillStyle = caseGrad;
+    ctx.fill();
+    ctx.restore();
+
+    // Screw-down Crown at 3 o'clock
+    ctx.save();
+    const crownW = radius * 0.12;
+    const crownH = radius * 0.22;
+    ctx.fillStyle = colors.caseGrad2;
+    ctx.fillRect(cx + radius * 1.02, cy - crownH / 2, crownW, crownH);
+    // Crown cabochon sapphire
+    ctx.beginPath();
+    ctx.arc(cx + radius * 1.02 + crownW, cy, crownH * 0.35, 0, Math.PI * 2);
+    ctx.fillStyle = '#1e3a8a';
+    ctx.fill();
+    ctx.restore();
+
+    // Bezel inner rim
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 0.98, 0, Math.PI * 2);
+    ctx.strokeStyle = colors.bezelRim;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // --- 3. Main Dial Bed ---
+    const dialRadius = radius * 0.94;
+    const dialGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, dialRadius);
+    dialGrad.addColorStop(0, '#13151a');
+    dialGrad.addColorStop(0.65, '#0b0c0f');
+    dialGrad.addColorStop(1, '#050507');
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, dialRadius, 0, Math.PI * 2);
+    ctx.fillStyle = dialGrad;
+    ctx.fill();
+
+    // GuillochÃ© concentric texture
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.035)';
+    ctx.lineWidth = 0.8;
+    for (let r = 25; r < dialRadius; r += 7) {
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // --- 4. Subdial at 6: Flying Tourbillon / Small Seconds ---
+    const subCx = cx;
+    const subCy = cy + dialRadius * 0.42;
+    const subRadius = dialRadius * 0.32;
+
+    // Subdial background opening
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(subCx, subCy, subRadius, 0, Math.PI * 2);
+    ctx.fillStyle = '#060709';
+    ctx.fill();
+    ctx.strokeStyle = colors.accent;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Rotating Tourbillon cage
+    const tourbillonAngle = (time.seconds + time.subsecond) * (Math.PI / 30); // 60s rotation
+    ctx.save();
+    ctx.translate(subCx, subCy);
+    ctx.rotate(tourbillonAngle);
+
+    // Bridge
+    ctx.beginPath();
+    ctx.moveTo(-subRadius * 0.8, 0);
+    ctx.lineTo(subRadius * 0.8, 0);
+    ctx.strokeStyle = colors.accent;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Oscillating Balance Wheel (4 Hz harmonic oscillation)
+    const balanceOsc = Math.sin((time.seconds + time.subsecond) * Math.PI * 8) * 0.45;
+    ctx.rotate(balanceOsc);
+    ctx.beginPath();
+    ctx.arc(0, 0, subRadius * 0.62, 0, Math.PI * 2);
+    ctx.strokeStyle = '#dfcaa0';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Central ruby jewel
+    ctx.beginPath();
+    ctx.arc(0, 0, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#e11d48';
+    ctx.fill();
+    ctx.restore();
+    ctx.restore();
+
+    // Subdial small seconds ticks
+    ctx.save();
+    ctx.translate(subCx, subCy);
+    for (let i = 0; i < 12; i++) {
+      const a = (i * Math.PI) / 6;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a) * (subRadius - 5), Math.sin(a) * (subRadius - 5));
+      ctx.lineTo(Math.cos(a) * (subRadius - 2), Math.sin(a) * (subRadius - 2));
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // --- 5. Date Window at 3 o'clock ---
+    const dateX = cx + dialRadius * 0.58;
+    const dateY = cy;
+    ctx.save();
+    ctx.fillStyle = '#090a0d';
+    ctx.strokeStyle = colors.accent;
+    ctx.lineWidth = 1;
+    ctx.strokeRect(dateX - 16, dateY - 11, 32, 22);
+    ctx.fillRect(dateX - 16, dateY - 11, 32, 22);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '600 11px JetBrains Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(new Date().getDate().toString(), dateX, dateY);
+    ctx.restore();
+
+    // --- 6. Brand Inscription ---
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.font = '500 14px Playfair Display, serif';
+    ctx.letterSpacing = '5px';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('APEX', cx, cy - dialRadius * 0.42);
+
+    ctx.font = '500 7px JetBrains Mono, monospace';
+    ctx.fillStyle = colors.accent;
+    ctx.fillText('HAUTE HORLOGERIE', cx, cy - dialRadius * 0.33);
+    ctx.fillText('GENÃˆVE', cx, cy - dialRadius * 0.25);
+    ctx.restore();
+
+    // --- 7. Hour & Minute Indices ---
+    ctx.save();
+    for (let i = 0; i < 60; i++) {
+      const angle = (i * Math.PI) / 30;
+      const isHour = i % 5 === 0;
+      const outerR = dialRadius - 6;
+      const innerR = isHour ? dialRadius - 22 : dialRadius - 12;
+
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(angle) * innerR, cy + Math.sin(angle) * innerR);
+      ctx.lineTo(cx + Math.cos(angle) * outerR, cy + Math.sin(angle) * outerR);
+
+      if (isHour) {
+        ctx.strokeStyle = colors.accent;
+        ctx.lineWidth = 2.5;
+      } else {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.lineWidth = 1;
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // --- 8. Precision Hands ---
+    const secVal = time.seconds + time.subsecond;
+    const minVal = time.minutes + secVal / 60;
+    const hourVal = (time.hours % 12) + minVal / 60;
+
+    const hourAngle = hourVal * (Math.PI / 6) - Math.PI / 2;
+    const minAngle = minVal * (Math.PI / 30) - Math.PI / 2;
+    const secAngle = secVal * (Math.PI / 30) - Math.PI / 2;
+
+    // Hour Hand (Faceted Sword Hand)
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(hourAngle);
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 8;
+    ctx.shadowOffsetY = 3;
+
+    ctx.beginPath();
+    ctx.moveTo(-10, 0);
+    ctx.lineTo(0, -dialRadius * 0.55);
+    ctx.lineTo(5, 0);
+    ctx.lineTo(0, 14);
+    ctx.closePath();
+    ctx.fillStyle = colors.accent;
+    ctx.fill();
+    ctx.strokeStyle = colors.highlight;
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    ctx.restore();
+
+    // Minute Hand (Extended Sword Hand)
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(minAngle);
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetY = 4;
+
+    ctx.beginPath();
+    ctx.moveTo(-8, 0);
+    ctx.lineTo(0, -dialRadius * 0.78);
+    ctx.lineTo(4, 0);
+    ctx.lineTo(0, 18);
+    ctx.closePath();
+    ctx.fillStyle = colors.highlight;
+    ctx.fill();
+    ctx.strokeStyle = colors.accent;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.restore();
+
+    // Sweeping Seconds Hand (High-beat Needle + Counterweight)
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(secAngle);
+    ctx.beginPath();
+    ctx.moveTo(0, dialRadius * 0.22);
+    ctx.lineTo(0, -dialRadius * 0.85);
+    ctx.strokeStyle = '#dfcaa0';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Counterweight circle
+    ctx.beginPath();
+    ctx.arc(0, dialRadius * 0.12, 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = colors.accent;
+    ctx.fill();
+
+    // Central Canon Pinion Cap
+    ctx.beginPath();
+    ctx.arc(0, 0, 5, 0, Math.PI * 2);
+    ctx.fillStyle = colors.accent;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(0, 0, 2, 0, Math.PI * 2);
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+    ctx.restore();
+
+    // --- 9. Sapphire Crystal Anti-Reflective Sheen ---
+    const sheenGrad = ctx.createLinearGradient(cx - radius, cy - radius, cx + radius, cy + radius);
+    sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+    sheenGrad.addColorStop(0.35, 'rgba(147, 197, 253, 0.05)');
+    sheenGrad.addColorStop(0.5, 'transparent');
+    sheenGrad.addColorStop(0.85, 'rgba(255, 255, 255, 0.04)');
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 0.94, 0, Math.PI * 2);
+    ctx.fillStyle = sheenGrad;
+    ctx.fill();
+  }
+
+  /**
+   * Draw the Exhibition Caseback (Mechanical Calibre APX-01)
+   */
+  function drawWatchCaseback(ctx, width, height, time, material) {
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = Math.min(width, height) * 0.44;
+    const colors = getMaterialColors(material);
+
+    ctx.clearRect(0, 0, width, height);
+
+    // Caseback Ring
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.05, 0, Math.PI * 2);
+    ctx.fillStyle = colors.caseGrad2;
+    ctx.fill();
+
+    // Inscribed Exhibition Bezel
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 0.94, 0, Math.PI * 2);
+    ctx.strokeStyle = colors.bezelRim;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.font = '500 8px JetBrains Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('â€¢ APEX MANUFACTURE â€¢ SWISS â€¢ 39 JEWELS â€¢ 50M â€¢ CAL. APX-01 â€¢ PIÃˆCE UNIQUE â€¢', cx, cy - radius * 0.98);
+    ctx.restore();
+
+    // Inner Sapphire view into movement
+    const movRadius = radius * 0.9;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, movRadius, 0, Math.PI * 2);
+    ctx.fillStyle = '#12141a';
+    ctx.fill();
+    ctx.clip();
+
+    // CÃ´tes de GenÃ¨ve (Geneva Stripes on Bridges)
+    const stripeW = 16;
+    for (let x = cx - movRadius; x < cx + movRadius; x += stripeW) {
+      const stripeGrad = ctx.createLinearGradient(x, 0, x + stripeW, 0);
+      stripeGrad.addColorStop(0, '#222530');
+      stripeGrad.addColorStop(0.5, '#2e3342');
+      stripeGrad.addColorStop(1, '#1b1d26');
+      ctx.fillStyle = stripeGrad;
+      ctx.fillRect(x, cy - movRadius, stripeW, movRadius * 2);
+    }
+
+    // Circular perlage plate details
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+    for (let i = 0; i < 30; i++) {
+      const px = cx + (Math.sin(i * 1.8) * movRadius * 0.7);
+      const py = cy + (Math.cos(i * 1.4) * movRadius * 0.7);
+      ctx.beginPath();
+      ctx.arc(px, py, 12, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Exposed Gear Train Wheels (Bronze & Steel)
+    function drawGear(gx, gy, gr, teeth, color) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(gx, gy, gr, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.strokeStyle = '#c5a059';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Cutout spokes
+      for (let s = 0; s < 5; s++) {
+        const sa = (s * Math.PI * 2) / 5;
+        ctx.beginPath();
+        ctx.arc(gx + Math.cos(sa) * gr * 0.5, gy + Math.sin(sa) * gr * 0.5, gr * 0.22, 0, Math.PI * 2);
+        ctx.fillStyle = '#12141a';
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    drawGear(cx - movRadius * 0.35, cy - movRadius * 0.2, 42, 24, '#b48a3c');
+    drawGear(cx + movRadius * 0.4, cy + movRadius * 0.15, 34, 18, '#8c7038');
+
+    // Synthetic Ruby Jewels (with gold chatons and blued screws)
+    const jewelPositions = [
+      [cx - 40, cy + 30],
+      [cx + 50, cy - 40],
+      [cx - 60, cy - 50],
+      [cx + 30, cy + 60],
+      [cx, cy - 65]
+    ];
+
+    jewelPositions.forEach(([jx, jy]) => {
+      // Gold chaton
+      ctx.beginPath();
+      ctx.arc(jx, jy, 9, 0, Math.PI * 2);
+      ctx.fillStyle = '#c5a059';
+      ctx.fill();
+      // Ruby jewel
+      ctx.beginPath();
+      ctx.arc(jx, jy, 5.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#e11d48';
+      ctx.fill();
+      // Jewel reflection
+      ctx.beginPath();
+      ctx.arc(jx - 1.5, jy - 1.5, 1.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.fill();
+    });
+
+    // Blued Screws (heat-blued high horology screws)
+    const screwPositions = [
+      [cx - 70, cy + 20],
+      [cx + 70, cy - 20],
+      [cx - 20, cy - 70],
+      [cx + 20, cy + 70]
+    ];
+
+    screwPositions.forEach(([sx, sy]) => {
+      ctx.beginPath();
+      ctx.arc(sx, sy, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#2563eb'; // Blued steel
+      ctx.fill();
+      ctx.strokeStyle = '#1e3a8a';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+      // Screw slot
+      ctx.beginPath();
+      ctx.moveTo(sx - 3, sy);
+      ctx.lineTo(sx + 3, sy);
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Skeletonized 22K Gold Rotor (Oscillating Weight)
+    const rotorAngle = (time.seconds + time.subsecond) * 0.4;
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(rotorAngle);
+
+    // Half-circle weighted sector
+    ctx.beginPath();
+    ctx.arc(0, 0, movRadius * 0.95, 0, Math.PI);
+    ctx.arc(0, 0, movRadius * 0.35, Math.PI, 0, true);
+    ctx.closePath();
+
+    const rotorGrad = ctx.createLinearGradient(-movRadius, 0, movRadius, 0);
+    rotorGrad.addColorStop(0, '#f6e8cc');
+    rotorGrad.addColorStop(0.5, '#c5a059');
+    rotorGrad.addColorStop(1, '#856325');
+    ctx.fillStyle = rotorGrad;
+    ctx.fill();
+    ctx.strokeStyle = '#fff2d8';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Rotor Openworked Architectural Cutouts
+    ctx.fillStyle = '#12141a';
+    ctx.beginPath();
+    ctx.arc(0, movRadius * 0.6, 20, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Inscription on Rotor
+    ctx.save();
+    ctx.fillStyle = '#3a270a';
+    ctx.font = '700 9px JetBrains Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('APEX MANUFACTURE â€¢ 22K SOLID GOLD', 0, movRadius * 0.82);
+    ctx.restore();
+
+    // Central rotor bearing
+    ctx.beginPath();
+    ctx.arc(0, 0, 14, 0, Math.PI * 2);
+    ctx.fillStyle = '#475569';
+    ctx.fill();
+    ctx.strokeStyle = '#c5a059';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.restore(); // end clip
+  }
+
+  /**
+   * Draw the Ultra-Thin Profile & Ergonomic Crown View
+   */
+  function drawWatchProfile(ctx, width, height, material) {
+    const cx = width / 2;
+    const cy = height / 2;
+    const colors = getMaterialColors(material);
+
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.save();
+    // Watch Case Side Silhouette (9.8mm ultra-thin geometry)
+    const profileW = width * 0.75;
+    const profileH = 48; // Represents thin profile
+
+    // Drop shadow
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 24;
+    ctx.shadowOffsetY = 15;
+
+    // Curved Domed Sapphire on top
+    ctx.beginPath();
+    ctx.ellipse(cx, cy - profileH / 2 + 2, profileW * 0.42, 12, 0, Math.PI, 0);
+    ctx.fillStyle = 'rgba(147, 197, 253, 0.25)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Middle Case
+    const sideGrad = ctx.createLinearGradient(0, cy - profileH / 2, 0, cy + profileH / 2);
+    sideGrad.addColorStop(0, colors.caseGrad1);
+    sideGrad.addColorStop(0.35, colors.caseGrad2);
+    sideGrad.addColorStop(0.7, colors.caseGrad3);
+    sideGrad.addColorStop(1, colors.caseGrad1);
+
+    // Sculpted ergonomic lug curvature
+    ctx.beginPath();
+    ctx.moveTo(cx - profileW / 2, cy + 18);
+    ctx.quadraticCurveTo(cx - profileW * 0.35, cy - profileH / 2, cx - profileW * 0.2, cy - profileH / 2);
+    ctx.lineTo(cx + profileW * 0.2, cy - profileH / 2);
+    ctx.quadraticCurveTo(cx + profileW * 0.35, cy - profileH / 2, cx + profileW / 2, cy + 18);
+    ctx.lineTo(cx + profileW * 0.42, cy + profileH / 2);
+    ctx.quadraticCurveTo(cx, cy + profileH / 2 + 4, cx - profileW * 0.42, cy + profileH / 2);
+    ctx.closePath();
+
+    ctx.fillStyle = sideGrad;
+    ctx.fill();
+    ctx.strokeStyle = colors.bezelRim;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Satin brushed flank lines
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+    ctx.lineWidth = 0.8;
+    for (let y = cy - 8; y <= cy + 8; y += 4) {
+      ctx.beginPath();
+      ctx.moveTo(cx - profileW * 0.35, y);
+      ctx.lineTo(cx + profileW * 0.35, y);
+      ctx.stroke();
+    }
+
+    // Fluted Crown on the right flank
+    const crownX = cx + profileW * 0.38;
+    ctx.beginPath();
+    ctx.roundRect(crownX, cy - 14, 18, 28, 3);
+    ctx.fillStyle = colors.caseGrad1;
+    ctx.fill();
+    ctx.strokeStyle = colors.caseGrad3;
+    ctx.stroke();
+
+    // Crown Flutes
+    for (let c = cy - 10; c <= cy + 10; c += 4) {
+      ctx.beginPath();
+      ctx.moveTo(crownX, c);
+      ctx.lineTo(crownX + 18, c);
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    // Cabochon sapphire jewel on crown tip
+    ctx.beginPath();
+    ctx.ellipse(crownX + 18, cy, 4, 8, 0, 0, Math.PI * 2);
+    ctx.fillStyle = '#1e3a8a';
+    ctx.fill();
+
+    // Technical annotation
+    ctx.fillStyle = colors.accent;
+    ctx.font = '500 11px JetBrains Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('9.8 MM ULTRA-SLIM ARCHITECTURE', cx, cy + 50);
+    ctx.fillText('INTEGRATED ERGONOMIC LUGS', cx, cy + 68);
+    ctx.restore();
+  }
+
+  /* --------------------------------------------------------------------------
+     4. RENDER LOOP MANAGER
+     -------------------------------------------------------------------------- */
+  function startRenderLoops() {
+    const heroCanvas = document.getElementById('heroWatchCanvas');
+    const configCanvas = document.getElementById('configWatchCanvas');
+
+    let heroCtx = null;
+    let configCtx = null;
+
+    if (heroCanvas) {
+      heroCtx = heroCanvas.getContext('2d');
+      // Set high-DPI scaling
+      const dpr = window.devicePixelRatio || 1;
+      heroCanvas.width = 520 * dpr;
+      heroCanvas.height = 520 * dpr;
+      heroCtx.scale(dpr, dpr);
+    }
+
+    if (configCanvas) {
+      configCtx = configCanvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      configCanvas.width = 440 * dpr;
+      configCanvas.height = 440 * dpr;
+      configCtx.scale(dpr, dpr);
+    }
+
+    function render(timestamp) {
+      const now = new Date();
+      STATE.hours = now.getHours();
+      STATE.minutes = now.getMinutes();
+      STATE.seconds = now.getSeconds();
+      STATE.subsecond = now.getMilliseconds() / 1000;
+
+      // Render Hero Canvas (always live interactive dial)
+      if (heroCtx) {
+        drawWatchDial(heroCtx, 520, 520, STATE, 'gold', 'alligator');
+      }
+
+      // Render Configurator Canvas (depends on selected angle and material)
+      if (configCtx) {
+        if (STATE.angle === 'dial') {
+          drawWatchDial(configCtx, 440, 440, STATE, STATE.material, STATE.strap);
+        } else if (STATE.angle === 'caseback') {
+          drawWatchCaseback(configCtx, 440, 440, STATE, STATE.material);
+        } else if (STATE.angle === 'profile') {
+          drawWatchProfile(configCtx, 440, 440, STATE.material);
+        }
+      }
+
+      requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  /* --------------------------------------------------------------------------
+     5. INTERACTIVE CONTROLS & UI EVENT HANDLERS
+     -------------------------------------------------------------------------- */
+  function updateConfiguratorPrice() {
+    const base = STATE.basePrices[STATE.material] || 78000;
+    const strap = STATE.strapPrices[STATE.strap] || 6500;
+    const total = base + strap;
+
+    const priceEl = document.getElementById('configPriceDisplay');
+    if (priceEl) {
+      priceEl.textContent = '
+</body>
+</html>
+ + total.toLocaleString();
+    }
+
+    const matNameEl = document.getElementById('selectedMaterialLabel');
+    if (matNameEl) {
+      const names = {
+        gold: '18K Honey Gold (Manufacture Alloy)',
+        titanium: 'Aerospace Grade 5 Titanium',
+        carbon: 'Monolithic Forged Carbon & DLC'
+      };
+      matNameEl.textContent = names[STATE.material] || STATE.material;
+    }
+
+    const strapNameEl = document.getElementById('selectedStrapLabel');
+    if (strapNameEl) {
+      const names = {
+        alligator: 'Hand-Stitched Mississippiensis Alligator',
+        calfskin: 'Bespoke Patina Saddle Calfskin',
+        mesh: 'Milanese Mesh Grade 5 Titanium',
+        rubber: 'Vulcanized FKM Technical Rubber'
+      };
+      strapNameEl.textContent = names[STATE.strap] || STATE.strap;
+    }
+  }
+
+  function setupConfigurator() {
+    // Material swatches
+    const matButtons = document.querySelectorAll('.mat-swatch-btn');
+    matButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        matButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        STATE.material = btn.dataset.material;
+        updateConfiguratorPrice();
+      });
+    });
+
+    // Strap swatches
+    const strapButtons = document.querySelectorAll('.strap-swatch-btn');
+    strapButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        strapButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        STATE.strap = btn.dataset.strap;
+        updateConfiguratorPrice();
+      });
+    });
+
+    // Angle buttons
+    const angleButtons = document.querySelectorAll('.angle-btn');
+    angleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        angleButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        STATE.angle = btn.dataset.angle;
+      });
+    });
+
+    updateConfiguratorPrice();
+  }
+
+  function setupCraftsmanshipTabs() {
+    const tabBtns = document.querySelectorAll('.craft-tab-btn');
+    const tabContents = document.querySelectorAll('.craft-tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetId = 'tab-' + btn.dataset.tab;
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
+
+  function setupCollectionsFilter() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.collection-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  function setupConciergeModal() {
+    const modal = document.getElementById('conciergeModal');
+    const openBtns = document.querySelectorAll('.open-concierge-btn');
+    const closeBtn = document.getElementById('closeConciergeBtn');
+    const form = document.getElementById('conciergeForm');
+    const confirmationCard = document.getElementById('conciergeConfirmation');
+
+    if (!modal) return;
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.showModal();
+        if (confirmationCard) confirmationCard.classList.remove('active');
+        if (form) {
+          form.style.display = 'block';
+          form.reset();
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.close();
+      });
+    }
+
+    // Click outside backdrop to close
+    modal.addEventListener('click', (e) => {
+      const rect = modal.getBoundingClientRect();
+      const inDialog =
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width;
+      if (!inDialog) {
+        modal.close();
+      }
+    });
+
+    // Form submission
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const clientName = document.getElementById('conciergeName').value;
+        const salon = document.getElementById('conciergeSalon').value;
+
+        // Generate luxury confirmation code
+        const refCode = 'APX-' + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById('confirmClientName').textContent = clientName;
+        document.getElementById('confirmSalon').textContent = salon;
+        document.getElementById('confirmRefCode').textContent = refCode;
+
+        form.style.display = 'none';
+        confirmationCard.classList.add('active');
+      });
+    }
+  }
+
+  function setupHeaderScroll() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+
+  function setupMobileMenu() {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        const expanded = navLinks.classList.contains('mobile-open');
+        toggle.setAttribute('aria-expanded', expanded.toString());
+      });
+
+      // Close menu when link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }
+
+  function setupParallaxTilt() {
+    const wrapper = document.querySelector('.watch-canvas-wrapper');
+    const canvas = document.getElementById('heroWatchCanvas');
+    if (!wrapper || !canvas) return;
+
+    // Check prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    wrapper.addEventListener('mousemove', (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      const rotX = ((y - cy) / cy) * -9; // Max 9 deg tilt
+      const rotY = ((x - cx) / cx) * 9;
+
+      canvas.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      canvas.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     6. INITIALIZATION ENTRY POINT
+     -------------------------------------------------------------------------- */
+  document.addEventListener('DOMContentLoaded', () => {
+    startRenderLoops();
+    setupConfigurator();
+    setupCraftsmanshipTabs();
+    setupCollectionsFilter();
+    setupConciergeModal();
+    setupHeaderScroll();
+    setupMobileMenu();
+    setupParallaxTilt();
+
+    // Escapement sound button listener
+    const soundBtn = document.getElementById('soundToggleBtn');
+    if (soundBtn) {
+      soundBtn.addEventListener('click', () => toggleSound(soundBtn));
+    }
+  });
+
+})();
+
+</script>
+</body>
+</html>
+

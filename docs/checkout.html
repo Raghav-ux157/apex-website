@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout — APEX Haute Horlogerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- Minimal Checkout Header -->
+  <header style="background:#070709; border-bottom:1px solid var(--color-border); padding: 20px 0;">
+    <div class="apex-container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
+        <span class="brand-logo-text">APEX</span>
+      </a>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--color-gold); letter-spacing:0.1em; text-transform:uppercase;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Encrypted Atelier Checkout</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="apex-container" style="padding: 40px 24px 80px;">
+
+    <!-- Order Success View (Hidden by default) -->
+    <div id="checkout-success" style="display:none; max-width:680px; margin:40px auto; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:50px 40px; text-align:center;">
+      <div style="width:70px; height:70px; border-radius:50%; background:rgba(52,211,153,0.12); border:2px solid var(--color-success); color:var(--color-success); display:flex; align-items:center; justify-content:center; margin:0 auto 24px;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <span class="section-tag" style="color:var(--color-success)">RESERVATION CONFIRMED</span>
+      <h2 style="font-family:var(--font-serif); font-size:36px; margin:0 0 14px;">Your Timepiece Is Being Prepared</h2>
+      <p style="color:var(--color-text-muted); line-height:1.7; margin-bottom:28px;">
+        Thank you for choosing APEX. Your order has been registered in the atelier ledger. Our master watchmakers are performing final inspection and precision calibration prior to dispatch.
+      </p>
+
+      <div style="background:#13151f; border:1px solid var(--color-border-subtle); border-radius:var(--radius-sm); padding:20px; text-align:left; margin-bottom:32px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:13px;">
+          <span style="color:var(--color-text-dim)">Order Reference:</span>
+          <span id="success-order-id" style="font-family:var(--font-mono); font-weight:700; color:var(--color-gold);">#APX-0000</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:13px;">
+          <span style="color:var(--color-text-dim)">Dispatch Destination:</span>
+          <span id="success-dest" style="color:#fff; font-weight:500;"></span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:13px;">
+          <span style="color:var(--color-text-dim)">Payment Status:</span>
+          <span style="color:var(--color-success); font-weight:600;">Authorized & Confirmed</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; justify-content:center;">
+        <a href="account.html" class="btn btn-primary">View in My Orders</a>
+        <a href="shop.html" class="btn btn-secondary">Return to Atelier</a>
+      </div>
+    </div>
+
+    <!-- Active Checkout Form & Review -->
+    <div id="checkout-active" class="checkout-grid">
+      <div>
+        <!-- Step 1: Destination -->
+        <div class="checkout-box">
+          <h3 class="checkout-box-title">
+            <span class="checkout-step-num">1</span>
+            Delivery & Client Destination
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="cust-name" class="form-control" placeholder="e.g. Vikramaditya Sharma" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="cust-phone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address (for Dispatch Updates) *</label>
+            <input type="email" id="cust-email" class="form-control" placeholder="you@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Address Line 1 (House/Suite, Street) *</label>
+            <input type="text" id="cust-line1" class="form-control" placeholder="Flat 4B, Silver Oak Residence, MG Road" required>
+          </div>
+
+          <div class="form-group">
+            <label>Address Line 2 (Apartment, Landmark)</label>
+            <input type="text" id="cust-line2" class="form-control" placeholder="Near Oberoi Hotel">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" id="cust-city" class="form-control" placeholder="Mumbai" required>
+            </div>
+            <div class="form-group">
+              <label>State *</label>
+              <input type="text" id="cust-state" class="form-control" placeholder="Maharashtra" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Postal PIN Code *</label>
+              <input type="text" id="cust-pincode" class="form-control" placeholder="400001" maxlength="6" required>
+            </div>
+            <div class="form-group">
+              <label>Special Delivery Instructions</label>
+              <input type="text" id="cust-notes" class="form-control" placeholder="e.g. Leave with building security">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Packaging & Presentation -->
+        <div class="checkout-box">
+          <h3 class="checkout-box-title">
+            <span class="checkout-step-num">2</span>
+            Bespoke Presentation Box
+          </h3>
+          <div style="background:#13151f; border:1px solid var(--color-border-subtle); border-radius:var(--radius-sm); padding:16px; display:flex; gap:16px; align-items:center;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.6"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <div style="font-size:13px; line-height:1.5;">
+              <strong style="color:#fff; display:block;">Complimentary Signature Lacquered Wooden Case</strong>
+              <span style="color:var(--color-text-dim);">Includes embossed warranty metal card, microfiber cloth, and chronometer rate certificate.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="checkout-box">
+          <h3 class="checkout-box-title">
+            <span class="checkout-step-num">3</span>
+            Payment Method
+          </h3>
+
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <label style="display:flex; align-items:center; gap:14px; padding:16px; background:#13151f; border:1px solid var(--color-gold); border-radius:var(--radius-sm); cursor:pointer;">
+              <input type="radio" name="payment_method" value="razorpay" checked>
+              <div style="flex-grow:1;">
+                <div style="font-weight:600; color:#fff;">Razorpay Secure Gateway (UPI / Credit Card / NetBanking)</div>
+                <div style="font-size:12px; color:var(--color-text-dim);">Instant payment verification via GPay, PhonePe, Cards & All Major Banks</div>
+              </div>
+              <span style="font-size:11px; padding:3px 8px; background:rgba(52,211,153,0.15); color:var(--color-success); border-radius:3px;">RECOMMENDED</span>
+            </label>
+
+            <label style="display:flex; align-items:center; gap:14px; padding:16px; background:#13151f; border:1px solid var(--color-border-subtle); border-radius:var(--radius-sm); cursor:pointer;">
+              <input type="radio" name="payment_method" value="cod">
+              <div style="flex-grow:1;">
+                <div style="font-weight:600; color:#fff;">Atelier White-Glove Cash on Delivery</div>
+                <div style="font-size:12px; color:var(--color-text-dim);">Verify timepieces upon arrival, pay courier via Cash or UPI on delivery</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <aside>
+        <div class="order-summary-card">
+          <h3 style="font-family:var(--font-serif); font-size:22px; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid var(--color-border-subtle);">
+            Order Review
+          </h3>
+
+          <div id="checkout-items-list" style="max-height:240px; overflow-y:auto; margin-bottom:20px;">
+            <!-- Injected -->
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="co-subtotal">₹0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Express Insured Transit</span>
+            <span style="color:var(--color-success); font-weight:600;">Complimentary</span>
+          </div>
+
+          <div class="summary-row total">
+            <span>Amount Payable</span>
+            <span id="co-total" style="color:var(--color-gold);">₹0</span>
+          </div>
+
+          <button id="co-submit-btn" class="btn btn-primary btn-block" style="margin-top:24px; padding:16px;" onclick="submitOrder()">
+            Confirm & Place Reservation
+          </button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+
+  <script>
+    let currentCart = null;
+
+    async function initCheckout() {
+      currentCart = await ApexStore.getCart();
+
+      if (!currentCart.items || currentCart.items.length === 0) {
+        window.location.href = 'cart.html';
+        return;
+      }
+
+      // Autofill user info if logged in
+      const user = Auth.getUser();
+      if (user) {
+        if (user.name) document.getElementById('cust-name').value = user.name;
+        if (user.email) document.getElementById('cust-email').value = user.email;
+        if (user.phone) document.getElementById('cust-phone').value = user.phone;
+      }
+
+      // Render summary items
+      const itemsList = document.getElementById('checkout-items-list');
+      itemsList.innerHTML = currentCart.items.map(i => `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:13px;">
+          <div>
+            <span style="font-weight:600; color:#fff;">${i.name}</span>
+            <span style="color:var(--color-text-dim); display:block; font-size:11px;">Qty: ${i.quantity}</span>
+          </div>
+          <span style="color:var(--color-gold); font-weight:600;">${ApexStore.formatINR((i.effectivePrice || i.price) * i.quantity)}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('co-subtotal').textContent = ApexStore.formatINR(currentCart.total);
+      document.getElementById('co-total').textContent = ApexStore.formatINR(currentCart.total);
+    }
+
+    async function submitOrder() {
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const email = document.getElementById('cust-email').value.trim();
+      const line1 = document.getElementById('cust-line1').value.trim();
+      const line2 = document.getElementById('cust-line2').value.trim();
+      const city = document.getElementById('cust-city').value.trim();
+      const state = document.getElementById('cust-state').value.trim();
+      const pincode = document.getElementById('cust-pincode').value.trim();
+      const notes = document.getElementById('cust-notes').value.trim();
+      const paymentMethod = document.querySelector('input[name="payment_method"]:checked')?.value || 'razorpay';
+
+      if (!name || !phone || !email || !line1 || !city || !state || !pincode) {
+        ApexStore.toast('Please complete all mandatory delivery fields (*)', 'error');
+        return;
+      }
+
+      const address = { name, phone, email, line1, line2, city, state, pincode, notes };
+      const btn = document.getElementById('co-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Processing Reservation...';
+
+      try {
+        // Ensure user account exists or place guest order
+        let orderPayload = {
+          address,
+          items: currentCart.items.map(i => ({
+            product_id: i.product_id || i.id,
+            quantity: i.quantity,
+            name: i.name,
+            price: i.effectivePrice || i.price
+          })),
+          subtotal: currentCart.total,
+          shipping: 0,
+          discount: 0,
+          total: currentCart.total,
+          coupon_code: null
+        };
+
+        // If not logged in, auto-register or login as guest user
+        if (!Auth.isLoggedIn()) {
+          try {
+            await Auth.register(name, email, 'apex_guest_' + Date.now(), phone);
+          } catch {
+            // Already exists, try login or continue
+          }
+        }
+
+        const res = await API.orders.place(orderPayload);
+
+        // Clear guest cart
+        localStorage.removeItem('apex_guest_cart');
+        await ApexStore.updateBadges();
+
+        // Show success screen
+        document.getElementById('checkout-active').style.display = 'none';
+        const success = document.getElementById('checkout-success');
+        success.style.display = 'block';
+        document.getElementById('success-order-id').textContent = `#APX-${String(res.order_id).padStart(4, '0')}`;
+        document.getElementById('success-dest').textContent = `${city}, ${state} (${pincode})`;
+
+        ApexStore.toast('Order placed successfully!', 'success');
+      } catch (err) {
+        ApexStore.toast(`Checkout failed: ${err.message}`, 'error');
+        btn.disabled = false;
+        btn.textContent = 'Confirm & Place Reservation';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initCheckout);
+  </script>
+</body>
+</html>

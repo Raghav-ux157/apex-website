@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="#c5a059" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="50" cy="50" r="41" stroke="#dfcaa0" stroke-width="1"/>
+  <!-- Geneva Shield Motif -->
+  <path d="M50 16 L68 28 L68 56 C68 70 50 82 50 82 C50 82 32 70 32 56 L32 28 Z" fill="rgba(197, 160, 89, 0.15)" stroke="#c5a059" stroke-width="2"/>
+  <!-- Key of Geneva & Eagle Crown -->
+  <path d="M44 34 L56 34 M50 34 L50 64 M42 58 L58 58 M42 64 L50 64" stroke="#f6e8cc" stroke-width="2" stroke-linecap="round"/>
+  <!-- Stars -->
+  <circle cx="50" cy="24" r="2.5" fill="#f6e8cc"/>
+</svg>

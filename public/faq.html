@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Answered Questions — APEX Haute Horlogerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-question {
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 19px;
+      color: #fff;
+    }
+    .faq-question:hover {
+      color: var(--color-gold);
+    }
+    .faq-icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+      color: var(--color-gold);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 26px 24px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      border-top: 1px solid var(--color-border-subtle);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="apex-container">
+      <span>Complimentary Express Shipping Across India • 2-Year International Atelier Warranty</span>
+    </div>
+  </div>
+
+  <header class="site-nav">
+    <div class="apex-container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
+        <span class="brand-logo-text">APEX</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Collection</a></li>
+          <li><a href="about.html" class="nav-link">Atelier</a></li>
+          <li><a href="journal.html" class="nav-link">Journal</a></li>
+          <li><a href="contact.html" class="nav-link">Concierge</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="admin/index.html" class="btn btn-outline btn-sm" data-auth-admin style="display:none; font-size:11px; padding:6px 12px; border-color:var(--color-gold);">Admin</a>
+        <a href="account.html" class="nav-btn" title="My Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="wishlist.html" class="nav-btn" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="nav-badge" data-wish-count style="display:none;">0</span>
+        </a>
+        <button class="nav-btn" onclick="ApexStore.openDrawer()" title="Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="nav-badge" data-cart-count style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section style="background: radial-gradient(circle at center, #151722 0%, #070709 100%); padding: 60px 0 40px; border-bottom: 1px solid var(--color-border);">
+    <div class="apex-container text-center">
+      <span class="section-tag">CURATED GUIDANCE</span>
+      <h1 class="section-title">Frequently Answered Questions</h1>
+      <p class="section-desc">Clear insights into our calibres, water resistance ratings, care recommendations, and atelier guarantees.</p>
+    </div>
+  </section>
+
+  <main class="apex-container" style="padding: 60px 24px 80px; max-width:900px;">
+    
+    <div class="faq-item active">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>What movements power APEX timepieces?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        APEX relies on genuine mechanical calibres renowned worldwide for reliability. Our Signature and Sport automatic lines feature authentic Miyota 9000-series and 8000-series Japanese automatic movements operating at 28,800 or 21,600 vph with 40–42 hour power reserves. Our mechanical chronographs use column-wheel Seagull ST19 calibres with exposed exhibition casebacks, while Meridian Slim pieces use ultra-accurate low-profile Miyota quartz engines.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Are APEX watches suitable for both men and women?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Absolutely. APEX operates on a unisex horological design code. Case diameters range from 36mm to 43mm with ergonomic lug-to-lug proportions that sit gracefully and comfortably on wrists of all sizes. We believe great design has no gender.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>How does the 2-Year International Atelier Warranty work?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Every APEX timepiece includes a serialised metal warranty card. For 24 months from the delivery date, any manufacturing defect, internal movement irregularity, or water seal failure under rated usage is serviced or replaced completely free of charge by our dedicated watchmakers in Mumbai.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Can I shower or swim with my APEX watch?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Water resistance varies by model. The Terra Diver (20 ATM / 200m) with screw-down crown is fully scuba and swimming certified. Our Chronos X1 and Veloce GMT (10 ATM / 100m) are suitable for swimming and water sports. Dress models (3 ATM to 5 ATM) withstand handwashing, rain, and accidental splashes, but should not be submerged. Never operate chronograph pushers or crowns underwater.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>What is your return and exchange policy?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        We offer a 14-day hassle-free return and exchange window. If a timepiece does not suit your wrist or personal aesthetic, you can initiate a return directly from your Client Account portal or by contacting our VIP Concierge. Timepieces must be unworn with protective films intact.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>How long does domestic transit take across India?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        All orders ship via BlueDart Express or DTDC Air Express with full transit insurance. Metro destinations (Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Kolkata) typically arrive within 48 to 72 hours. Tier 2 and Tier 3 cities require 3 to 5 business days. You will receive live SMS and WhatsApp tracking as soon as your package leaves the atelier.
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="apex-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
+            <span class="brand-logo-text">APEX</span>
+          </a>
+          <p>Engineered at the summit. Crafted for those who understand that true luxury is not loud — it is unwavering precision.</p>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Collections</h5>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=Signature">Signature</a></li>
+            <li><a href="shop.html?cat=Apex+Sport">Apex Sport</a></li>
+            <li><a href="shop.html?cat=Meridian">Meridian</a></li>
+            <li><a href="shop.html?cat=Heritage">Heritage</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Atelier</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Brand Story</a></li>
+            <li><a href="journal.html">Journal & Horology</a></li>
+            <li><a href="contact.html">Concierge & Boutique</a></li>
+            <li><a href="faq.html">FAQ & Movements</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">Customer Care</h5>
+          <ul class="footer-links">
+            <li><a href="shipping.html">Shipping & Returns</a></li>
+            <li><a href="account.html">My Orders</a></li>
+            <li><a href="wishlist.html">Saved Timepieces</a></li>
+            <li><a href="shipping.html#warranty">2-Year Warranty</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-col-title">VIP Newsletter</h5>
+          <p style="font-size:13px; color:var(--color-text-dim); margin-bottom:12px;">Receive private allocation invites for limited series drops.</p>
+          <div style="display:flex; gap:8px;">
+            <input type="email" placeholder="Enter your email" class="form-control" style="font-size:13px; padding:10px 12px;">
+            <button class="btn btn-primary btn-sm" onclick="ApexStore.toast('Subscribed to VIP dispatch', 'success')">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 APEX Haute Horlogerie Pvt Ltd. All rights reserved.</span>
+        <span>Curated & Assembled in India • Worldwide Components</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+
+  <script>
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      item.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
