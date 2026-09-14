@@ -10,8 +10,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 12000,
     "stock": 44,
     "images": [
-      "img/ph-black-gold-1.svg",
-      "img/ph-black-gold-2.svg"
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "40mm",
@@ -35,8 +35,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": null,
     "stock": 30,
     "images": [
-      "img/ph-silver-blue-1.svg",
-      "img/ph-silver-blue-2.svg"
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "40mm",
@@ -67,8 +67,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 10500,
     "stock": 22,
     "images": [
-      "img/ph-green-1.svg",
-      "img/ph-green-2.svg"
+      "https://images.unsplash.com/photo-1509941943102-10c232535736?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "39mm",
@@ -98,8 +98,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 13000,
     "stock": 18,
     "images": [
-      "img/ph-chrono-1.svg",
-      "img/ph-chrono-2.svg"
+      "https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "43mm",
@@ -130,8 +130,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": null,
     "stock": 35,
     "images": [
-      "img/ph-sport-1.svg",
-      "img/ph-sport-2.svg"
+      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "42mm",
@@ -162,8 +162,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 11000,
     "stock": 12,
     "images": [
-      "img/ph-silver-blue-1.svg",
-      "img/ph-silver-blue-2.svg"
+      "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "41mm",
@@ -193,8 +193,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 7000,
     "stock": 60,
     "images": [
-      "img/ph-white-silver-1.svg",
-      "img/ph-white-silver-2.svg"
+      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "38mm",
@@ -224,8 +224,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": null,
     "stock": 50,
     "images": [
-      "img/ph-sport-1.svg",
-      "img/ph-sport-2.svg"
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "40mm",
@@ -254,8 +254,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 7500,
     "stock": 40,
     "images": [
-      "img/ph-rose-1.svg",
-      "img/ph-rose-2.svg"
+      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "36mm",
@@ -284,8 +284,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 10000,
     "stock": 15,
     "images": [
-      "img/ph-bronze-1.svg",
-      "img/ph-bronze-2.svg"
+      "https://images.unsplash.com/photo-1517940310602-26535839ec0f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "38mm (Cushion)",
@@ -315,8 +315,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 11000,
     "stock": 10,
     "images": [
-      "img/ph-black-gold-1.svg",
-      "img/ph-black-gold-2.svg"
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "40mm",
@@ -340,8 +340,8 @@ window.APEX_SEED_PRODUCTS = [
     "compare_price": 8800,
     "stock": 28,
     "images": [
-      "img/ph-green-1.svg",
-      "img/ph-green-2.svg"
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509941943102-10c232535736?auto=format&fit=crop&w=800&q=80"
     ],
     "specs": {
       "Case Diameter": "41mm",
@@ -370,7 +370,7 @@ window.APEX_SEED_POSTS = [
     "slug": "philosophy-of-time-apex-watches",
     "excerpt": "We believe a watch is not a status symbol — it is a daily companion. Here is why we built APEX the way we did.",
     "content": "<p>At APEX, we started with a simple question: why do premium watches cost ₹5 lakhs when the components that make a watch truly great — sapphire crystal, real automatic movement, 316L steel — can be sourced for a fraction of that?</p><p>The answer is brand tax. A luxury watch charges you 90% for the name on the dial and 10% for the watch itself.</p><p>We inverted that ratio. APEX puts 85% of your money into the watch and 15% into building a brand worth wearing.</p>",
-    "image": "img/blog-1.svg",
+    "image": "https://images.unsplash.com/photo-1509941943102-10c232535736?auto=format&fit=crop&w=1200&q=80",
     "author": "APEX Editorial",
     "category": "journal",
     "published_at": "2026-09-11 08:11:08"
@@ -381,7 +381,7 @@ window.APEX_SEED_POSTS = [
     "slug": "how-to-read-your-watch-like-a-connoisseur",
     "excerpt": "From dial finishing to movement architecture — a beginner's guide to watch appreciation.",
     "content": "<p>The difference between a ₹500 watch and a ₹9,000 watch is rarely the movement alone. It lives in the details: the depth of the dial colour, the crispness of the applied indices, the heft of the case in hand.</p><p>In this guide, we walk you through exactly what to look for when evaluating any timepiece.</p>",
-    "image": "img/blog-2.svg",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
     "author": "APEX Editorial",
     "category": "journal",
     "published_at": "2026-09-11 08:11:08"
@@ -392,7 +392,7 @@ window.APEX_SEED_POSTS = [
     "slug": "caring-for-your-apex-timepiece",
     "excerpt": "A well-maintained watch lasts a lifetime. Here is everything you need to know.",
     "content": "<p>Your APEX watch is built to last decades. With minimal care, it will outlive every smartphone you will ever own. Here is how to keep it performing at its best.</p><h3>Cleaning</h3><p>Wipe the case monthly with a soft microfibre cloth. For the bracelet, a soft brush with mild soap and warm water works perfectly.</p><h3>Servicing</h3><p>Automatic movements should be serviced every 5–7 years. Our service centre can handle any APEX timepiece.</p>",
-    "image": "img/blog-3.svg",
+    "image": "https://images.unsplash.com/photo-1517940310602-26535839ec0f?auto=format&fit=crop&w=1200&q=80",
     "author": "APEX Editorial",
     "category": "journal",
     "published_at": "2026-09-11 08:11:08"

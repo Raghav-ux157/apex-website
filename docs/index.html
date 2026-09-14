@@ -12,10 +12,10 @@
   <meta property="og:description" content="The Architecture of Precision. Handcrafted in Geneva with relentless pursuit of mechanical perfection.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Bebas Neue, Space Grotesk, Cormorant Garamond, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -29,10 +29,10 @@
   <header class="site-header" role="banner">
     <div class="container header-container">
       
-      <!-- Brand Logo -->
-      <a href="index.html" class="brand-mark" aria-label="Apex Haute Horlogerie Home">
-        <span class="brand-name">APEX</span>
-        <span class="brand-subtext">HAUTE HORLOGERIE & ATELIER</span>
+      <!-- Brand Logo (Farak-inspired spaced uppercase) -->
+      <a href="index.html" class="brand-mark" aria-label="Apex Home">
+        <span class="brand-name" style="letter-spacing:0.45em; font-weight:700;">A P E X</span>
+        <span class="brand-subtext" style="letter-spacing:0.3em;">JAIPUR • HANDMADE HOROLOGY</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -93,72 +93,56 @@
   <main id="main-content">
 
     <!-- ========================================================================
-         HERO SECTION: THE MONUMENT OF TIME
+         HERO SECTION: FARAK EDITORIAL AESTHETIC WITH REAL WATCH PHOTOGRAPHY
          ======================================================================== -->
-    <section class="hero-section" id="hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Narrative Content -->
-          <div class="hero-content">
-            <div class="section-tag">Atelier Reserve • Edition 2026</div>
-            <h1 id="hero-heading" class="hero-title">
-              Time, Crafted with <span class="text-gold-gradient">Quiet Elegance.</span>
-            </h1>
-            <p class="hero-description">
-              Thoughtfully sculpted timepieces designed to celebrate life's most meaningful moments. Where gentle restraint meets enduring beauty, made to feel effortless on every wrist.
-            </p>
+    <section class="farak-hero" id="hero" aria-labelledby="hero-heading">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1920&q=85" 
+           alt="APEX Luxury Timepiece Craftsmanship" 
+           class="farak-hero-bg">
+      <div class="farak-hero-overlay" aria-hidden="true"></div>
 
-            <div class="hero-cta-group">
-              <a href="shop.html" class="btn btn-primary">
-                Shop The Collection
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#collections" class="btn btn-secondary">
-                View Signature Pieces
-              </a>
-            </div>
+      <div class="container farak-hero-content">
+        <div class="farak-brand-pill">CRAFTED IN JAIPUR • TIME FOR PURPOSE</div>
+        
+        <h1 id="hero-heading" class="farak-hero-title">
+          <span>TIME THAT SPEAKS</span>
+          <span class="accent-word">FOR ITSELF.</span>
+        </h1>
+        
+        <p class="farak-hero-desc">
+          Disrupting traditional watchmaking. Real automatic calibres, scratch-proof sapphire, and unapologetic presence designed for those who carve their own path.
+        </p>
 
-            <!-- Craftsmanship Highlights Bar -->
-            <div class="specs-bar" role="region" aria-label="Craftsmanship Highlights">
-              <div class="spec-item">
-                <span class="spec-value">Automatic</span>
-                <span class="spec-label">Self-Winding Grace</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-value">42+ Hours</span>
-                <span class="spec-label">Gentle Reserve</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-value">Sapphire</span>
-                <span class="spec-label">Scratch-Proof Crystal</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-value">Atelier Care</span>
-                <span class="spec-label">2-Year Warranty</span>
-              </div>
-            </div>
+        <div class="farak-hero-actions">
+          <a href="shop.html" class="btn btn-primary">
+            Shop The Drop
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#collections" class="btn btn-secondary">
+            Explore Editions
+          </a>
+        </div>
+
+        <div class="farak-hero-stats" role="region" aria-label="Key Specifications">
+          <div class="farak-stat-item">
+            <span class="farak-stat-val">AUTOMATIC</span>
+            <span class="farak-stat-lbl">Miyota & Mechanical Calibres</span>
           </div>
-
-          <!-- Interactive Timepiece Stage -->
-          <div class="hero-stage">
-            <div class="watch-canvas-wrapper">
-              <div class="watch-ambient-glow" aria-hidden="true"></div>
-              <!-- HTML5 Interactive Canvas Watch -->
-              <canvas id="heroWatchCanvas" width="520" height="520" aria-label="Interactive real-time mechanical watch face ticking at 8 beats per second with active flying tourbillon.">
-                Your browser does not support high-definition canvas rendering.
-              </canvas>
-              
-              <div class="canvas-live-badge" aria-live="polite">
-                <span class="pulse-dot"></span>
-                <span>Calibre APX-01 • Live Continuous Beat</span>
-              </div>
-            </div>
+          <div class="farak-stat-item">
+            <span class="farak-stat-val">SAPPHIRE</span>
+            <span class="farak-stat-lbl">Ultra AR-Coated Glass</span>
           </div>
-
+          <div class="farak-stat-item">
+            <span class="farak-stat-val">₹5,000–₹10K</span>
+            <span class="farak-stat-lbl">Honest Accessible Pricing</span>
+          </div>
+          <div class="farak-stat-item">
+            <span class="farak-stat-val">2 YEARS</span>
+            <span class="farak-stat-lbl">Pan-India Atelier Care</span>
+          </div>
         </div>
       </div>
     </section>
@@ -300,201 +284,155 @@
         <!-- Category Filters -->
         <div class="collection-filter-bar" role="tablist" aria-label="Filter collections by complication">
           <button class="filter-btn active" data-filter="all">All Timepieces</button>
-          <button class="filter-btn" data-filter="complication">Grand Complications</button>
-          <button class="filter-btn" data-filter="skeleton">Architectural Skeleton</button>
-          <button class="filter-btn" data-filter="chronometer">Precision Chronometers</button>
+          <button class="filter-btn" data-filter="complication">Signature Editions</button>
+          <button class="filter-btn" data-filter="skeleton">Apex Sport</button>
+          <button class="filter-btn" data-filter="chronometer">Heritage Archive</button>
         </div>
 
         <!-- Collections Grid -->
         <div class="collection-grid">
           
-          <!-- Piece 1: Chrono-Tourbillon -->
+          <!-- Piece 1: Solaris Gold -->
           <article class="collection-card" data-category="complication">
-            <span class="card-badge">Limited Edition 25 pcs</span>
-            <div class="card-visual">
-              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
-                <circle cx="100" cy="100" r="85" stroke="#c5a059" stroke-width="6"/>
-                <circle cx="100" cy="100" r="75" fill="#0d0e12" stroke="#dfcaa0" stroke-width="1.5"/>
-                <!-- Tourbillon cage at 6 -->
-                <circle cx="100" cy="140" r="26" stroke="#c5a059" stroke-width="1.5" fill="#08080a"/>
-                <path d="M78 140 L122 140" stroke="#f6e8cc" stroke-width="2"/>
-                <circle cx="100" cy="140" r="4" fill="#e11d48"/>
-                <!-- Hands -->
-                <line x1="100" y1="100" x2="60" y2="70" stroke="#dfcaa0" stroke-width="3" stroke-linecap="round"/>
-                <line x1="100" y1="100" x2="140" y2="60" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="100" cy="100" r="5" fill="#c5a059"/>
-              </svg>
+            <span class="card-badge">Signature Drop</span>
+            <div class="card-real-img-wrap">
+              <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80" 
+                   alt="APEX Solaris I Real Watch" class="card-real-img" loading="lazy">
             </div>
-            <span class="card-meta">Calibre APX-01T</span>
-            <h3 class="card-title">Apex Chrono-Tourbillon</h3>
+            <span class="card-meta">Calibre Miyota 9015</span>
+            <h3 class="card-title">Apex Solaris I Gold</h3>
             <p class="card-desc">
-              Single-pusher column-wheel chronograph with flying 60-second tourbillon cage, hand-beveled internal angles in 18K Honey Gold.
+              Sunburst deep-black dial with hand-applied baton indices in warm gold and domed sapphire crystal.
             </p>
             <ul class="card-specs-list">
               <li class="card-spec-row">
                 <span class="spec-k">Dimensions</span>
-                <span class="spec-v">41.5mm × 11.2mm</span>
+                <span class="spec-v">40.0mm × 10.2mm</span>
               </li>
               <li class="card-spec-row">
                 <span class="spec-k">Power Reserve</span>
-                <span class="spec-v">72 Hours</span>
+                <span class="spec-v">42 Hours</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Frequency</span>
-                <span class="spec-v">28,800 vph</span>
+                <span class="spec-k">Movement</span>
+                <span class="spec-v">Automatic</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Water Resistance</span>
-                <span class="spec-v">50 Meters</span>
+                <span class="spec-k">Glass</span>
+                <span class="spec-v">Sapphire AR</span>
               </li>
             </ul>
             <div class="card-footer">
-              <div class="card-price">$128,000</div>
-              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+              <div class="card-price">₹9,800</div>
+              <a href="shop.html" class="btn btn-secondary">Shop Piece</a>
             </div>
           </article>
 
-          <!-- Piece 2: Architecture Skeleton -->
+          <!-- Piece 2: Chronos Black -->
           <article class="collection-card" data-category="skeleton">
-            <span class="card-badge">Openworked Masterpiece</span>
-            <div class="card-visual">
-              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
-                <circle cx="100" cy="100" r="85" stroke="#94a3b8" stroke-width="6"/>
-                <circle cx="100" cy="100" r="75" fill="#08090d" stroke="#cbd5e1" stroke-width="1.5"/>
-                <!-- Openworked skeleton bridges -->
-                <path d="M40 80 Q100 60 160 80 T130 150 Q100 120 70 150 Z" stroke="#c5a059" stroke-width="2" fill="rgba(197,160,89,0.06)"/>
-                <circle cx="80" cy="90" r="18" stroke="#dfcaa0" stroke-width="1.5"/>
-                <circle cx="120" cy="115" r="22" stroke="#94a3b8" stroke-width="1.5"/>
-                <circle cx="95" cy="135" r="14" stroke="#c5a059" stroke-width="1.5"/>
-                <!-- Ruby Jewels -->
-                <circle cx="80" cy="90" r="4" fill="#e11d48"/>
-                <circle cx="120" cy="115" r="4" fill="#e11d48"/>
-                <!-- Hands -->
-                <line x1="100" y1="100" x2="80" y2="50" stroke="#f6e8cc" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="100" y1="100" x2="145" y2="85" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
+            <span class="card-badge">High Performance</span>
+            <div class="card-real-img-wrap">
+              <img src="https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=800&q=80" 
+                   alt="APEX Chronos X1 Real Watch" class="card-real-img" loading="lazy">
             </div>
-            <span class="card-meta">Calibre APX-02S</span>
-            <h3 class="card-title">Apex Architecture Skeleton</h3>
+            <span class="card-meta">Calibre Seagull ST1901</span>
+            <h3 class="card-title">Apex Chronos X1</h3>
             <p class="card-desc">
-              Three-dimensional sculptural openworking exposing the entire geartrain, anthracite NAC-coated bridges, and double mainspring barrel.
+              Tri-register column-wheel chronograph in matte PVD black with vulcanized tactile rubber strap.
             </p>
             <ul class="card-specs-list">
               <li class="card-spec-row">
                 <span class="spec-k">Dimensions</span>
-                <span class="spec-v">40.0mm × 9.4mm</span>
+                <span class="spec-v">43.0mm × 12.0mm</span>
               </li>
               <li class="card-spec-row">
                 <span class="spec-k">Power Reserve</span>
-                <span class="spec-v">80 Hours</span>
+                <span class="spec-v">45 Hours</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Frequency</span>
-                <span class="spec-v">21,600 vph</span>
+                <span class="spec-k">Bezel</span>
+                <span class="spec-v">Aluminium Click</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Water Resistance</span>
+                <span class="spec-k">Water Res</span>
                 <span class="spec-v">100 Meters</span>
               </li>
             </ul>
             <div class="card-footer">
-              <div class="card-price">$84,500</div>
-              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+              <div class="card-price">₹9,999</div>
+              <a href="shop.html" class="btn btn-secondary">Shop Piece</a>
             </div>
           </article>
 
-          <!-- Piece 3: Meridian Perpetual -->
+          <!-- Piece 3: Terra Diver -->
           <article class="collection-card" data-category="complication">
-            <span class="card-badge">Grand Complication</span>
-            <div class="card-visual">
-              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
-                <circle cx="100" cy="100" r="85" stroke="#c5a059" stroke-width="6"/>
-                <circle cx="100" cy="100" r="75" fill="#07080b" stroke="#dfcaa0" stroke-width="1.5"/>
-                <!-- Aventurine Moonphase at 12 -->
-                <circle cx="100" cy="65" r="22" stroke="#3b82f6" stroke-width="1.5" fill="#0f172a"/>
-                <path d="M92 65 A8 8 0 0 0 108 65 A8 8 0 0 1 92 65" fill="#f6e8cc"/>
-                <!-- Subdials at 3, 6, 9 -->
-                <circle cx="138" cy="105" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                <circle cx="62" cy="105" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                <circle cx="100" cy="142" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                <!-- Hands -->
-                <line x1="100" y1="100" x2="120" y2="70" stroke="#f6e8cc" stroke-width="2.5"/>
-                <line x1="100" y1="100" x2="70" y2="120" stroke="#ffffff" stroke-width="2"/>
-              </svg>
+            <span class="card-badge">200M Certified</span>
+            <div class="card-real-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=800&q=80" 
+                   alt="APEX Terra Diver Real Watch" class="card-real-img" loading="lazy">
             </div>
-            <span class="card-meta">Calibre APX-03QP</span>
-            <h3 class="card-title">Apex Meridian Perpetual</h3>
+            <span class="card-meta">Calibre Miyota 8215</span>
+            <h3 class="card-title">Apex Terra Diver</h3>
             <p class="card-desc">
-              Secular perpetual calendar synchronized to astronomical cycles with hand-engraved gold moonphase on midnight aventurine.
+              ISO-grade aquatic tool watch with screw-down crown, Super-LumiNova C1, and solid brushed oyster links.
             </p>
             <ul class="card-specs-list">
               <li class="card-spec-row">
                 <span class="spec-k">Dimensions</span>
-                <span class="spec-v">42.0mm × 10.8mm</span>
+                <span class="spec-v">42.0mm × 12.5mm</span>
               </li>
               <li class="card-spec-row">
                 <span class="spec-k">Power Reserve</span>
-                <span class="spec-v">65 Hours</span>
+                <span class="spec-v">40 Hours</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Frequency</span>
-                <span class="spec-v">28,800 vph</span>
+                <span class="spec-k">Crown</span>
+                <span class="spec-v">Screw-Down</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Water Resistance</span>
-                <span class="spec-v">30 Meters</span>
+                <span class="spec-k">Water Res</span>
+                <span class="spec-v">200 Meters</span>
               </li>
             </ul>
             <div class="card-footer">
-              <div class="card-price">$145,000</div>
-              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+              <div class="card-price">₹8,500</div>
+              <a href="shop.html" class="btn btn-secondary">Shop Piece</a>
             </div>
           </article>
 
-          <!-- Piece 4: DeepSea Chronometer -->
+          <!-- Piece 4: Archival Vintage -->
           <article class="collection-card" data-category="chronometer">
-            <span class="card-badge">COSC Chronometer</span>
-            <div class="card-visual">
-              <svg viewBox="0 0 200 200" width="180" height="180" fill="none" aria-hidden="true">
-                <circle cx="100" cy="100" r="85" stroke="#27272a" stroke-width="8"/>
-                <circle cx="100" cy="100" r="74" fill="#090a0d" stroke="#c5a059" stroke-width="2"/>
-                <!-- Diver Bezel Markers -->
-                <polygon points="100,28 95,36 105,36" fill="#c5a059"/>
-                <circle cx="160" cy="100" r="4" fill="#ffffff"/>
-                <circle cx="100" cy="160" r="4" fill="#ffffff"/>
-                <circle cx="40" cy="100" r="4" fill="#ffffff"/>
-                <!-- Bold Diver Hands -->
-                <line x1="100" y1="100" x2="70" y2="70" stroke="#f6e8cc" stroke-width="4" stroke-linecap="round"/>
-                <line x1="100" y1="100" x2="135" y2="100" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-                <circle cx="100" cy="100" r="6" fill="#e11d48"/>
-              </svg>
+            <span class="card-badge">Patina Edition</span>
+            <div class="card-real-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517940310602-26535839ec0f?auto=format&fit=crop&w=800&q=80" 
+                   alt="APEX Archival 1973 Real Watch" class="card-real-img" loading="lazy">
             </div>
-            <span class="card-meta">Calibre APX-04D</span>
-            <h3 class="card-title">Apex DeepSea Carbon</h3>
+            <span class="card-meta">Calibre Vintage Auto</span>
+            <h3 class="card-title">Apex Archival 1973</h3>
             <p class="card-desc">
-              Forged carbon monobloc architecture with titanium inner capsule, automatic helium escape valve, and 300-meter hydrostatic integrity.
+              Warm bronze-tone cushion case with a rich cream fauxtina dial and distressed tan leather strap.
             </p>
             <ul class="card-specs-list">
               <li class="card-spec-row">
                 <span class="spec-k">Dimensions</span>
-                <span class="spec-v">43.0mm × 12.8mm</span>
+                <span class="spec-v">38.0mm × 10.0mm</span>
               </li>
               <li class="card-spec-row">
                 <span class="spec-k">Power Reserve</span>
-                <span class="spec-v">70 Hours</span>
+                <span class="spec-v">40 Hours</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Frequency</span>
-                <span class="spec-v">28,800 vph</span>
+                <span class="spec-k">Case</span>
+                <span class="spec-v">Bronze PVD</span>
               </li>
               <li class="card-spec-row">
-                <span class="spec-k">Water Resistance</span>
-                <span class="spec-v">300 Meters</span>
+                <span class="spec-k">Strap</span>
+                <span class="spec-v">Aged Tan Leather</span>
               </li>
             </ul>
             <div class="card-footer">
-              <div class="card-price">$46,000</div>
-              <button class="btn btn-secondary open-concierge-btn">Inquire</button>
+              <div class="card-price">₹8,200</div>
+              <a href="shop.html" class="btn btn-secondary">Shop Piece</a>
             </div>
           </article>
 
@@ -522,164 +460,132 @@
 
 
     <!-- ========================================================================
-         THE ATELIER: FOUR PILLARS OF CRAFTSMANSHIP
+         THE ATELIER: FOUR PILLARS OF CRAFTSMANSHIP (FARAK BRAND STORYTELLING)
          ======================================================================== -->
     <section class="craftsmanship-section section-padding" id="craftsmanship" aria-labelledby="craft-heading">
       <div class="container">
         
-        <div class="section-tag">Genevan Manufacture Heritage</div>
+        <div class="section-tag">HANDCRAFTED PURPOSE • BOLD PURSUIT</div>
         <h2 id="craft-heading" class="section-title">
-          The Four Pillars of <span class="text-gold-gradient">Mastery</span>
+          BUILT BY HAND. <span class="text-gold-gradient">MADE TO LAST.</span>
         </h2>
         <p class="section-subtitle">
-          In our Vallée de Joux atelier, machines only prepare the metal. Every surface, inward angle, and balance hairspring is brought to life through the patient touch of human hands.
+          We don't mass produce. Every single APEX watch is hand-inspected, individually calibrated, and assembled with obsessive attention to detail — because real things take time.
         </p>
 
         <!-- Craftsmanship Tab Navigation -->
         <div class="craft-tabs-nav" role="tablist" aria-label="Craftsmanship Pillars">
           <button class="craft-tab-btn active" role="tab" aria-selected="true" data-tab="anglage">
-            I. Hand Anglage & Polish
+            I. Hand Finishing
           </button>
           <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="calibre">
-            II. In-House Calibre APX-01
+            II. Proven Calibres
           </button>
           <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="metallurgy">
-            III. Metallurgy & Materials
+            III. 316L Solid Steel
           </button>
           <button class="craft-tab-btn" role="tab" aria-selected="false" data-tab="seal">
-            IV. The Poinçon de Genève
+            IV. Our Promise
           </button>
         </div>
 
-        <!-- Tab Content 1: Anglage -->
+        <!-- Tab Content 1: Hand Finishing -->
         <div id="tab-anglage" class="craft-tab-content active" role="tabpanel">
           <div class="craft-editorial">
-            <h3 class="craft-editorial-title">45 Hours of Patient Beveling Per Movement</h3>
+            <h3 class="craft-editorial-title">Every Surface Inspected by Human Eyes</h3>
             <p class="craft-editorial-p">
-              The internal angles of every bridge are hand-filed using boxwood pegwood and diamond paste to achieve a flawless 45-degree mirror sheen. No CNC machine in the world can replicate the razor-sharp interior vertices produced by our master artisans.
+              From brush-satin lug finishes to mirror-polished bevels, no watch leaves our studio without passing a 32-point tactile inspection. We embrace slight human touch over cold sterile machines.
             </p>
             <div class="craft-metrics">
               <div class="craft-metric-item">
-                <div class="metric-digit">0.02 mm</div>
-                <div class="metric-caption">Chamfer Precision Tolerance</div>
+                <div class="metric-digit">32-Point</div>
+                <div class="metric-caption">Human Quality Audit</div>
               </div>
               <div class="craft-metric-item">
                 <div class="metric-digit">100%</div>
-                <div class="metric-caption">Hand-Finished Components</div>
+                <div class="metric-caption">Sapphire Glass Standard</div>
               </div>
             </div>
-            <button class="btn btn-secondary open-concierge-btn">Schedule Atelier Tour</button>
+            <a href="about.html" class="btn btn-secondary">Discover The Studio</a>
           </div>
-          <div class="craft-visual-panel">
-            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
-              <rect width="400" height="300" fill="#0d0f14"/>
-              <!-- Hand Beveled Bridge Macro Motif -->
-              <path d="M40 220 L120 80 L280 80 L360 220 L240 220 L200 160 L160 220 Z" stroke="#c5a059" stroke-width="4" fill="rgba(197, 160, 89, 0.12)"/>
-              <!-- Mirror Anglage Highlight Ridge -->
-              <path d="M40 220 L120 80 L280 80" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="200" cy="120" r="14" fill="#e11d48" stroke="#c5a059" stroke-width="2"/>
-              <text x="200" y="270" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 1: HAND-CHAMFERED BRIDGES (BERYLLIUM COPPER)</text>
-            </svg>
+          <div class="craft-visual-panel" style="background:#000; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1509941943102-10c232535736?auto=format&fit=crop&w=800&q=80" 
+                 alt="Watchmaking Craft" style="width:100%; height:320px; object-fit:cover; filter:brightness(0.85) contrast(1.1);">
           </div>
         </div>
 
-        <!-- Tab Content 2: In-House Calibre -->
+        <!-- Tab Content 2: Proven Calibres -->
         <div id="tab-calibre" class="craft-tab-content" role="tabpanel">
           <div class="craft-editorial">
-            <h3 class="craft-editorial-title">Calibre APX-01: Pure Kinetic Architecture</h3>
+            <h3 class="craft-editorial-title">Pure Mechanical Movement — No Batteries Required</h3>
             <p class="craft-editorial-p">
-              Designed and assembled entirely within Geneva, Calibre APX-01 features a free-sprung balance wheel with four gold inertia regulating blocks, a paramagnetic silicon escape wheel, and twin mainspring barrels delivering a constant torque 72-hour power reserve.
+              Powered by robust Japanese Miyota and manual-wind chronograph calibres. Beating at 21,600 to 28,800 vibrations per hour, powered naturally by the motion of your wrist.
             </p>
             <div class="craft-metrics">
               <div class="craft-metric-item">
-                <div class="metric-digit">4 Hz</div>
-                <div class="metric-caption">Frequency (28,800 VPH)</div>
+                <div class="metric-digit">42+ Hrs</div>
+                <div class="metric-caption">Continuous Power Reserve</div>
               </div>
               <div class="craft-metric-item">
-                <div class="metric-digit">39</div>
-                <div class="metric-caption">Faceted Synthetic Rubies</div>
+                <div class="metric-digit">21-Jewel</div>
+                <div class="metric-caption">Friction-Free Ruby Bearings</div>
               </div>
             </div>
-            <button class="btn btn-secondary open-concierge-btn">Download Calibre Blueprint</button>
+            <a href="shop.html" class="btn btn-secondary">Explore Automatics</a>
           </div>
-          <div class="craft-visual-panel">
-            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
-              <rect width="400" height="300" fill="#0d0f14"/>
-              <circle cx="200" cy="140" r="95" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
-              <!-- Gear Assembly Diagram -->
-              <circle cx="160" cy="120" r="45" stroke="#c5a059" stroke-width="2"/>
-              <circle cx="240" cy="140" r="35" stroke="#dfcaa0" stroke-width="1.8"/>
-              <circle cx="190" cy="180" r="25" stroke="#94a3b8" stroke-width="1.5"/>
-              <circle cx="160" cy="120" r="6" fill="#e11d48"/>
-              <circle cx="240" cy="140" r="6" fill="#e11d48"/>
-              <circle cx="190" cy="180" r="6" fill="#e11d48"/>
-              <text x="200" y="270" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 2: CALIBRE APX-01 KINEMATIC GEAR TRAIN</text>
-            </svg>
+          <div class="craft-visual-panel" style="background:#000; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" 
+                 alt="Mechanical Movement Craft" style="width:100%; height:320px; object-fit:cover; filter:brightness(0.85) contrast(1.1);">
           </div>
         </div>
 
         <!-- Tab Content 3: Metallurgy -->
         <div id="tab-metallurgy" class="craft-tab-content" role="tabpanel">
           <div class="craft-editorial">
-            <h3 class="craft-editorial-title">18K Honey Gold & Aerospace Grade 5 Titanium</h3>
+            <h3 class="craft-editorial-title">Surgical-Grade 316L Stainless Steel & PVD</h3>
             <p class="craft-editorial-p">
-              We smelt our proprietary Honey Gold alloy in small sealed crucibles, infusing precise ratios of platinum to ensure color stability that will never oxidize over centuries. For our sport instruments, forged aeronautic carbon is fused at 300 bars of pressure with Grade 5 titanium.
+              Corrosion-proof, hypoallergenic, and impervious to everyday sweat and humidity. Our PVD coatings undergo vacuum-deposition to ensure lasting deep-matte saturation that won't fade.
             </p>
             <div class="craft-metrics">
               <div class="craft-metric-item">
-                <div class="metric-digit">Grade 5</div>
-                <div class="metric-caption">Titanium (Ti-6Al-4V)</div>
+                <div class="metric-digit">316L</div>
+                <div class="metric-caption">Marine Solid Stainless</div>
               </div>
               <div class="craft-metric-item">
-                <div class="metric-digit">18 Karat</div>
-                <div class="metric-caption">Proprietary Honey Gold</div>
+                <div class="metric-digit">9 Mohs</div>
+                <div class="metric-caption">Sapphire Crystal Hardness</div>
               </div>
             </div>
-            <button class="btn btn-secondary open-concierge-btn">Explore Materials Lab</button>
+            <a href="shop.html" class="btn btn-secondary">View Steel Pieces</a>
           </div>
-          <div class="craft-visual-panel">
-            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
-              <rect width="400" height="300" fill="#0d0f14"/>
-              <!-- Crystal Lattice Graphic -->
-              <polygon points="200,50 280,100 280,200 200,250 120,200 120,100" stroke="#c5a059" stroke-width="2" fill="rgba(197,160,89,0.08)"/>
-              <line x1="200" y1="50" x2="200" y2="250" stroke="#c5a059" stroke-width="1.5"/>
-              <line x1="120" y1="100" x2="280" y2="200" stroke="#c5a059" stroke-width="1.5"/>
-              <line x1="120" y1="200" x2="280" y2="100" stroke="#c5a059" stroke-width="1.5"/>
-              <circle cx="200" cy="150" r="10" fill="#ffffff"/>
-              <text x="200" y="280" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 3: HONEY GOLD ATOMIC INTERFACE</text>
-            </svg>
+          <div class="craft-visual-panel" style="background:#000; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=800&q=80" 
+                 alt="Steel Materials Craft" style="width:100%; height:320px; object-fit:cover; filter:brightness(0.85) contrast(1.1);">
           </div>
         </div>
 
-        <!-- Tab Content 4: Geneva Seal -->
+        <!-- Tab Content 4: Our Promise -->
         <div id="tab-seal" class="craft-tab-content" role="tabpanel">
           <div class="craft-editorial">
-            <h3 class="craft-editorial-title">The Poinçon de Genève: Ultimate Certification</h3>
+            <h3 class="craft-editorial-title">2-Year Pan-India Atelier Guarantee</h3>
             <p class="craft-editorial-p">
-              Every Apex timepiece bears the prestigious Geneva Seal—an independent statutory guarantee of origin, craftsmanship, and performance awarded only to watches designed, assembled, and chronometrically adjusted within the Canton of Geneva.
+              We stand behind every single timepiece. Complimentary express insured shipping across India, dedicated concierge support, and seamless repairs handled directly by our horology bench.
             </p>
             <div class="craft-metrics">
               <div class="craft-metric-item">
-                <div class="metric-digit">-2 / +2</div>
-                <div class="metric-caption">Seconds / Day Strict Tolerance</div>
+                <div class="metric-digit">2 Years</div>
+                <div class="metric-caption">Movement & Build Warranty</div>
               </div>
               <div class="craft-metric-item">
-                <div class="metric-digit">100%</div>
-                <div class="metric-caption">Canton of Geneva Regulation</div>
+                <div class="metric-digit">Free</div>
+                <div class="metric-caption">Insured Pan-India Transit</div>
               </div>
             </div>
-            <button class="btn btn-secondary open-concierge-btn">View Certification Standards</button>
+            <a href="contact.html" class="btn btn-secondary">Connect With Atelier</a>
           </div>
-          <div class="craft-visual-panel">
-            <svg viewBox="0 0 400 300" fill="none" aria-hidden="true">
-              <rect width="400" height="300" fill="#0d0f14"/>
-              <!-- Geneva Seal Inscription Emblem -->
-              <circle cx="200" cy="140" r="85" stroke="#c5a059" stroke-width="3" stroke-dasharray="6 3"/>
-              <circle cx="200" cy="140" r="76" stroke="#dfcaa0" stroke-width="1.5"/>
-              <path d="M200 80 L230 100 L230 150 C230 175 200 195 200 195 C200 195 170 175 170 150 L170 100 Z" stroke="#c5a059" stroke-width="2" fill="rgba(197, 160, 89, 0.2)"/>
-              <path d="M190 110 L210 110 M200 110 L200 160 M188 150 L212 150" stroke="#f6e8cc" stroke-width="2" stroke-linecap="round"/>
-              <text x="200" y="265" text-anchor="middle" fill="#dfcaa0" font-family="JetBrains Mono" font-size="12" letter-spacing="3">FIG. 4: POINÇON DE GENÈVE HALLMARK</text>
-            </svg>
+          <div class="craft-visual-panel" style="background:#000; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80" 
+                 alt="Our Guarantee" style="width:100%; height:320px; object-fit:cover; filter:brightness(0.85) contrast(1.1);">
           </div>
         </div>
 
@@ -696,20 +602,20 @@
         <div class="heritage-grid">
           
           <div>
-            <div class="section-tag">Since 1894</div>
+            <div class="section-tag">ORIGIN & PHILOSOPHY</div>
             <h2 id="heritage-heading" class="section-title">
-              Born in Geneva, <br>
-              <span class="text-gold-gradient">Mastered for Eternity</span>
+              BORN IN JAIPUR. <br>
+              <span class="text-gold-gradient">FOR THE WORLD.</span>
             </h2>
             <p class="section-subtitle" style="margin-bottom: var(--space-8);">
-              Founded in 1894 along the shores of Lake Geneva by master horologist Henri de L’Apex, our manufacture has remained staunchly independent for over a century. We answer solely to our craft.
+              Founded to disrupt traditional luxury. We rejected Swiss markups, eliminated middleman retail margins, and focused on pure craftsmanship: mechanical hearts, real metals, and honest design.
             </p>
             <div style="padding: var(--space-6); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); background: rgba(197, 160, 89, 0.04);">
-              <p style="font-family: var(--raw-font-serif); font-size: 1.25rem; font-style: italic; color: #f6e8cc; line-height: 1.6;">
-                "We do not merely measure time. We sculpt the seconds into enduring physical monuments."
+              <p style="font-family: var(--raw-font-sans); font-size: 1.25rem; font-weight:600; color: #f6e8cc; line-height: 1.5; text-transform:uppercase;">
+                "A watch isn't just about reading the hour. It's about how you carry yourself through every second."
               </p>
-              <span style="display: block; font-family: var(--raw-font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); margin-top: var(--space-3); letter-spacing: 0.15em;">
-                — Laurent de L’Apex, Master Watchmaker
+              <span style="display: block; font-family: var(--raw-font-sans); font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); margin-top: var(--space-3); letter-spacing: 0.25em;">
+                — THE APEX ATELIER MANIFESTO
               </span>
             </div>
           </div>
@@ -720,37 +626,28 @@
               
               <li class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-year">1894</div>
-                <h3 class="timeline-heading">Founding of the Atelier</h3>
+                <div class="timeline-year">THE VISION</div>
+                <h3 class="timeline-heading">Inverting the Luxury Formula</h3>
                 <p class="timeline-desc">
-                  Henri de L’Apex registers his initial patent for an ultra-flat pocket watch tourbillon in Geneva, winning the Grand Prix de Chronométrie.
+                  Questioned why automatic watches with sapphire crystals cost lakhs. Started direct-to-wrist manufacture with 0% compromise.
                 </p>
               </li>
 
               <li class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-year">1952</div>
-                <h3 class="timeline-heading">The Meridian Calibre Breakthrough</h3>
+                <div class="timeline-year">THE DROP</div>
+                <h3 class="timeline-heading">The Solaris & Sport Editions</h3>
                 <p class="timeline-desc">
-                  Creation of the legendary high-beat automatic movement with patented bi-directional ceramic ball bearings.
+                  Engineered custom dials, sunburst guilloché textures, and 316L solid surgical steel cases tested to 10 ATM.
                 </p>
               </li>
 
               <li class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-year">2008</div>
-                <h3 class="timeline-heading">The Silicon Escapement Era</h3>
+                <div class="timeline-year">TODAY</div>
+                <h3 class="timeline-heading">Community & Purpose</h3>
                 <p class="timeline-desc">
-                  Pioneering zero-lubrication silicon hairsprings and escape wheels impervious to magnetic fields up to 15,000 Gauss.
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-year">Present Day</div>
-                <h3 class="timeline-heading">The Architecture Series</h3>
-                <p class="timeline-desc">
-                  Unveiling Calibre APX-01: integrating space-grade materials with classical hand-finishing for modern connoisseurs.
+                  Thousands of discerning wrists across India. 12 distinct timepieces built for those who value authenticity over vanity.
                 </p>
               </li>
 
@@ -862,69 +759,65 @@
         <!-- Col 1: Brand & Manifesto -->
         <div>
           <div class="brand-mark" style="margin-bottom: var(--space-4);">
-            <span class="brand-name">APEX</span>
-            <span class="brand-subtext">HAUTE HORLOGERIE GENÈVE</span>
+            <span class="brand-name" style="letter-spacing:0.45em; font-weight:700;">A P E X</span>
+            <span class="brand-subtext" style="letter-spacing:0.3em;">JAIPUR • HANDMADE HOROLOGY</span>
           </div>
           <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 320px; margin-bottom: var(--space-6);">
-            Apex Manufacture SA. An independent Genevan manufacture dedicated to the highest orders of Swiss mechanical horology and architectural finishing.
+            Disruptive Indian horology. Engineered with precision mechanical calibres, scratch-proof sapphire, and unapologetic character.
           </p>
-          <div class="section-tag">Swiss Made • Geneva Seal No. 418</div>
+          <div class="section-tag">CRAFTED IN INDIA • 2-YEAR WARRANTY</div>
         </div>
 
-        <!-- Col 2: Flagship Salons -->
+        <!-- Col 2: Flagship Spaces -->
         <div>
-          <h4 class="footer-col-title">Flagship Boutiques</h4>
+          <h4 class="footer-col-title">Atelier Salons</h4>
           <ul class="boutiques-list">
             <li class="boutique-item">
-              <strong>Geneva</strong>
-              <span>Rue du Rhône 42, 1204 Genève</span>
+              <strong>Jaipur</strong>
+              <span>C-Scheme Studio, Jaipur</span>
             </li>
             <li class="boutique-item">
-              <strong>London</strong>
-              <span>14 New Bond Street, Mayfair</span>
+              <strong>Mumbai</strong>
+              <span>Bandra West Studio, Mumbai</span>
             </li>
             <li class="boutique-item">
-              <strong>New York</strong>
-              <span>645 Madison Avenue</span>
+              <strong>Bengaluru</strong>
+              <span>Indiranagar Experience Lab</span>
             </li>
             <li class="boutique-item">
-              <strong>Tokyo</strong>
-              <span>6-10-1 Ginza, Chuo-ku</span>
-            </li>
-            <li class="boutique-item">
-              <strong>Dubai</strong>
-              <span>Gate Precinct 4, DIFC</span>
+              <strong>New Delhi</strong>
+              <span>Mehrauli Design District</span>
             </li>
           </ul>
         </div>
 
         <!-- Col 3: Manufacture -->
         <div>
-          <h4 class="footer-col-title">The Manufacture</h4>
+          <h4 class="footer-col-title">The Collection</h4>
           <ul class="footer-links-list">
-            <li><a href="#craftsmanship" class="footer-link">Calibre APX-01 Blueprint</a></li>
-            <li><a href="#craftsmanship" class="footer-link">Hand Anglage Workshop</a></li>
-            <li><a href="#craftsmanship" class="footer-link">The Geneva Seal Standards</a></li>
-            <li><a href="#heritage" class="footer-link">Manufacture Archives</a></li>
-            <li><a href="#configurator" class="footer-link">Bespoke Commissions</a></li>
-            <li><a href="#" class="footer-link open-concierge-btn">VIP Concierge Desk</a></li>
+            <li><a href="shop.html" class="footer-link">All 12 Timepieces</a></li>
+            <li><a href="shop.html?cat=Signature" class="footer-link">Signature Dress Watches</a></li>
+            <li><a href="shop.html?cat=Apex+Sport" class="footer-link">Sport & Chronographs</a></li>
+            <li><a href="shop.html?cat=Heritage" class="footer-link">Archival Heritage</a></li>
+            <li><a href="about.html" class="footer-link">Our Story & Workshop</a></li>
+            <li><a href="contact.html" class="footer-link">Concierge & Inquiries</a></li>
           </ul>
         </div>
 
         <!-- Col 4: Gazette Newsletter -->
         <div>
-          <h4 class="footer-col-title">The Apex Gazette</h4>
+          <h4 class="footer-col-title">The APEX Club</h4>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            Subscribe to receive private allocations, technical papers, and invitations to private salon viewings.
+            Be first in line for limited drops, new movement releases, and private community events.
           </p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Your subscription to The Apex Gazette has been registered.');">
-            <input type="email" class="newsletter-input" placeholder="Your private email" aria-label="Email address for Apex Gazette" required>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the APEX community.');">
+            <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address for newsletter" required>
             <button type="submit" class="btn btn-primary" style="padding: 0.65rem 1rem; min-height: unset;">
               Join
             </button>
           </form>
           <span style="font-size: 0.72rem; color: var(--text-muted); display: block; margin-top: 8px;">
-            Strict confidentiality assured. Dispatches issued quarterly.
+            Zero spam. Only new drops and dispatch notices.
           </span>
         </div>
 
@@ -933,13 +826,12 @@
       <!-- Bottom Legal -->
       <div class="footer-bottom-bar">
         <div>
-          © 2026 APEX Haute Horlogerie SA. All Rights Reserved. Handcrafted in Switzerland.
+          © 2026 APEX Watches India. All Rights Reserved. Crafted with pride.
         </div>
         <div class="footer-legal-links">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Manufacture</a>
-          <a href="#" class="footer-link">5-Year International Guarantee</a>
-          <a href="#" class="footer-link">Traceability & Ethics</a>
+          <a href="shipping.html" class="footer-link">Shipping & Returns</a>
+          <a href="faq.html" class="footer-link">FAQ & Guarantee</a>
+          <a href="contact.html" class="footer-link">Contact Concierge</a>
         </div>
       </div>
 
