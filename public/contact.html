@@ -35,6 +35,11 @@
         </ul>
       </nav>
 
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-mobile-toggle-secondary" id="sec-menu-toggle" aria-label="Open menu" style="display:none; background:none; border:none; cursor:pointer; padding:8px; color:var(--color-text,#fff);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
       <div class="nav-actions">
         <a href="admin/index.html" class="btn btn-outline btn-sm" data-auth-admin style="display:none; font-size:11px; padding:6px 12px; border-color:var(--color-gold);">Admin</a>
         <a href="account.html" class="nav-btn" title="My Account">
@@ -51,6 +56,18 @@
       </div>
     </div>
   </header>
+  <script>
+    (function(){
+      var btn = document.getElementById('sec-menu-toggle');
+      var nav = document.querySelector('.site-nav .nav-links');
+      if(btn && nav) btn.addEventListener('click', function(){
+        nav.classList.toggle('open');
+        btn.innerHTML = nav.classList.contains('open')
+          ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+          : '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      });
+    })();
+  </script>
 
   <main class="apex-container" style="padding: 60px 24px 80px;">
     <div class="text-center" style="margin-bottom: 50px;">

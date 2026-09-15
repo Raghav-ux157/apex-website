@@ -1391,6 +1391,12 @@ img, svg {
   }
 }
 
+@media (max-width: 1024px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -1408,10 +1414,31 @@ img, svg {
     padding: var(--space-8);
     gap: var(--space-6);
     z-index: 999;
+    overflow-y: auto;
   }
 
   .mobile-nav-toggle {
     display: flex;
+  }
+
+  /* Secondary nav hamburger (shop/about/etc) */
+  .nav-mobile-toggle-secondary {
+    display: flex !important;
+  }
+
+  .site-nav .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-height, 64px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-app, #07080f);
+    padding: 32px 24px;
+    gap: 24px;
+    z-index: 999;
+    overflow-y: auto;
   }
 
   .specs-bar {
@@ -1430,6 +1457,59 @@ img, svg {
   }
 
   .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero title: smaller floor so it doesn't overflow on 320px phones */
+  .farak-hero-title {
+    font-size: clamp(2.4rem, 11vw, 8.5rem);
+  }
+
+  /* Collection filter bar wraps on narrow screens */
+  .collection-filter-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  /* Hide sound toggle label on mobile, keep icon */
+  .sound-toggle-btn .sound-label {
+    display: none;
+  }
+
+  /* Brand pill smaller text */
+  .farak-brand-pill {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+  }
+
+  /* Collection grid 1 col on small phones */
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero CTA stack on phones */
+  .farak-hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter hero padding */
+  .farak-hero {
+    padding-inline: 20px;
+  }
+
+  /* Smaller section headings */
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  /* Product cards 1 col on very small screens */
+  .product-grid-home {
     grid-template-columns: 1fr;
   }
 }

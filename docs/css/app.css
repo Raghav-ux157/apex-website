@@ -1254,12 +1254,27 @@ button, input, select, textarea {
   .nav-links {
     display: none;
   }
-  .nav-mobile-toggle {
+  .nav-mobile-toggle, .nav-mobile-toggle-secondary {
     display: flex;
   }
+  /* Secondary nav mobile drawer */
+  .site-nav .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-surface, #0d0e14);
+    padding: 32px 24px;
+    gap: 24px;
+    z-index: 999;
+    overflow-y: auto;
+  }
   .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1268,3 +1283,17 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .product-thumb-wrap {
+    padding: 12px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .nav-actions .nav-btn:not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
+}
+
