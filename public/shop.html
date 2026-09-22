@@ -1,333 +1,565 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Collection — APEX Haute Horlogerie & Atelier</title>
-  <meta name="description" content="Explore handcrafted precision wristwatches engineered for everyday excellence. Discover Signature, Apex Sport, Meridian, and Heritage collections.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/app.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Collection — APEX Luxury Handmade Horology</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {},
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {},
+          fontFamily: {
+            headline: ["Bebas Neue", "Public Sans", "sans-serif"],
+            display: ["Bebas Neue", "Public Sans", "sans-serif"],
+            body: ["Space Grotesk", "sans-serif"],
+            label: ["Space Grotesk", "sans-serif"]
+          },
+          fontSize: {}
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #C9A84C;
+      cursor: pointer;
+      border: 2px solid #07080f;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #C9A84C;
+      cursor: pointer;
+      border: 2px solid #07080f;
+    }
+  </style>
 </head>
-<body>
-
-  <!-- Top announcement bar -->
-  <div class="top-bar">
-    <div class="apex-container">
-      <span>Complimentary Express Shipping Across India • 2-Year International Atelier Warranty</span>
-    </div>
-  </div>
-
-  <!-- Header Navigation -->
-  <header class="site-nav">
-    <div class="apex-container nav-inner">
-      <a href="index.html" class="brand-logo">
-        <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
-        <span class="brand-logo-text">APEX</span>
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="shop.html" class="nav-link active">Collection</a></li>
-          <li><a href="about.html" class="nav-link">Atelier</a></li>
-          <li><a href="journal.html" class="nav-link">Journal</a></li>
-          <li><a href="contact.html" class="nav-link">Concierge</a></li>
-        </ul>
-      </nav>
-
-      <!-- Hamburger (mobile only) -->
-      <button class="nav-mobile-toggle-secondary" id="sec-menu-toggle" aria-label="Open menu" style="display:none; background:none; border:none; cursor:pointer; padding:8px; color:var(--color-text,#fff);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-
-      <div class="nav-actions">
-        <!-- Admin Link (shown only if admin) -->
-        <a href="admin/index.html" class="btn btn-outline btn-sm" data-auth-admin style="display:none; font-size:11px; padding:6px 12px; border-color:var(--color-gold);">Admin</a>
-
-        <!-- Account / Login -->
-        <a href="account.html" class="nav-btn" title="My Account">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </a>
-
-        <!-- Wishlist -->
-        <a href="wishlist.html" class="nav-btn" title="Wishlist">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          <span class="nav-badge" data-wish-count style="display:none;">0</span>
-        </a>
-
-        <!-- Cart Bag -->
-        <button class="nav-btn" onclick="ApexStore.openDrawer()" title="Bag">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          <span class="nav-badge" data-cart-count style="display:none;">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <script>
-    (function(){
-      var btn = document.getElementById('sec-menu-toggle');
-      var nav = document.querySelector('.site-nav .nav-links');
-      if(btn && nav) btn.addEventListener('click', function(){
-        nav.classList.toggle('open');
-        btn.innerHTML = nav.classList.contains('open')
-          ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
-          : '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-      });
-    })();
-  </script>
-
-  <!-- Shop Hero Banner -->
-  <section style="background: radial-gradient(circle at center, #151722 0%, #070709 100%); padding: 60px 0 40px; border-bottom: 1px solid var(--color-border);">
-    <div class="apex-container text-center">
-      <span class="section-tag">HOROLOGICAL CATALOGUE</span>
-      <h1 class="section-title">The Complete APEX Collection</h1>
-      <p class="section-desc">Designed with architectural precision, powered by mechanical and automatic engines, and engineered to endure generations.</p>
-    </div>
-  </section>
-
-  <!-- Main Shop Section -->
-  <main class="apex-container">
-    <div class="shop-layout">
-      <!-- Sidebar Filters -->
-      <aside class="filter-card">
-        <div class="filter-group">
-          <h4 class="filter-heading">Collection</h4>
-          <ul class="filter-list">
-            <li class="filter-item">
-              <label><input type="radio" name="collection" value="" checked onchange="filterProducts()"> All Timepieces</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="collection" value="Signature" onchange="filterProducts()"> Signature (Dress)</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="collection" value="Apex Sport" onchange="filterProducts()"> Apex Sport (Chrono & Diver)</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="collection" value="Meridian" onchange="filterProducts()"> Meridian (Everyday Slim)</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="collection" value="Heritage" onchange="filterProducts()"> Heritage (Patina & Cushion)</label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="filter-group">
-          <h4 class="filter-heading">Price Range</h4>
-          <ul class="filter-list">
-            <li class="filter-item">
-              <label><input type="radio" name="pricerange" value="all" checked onchange="filterProducts()"> Any Price</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="pricerange" value="under-7k" onchange="filterProducts()"> Under ₹7,000</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="pricerange" value="7k-9k" onchange="filterProducts()"> ₹7,000 – ₹9,000</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="radio" name="pricerange" value="above-9k" onchange="filterProducts()"> ₹9,000 & Above</label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="filter-group">
-          <h4 class="filter-heading">Movement</h4>
-          <ul class="filter-list">
-            <li class="filter-item">
-              <label><input type="checkbox" value="automatic" class="movement-filter" onchange="filterProducts()"> Automatic Mechanical</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="checkbox" value="quartz" class="movement-filter" onchange="filterProducts()"> High-Precision Quartz</label>
-            </li>
-            <li class="filter-item">
-              <label><input type="checkbox" value="chronograph" class="movement-filter" onchange="filterProducts()"> Column-Wheel Chrono</label>
-            </li>
-          </ul>
-        </div>
-
-        <button class="btn btn-outline btn-block btn-sm" onclick="resetFilters()" style="margin-top:20px;">Clear Filters</button>
-      </aside>
-
-      <!-- Products Grid & Controls -->
-      <section>
-        <div class="shop-top-controls">
-          <span class="shop-counter" id="shop-item-counter">Loading timepieces...</span>
-          <div class="shop-sort">
-            <label for="sort-select" style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; margin-right:8px; color:var(--color-text-dim);">Sort By:</label>
-            <select id="sort-select" onchange="filterProducts()">
-              <option value="featured">Featured First</option>
-              <option value="price_asc">Price: Low to High</option>
-              <option value="price_desc">Price: High to Low</option>
-              <option value="name">Name: A to Z</option>
-            </select>
+<body class="bg-[#07080f] text-[#f0f0f0] font-body selection:bg-[#C9A84C] selection:text-[#07080f] min-h-screen antialiased overflow-x-hidden">
+<!-- Top Navigation (Shared Component Execution) -->
+<header class="bg-[#07080f]/90 backdrop-blur-md docked full-width top-0 fixed z-50 border-b border-white/[0.08] flat no shadows transition-all duration-300 ease-out">
+<div class="w-full px-6 md:px-12 flex justify-between items-center h-20 max-w-7xl mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline tracking-widest text-2xl uppercase text-[#f0f0f0] flex items-center gap-2" href="#">
+<span>APEX</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 font-headline uppercase tracking-widest text-xs">
+<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Home</a>
+<a class="text-[#C9A84C] border-b border-[#C9A84C] pb-1" href="#">Collection</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Atelier</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Journal</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Concierge</a>
+</nav>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-5 text-[#f0f0f0]/70">
+<button aria-label="Search" class="hover:text-[#C9A84C] transition-colors duration-200 flex items-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Bookmarks" class="hover:text-[#C9A84C] transition-colors duration-200 flex items-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+<button aria-label="Cart" class="hover:text-[#C9A84C] transition-colors duration-200 flex items-center relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1.5 bg-[#C9A84C] text-[#07080f] text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 md:pt-28">
+<!-- Hero Section -->
+<section class="relative border-b border-white/[0.08] overflow-hidden bg-gradient-to-b from-[#0d0e14] to-[#07080f]">
+<!-- Architectural subtle grid lines -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.06)_0%,transparent_60%)] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-10 relative">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-[#C9A84C]"></span>
+<span class="text-xs uppercase tracking-[0.25em] text-[#C9A84C] font-semibold">HAUTE HORLOGERIE JAIPUR</span>
+</div>
+<h1 class="font-headline tracking-wider text-5xl md:text-7xl uppercase text-[#f0f0f0] leading-none mb-4">
+            THE COLLECTION
+          </h1>
+<p class="text-sm md:text-base text-[#f0f0f0]/60 max-w-2xl font-light leading-relaxed">
+            Handcrafted in Jaipur — Numbered mechanical timepieces hand-assembled by master horologists. Rooted in Rajasthani craftsmanship and Swiss-grade chronometric precision.
+          </p>
+</div>
+<!-- Horizontal Category Quick Filter Bar -->
+<div class="mt-10 pt-6 border-t border-white/[0.08] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-6 md:gap-8 overflow-x-auto pb-2 md:pb-0 text-xs uppercase tracking-widest no-scrollbar font-medium">
+<button class="text-[#C9A84C] border-b-2 border-[#C9A84C] pb-2 transition-all whitespace-nowrap">All Timepieces</button>
+<button class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] pb-2 transition-colors whitespace-nowrap">Automatic</button>
+<button class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] pb-2 transition-colors whitespace-nowrap">Tourbillon</button>
+<button class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] pb-2 transition-colors whitespace-nowrap">GMT</button>
+<button class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] pb-2 transition-colors whitespace-nowrap">Limited Edition</button>
+</div>
+<div class="text-xs uppercase tracking-wider text-[#f0f0f0]/50 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C9A84C]/60"></span>
+<span>12 Timepieces available</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Shop Layout: Sidebar Filters + 3-Column Product Grid -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+<div class="flex flex-col lg:flex-row gap-10 items-start">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 shrink-0 lg:sticky lg:top-28 space-y-8 bg-[#0d0e14] p-6 border border-white/[0.08] rounded-none">
+<div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+<span class="font-headline uppercase tracking-wider text-sm text-[#f0f0f0]">Filters</span>
+<button class="text-[11px] uppercase tracking-wider text-[#C9A84C] hover:text-[#e2c97e] transition-colors">Reset All</button>
+</div>
+<!-- Active Badges -->
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider bg-white/[0.04] border border-white/[0.1] px-2.5 py-1 text-[#f0f0f0]/80">
+              Automatic <button class="hover:text-[#C9A84C]"><span class="material-symbols-outlined text-[14px]" data-icon="close">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider bg-white/[0.04] border border-white/[0.1] px-2.5 py-1 text-[#f0f0f0]/80">
+              Gold Case <button class="hover:text-[#C9A84C]"><span class="material-symbols-outlined text-[14px]" data-icon="close">close</span></button>
+</span>
+</div>
+<!-- Price Range Slider -->
+<div class="space-y-3">
+<div class="flex justify-between items-center text-xs tracking-wider uppercase text-[#f0f0f0]/70">
+<span>Price Range</span>
+<span class="text-[#C9A84C] font-semibold">$3,000 — $15,000+</span>
+</div>
+<input class="w-full h-1 bg-white/10 appearance-none cursor-pointer accent-[#C9A84C]" max="15000" min="3000" type="range" value="11500"/>
+<div class="flex justify-between text-[10px] text-[#f0f0f0]/40 uppercase tracking-wider">
+<span>$3,000 (Min)</span>
+<span>$15,000+ (Max)</span>
+</div>
+</div>
+<!-- Movement Type -->
+<div class="space-y-3 pt-2 border-t border-white/[0.08]">
+<h2 class="text-xs uppercase tracking-widest text-[#f0f0f0] font-medium">Movement Calibre</h2>
+<div class="space-y-2 text-xs text-[#f0f0f0]/70">
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input checked="" class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Automatic Mechanical</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">04</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input checked="" class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Skeleton Tourbillon</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">03</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Manual Wind Calibre</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">03</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Dual-Time GMT</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">02</span>
+</label>
+</div>
+</div>
+<!-- Case Material -->
+<div class="space-y-3 pt-2 border-t border-white/[0.08]">
+<h2 class="text-xs uppercase tracking-widest text-[#f0f0f0] font-medium">Case Material</h2>
+<div class="space-y-2 text-xs text-[#f0f0f0]/70">
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>316L Marine Steel</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">05</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Damascus Pattern Steel</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">02</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input checked="" class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>18K Rose Gold</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">03</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group hover:text-[#f0f0f0]">
+<div class="flex items-center gap-2.5">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Hand-Finished Titanium</span>
+</div>
+<span class="text-[10px] text-[#f0f0f0]/40">02</span>
+</label>
+</div>
+</div>
+<!-- Complications -->
+<div class="space-y-3 pt-2 border-t border-white/[0.08]">
+<h2 class="text-xs uppercase tracking-widest text-[#f0f0f0] font-medium">Complications &amp; Finish</h2>
+<div class="space-y-2 text-xs text-[#f0f0f0]/70">
+<label class="flex items-center gap-2.5 cursor-pointer hover:text-[#f0f0f0]">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Sapphire Exhibition Back</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer hover:text-[#f0f0f0]">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Enamel Dial</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer hover:text-[#f0f0f0]">
+<input class="rounded-none border-white/20 bg-transparent text-[#C9A84C] focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Hand-Engraved Bezel</span>
+</label>
+</div>
+</div>
+<!-- Water Resistance -->
+<div class="space-y-3 pt-2 border-t border-white/[0.08]">
+<h2 class="text-xs uppercase tracking-widest text-[#f0f0f0] font-medium">Water Resistance</h2>
+<div class="grid grid-cols-3 gap-2 text-center text-xs uppercase tracking-wider">
+<button class="py-1.5 border border-white/10 hover:border-[#C9A84C] text-[#f0f0f0]/70 hover:text-[#f0f0f0] transition-colors">50M</button>
+<button class="py-1.5 border border-[#C9A84C] bg-[#C9A84C]/10 text-[#C9A84C] font-medium transition-colors">100M</button>
+<button class="py-1.5 border border-white/10 hover:border-[#C9A84C] text-[#f0f0f0]/70 hover:text-[#f0f0f0] transition-colors">200M</button>
+</div>
+</div>
+</aside>
+<!-- Product Grid Section -->
+<div class="flex-1 w-full">
+<!-- Header Bar: Showing Count + Sort dropdown -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-6 mb-8 border-b border-white/[0.08] gap-4">
+<div class="text-xs uppercase tracking-wider text-[#f0f0f0]/60">
+              Showing <span class="text-[#f0f0f0] font-medium">6</span> of <span class="text-[#f0f0f0] font-medium">12</span> Timepieces
+            </div>
+<div class="flex items-center gap-3">
+<span class="text-xs uppercase tracking-wider text-[#f0f0f0]/50">Sort By:</span>
+<div class="relative">
+<select class="bg-[#0d0e14] border border-white/[0.1] text-xs uppercase tracking-wider text-[#f0f0f0] py-2 pl-3 pr-8 rounded-none focus:border-[#C9A84C] focus:ring-0 appearance-none cursor-pointer">
+<option>Curated / Featured</option>
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+<option>Newest Editions</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 pointer-events-none text-xs text-[#f0f0f0]/60" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 3-Column Luxury Watch Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Watch Card 1 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="THE AMBER CHRONO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Macro product photograph of a luxury dark horology chronograph watch with hand-polished 18k rose gold bezel, matte black obsidian dial, and glowing indices, captured under dramatic chiaroscuro studio lighting on a dark stone surface with subtle warm reflections and cinematic shadow depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiHwRIrncp6Bw0OBWuNPQT0YjaVgzwCG_0SdjiUrFXFt5ut-bNTq_GWlcdJFhO9gdAUrCieRqC6fAwkz_hEMoqImkXeoWu6PbAQyYRmqeQ1PyjcTQ30evOHmGD5k6yA8M1HHXi1hcsvBwTgGx7Xd-2BFXaWNpQwLfWWqCLT7byBc3SvjLMJM9-JDYRAmeW9NYl6JaIPVgs7sXMUP-20e3YLEv_8mzb2ToxXGHPzy6814kf-W0JJgusyJieEgiwHa8zbdiEG5IScRU"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#07080f]/90 text-[#C9A84C] border border-[#C9A84C]/30 px-2 py-0.5">EDITION 01</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">CHRONOGRAPH</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">THE AMBER CHRONO</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Hand-polished rose gold &amp; obsidian dial with sapphire exhibition caseback.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$4,850</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+<!-- Watch Card 2 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="HAVELI TOURBILLON" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Editorial close-up luxury timepiece photograph of a skeleton mechanical tourbillon watch with hand-beveled Damascus steel case, intricate exposed balance wheel and gear train in warm gold tones against deep midnight black aesthetic with ultra-refined highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX7B3K5OhTbM4FJNir2gaFPEJPxkpvtkT0pLTmViSUJEX762QOsK4Matt_v7MA1pH5MmM2uE-K-3YfHduV7fl_yXS2OY0HCtQG3VTnU8aqSUUG04YpbeYnK2Hrtr1Lv_5NdeEY7MXx8eyM-9T-yuRJgKv8rCZywMwyZzK50kAeJMWlZtKlwd1iJBh5i1v6qlJJHqzSMj6ITtQqAOpdwrLCpp6AxoGO9tkB4SxluLCNEN3-vPMHiRvEUwpzMX_kJOh6rGq5YnSoHJc"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#07080f]/90 text-[#C9A84C] border border-[#C9A84C]/30 px-2 py-0.5">HAUTE PIECE</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">TOURBILLON</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">HAVELI TOURBILLON</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Skeleton mechanical movement, Damascus steel case, hand-beveled tourbillon cage.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$9,200</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+<!-- Watch Card 3 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="JAI SECTOR AUTOMATIC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Pristine front-facing luxury horology photograph of a classic automatic watch featuring a deep cobalt blue grand feu enamel dial, silvered indices, brushed solid 316L marine steel case, set on dark architectural backdrop with soft golden rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgJ_y0VYqd5fCbeZStk4AsqYEBibEbTwMG1aWvhiUaE1J89bdfRDKdLboWdY9aoYQs3i16YRxI74gizdE7JD0wiweCViXkxYx6MdeHODI7w-YW0t5ACh8Nuve3Wjf8f1kPjLJfOZyLOnv8JieJIlzI-6e_9zsuGvYEEGCgtvvi63hqcGdHCZ_2CAJDL-Oip6sIuZ_19t6oqXKqxzynrTAHXwzwUe4kSeoiHyqlt0TbvnTOs5ZthKac4EIaUiJYjrsgBuWR5vMJSOo"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#07080f]/90 text-[#f0f0f0]/80 border border-white/20 px-2 py-0.5">CLASSIC</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">AUTOMATIC</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">JAI SECTOR AUTOMATIC</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Deep cobalt enamel dial, 316L solid marine steel, 68-hour power reserve calibre.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$3,600</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+<!-- Watch Card 4 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="MAHARAJA GMT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Luxury commercial watch photograph of a bespoke dual-timezone GMT timepiece with hand-engraved gold bezel featuring celestial star maps, dark midnight sunburst dial, and custom gold GMT hand, captured with cinematic moody lighting on dark textured slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRDQLJ8HUcpB_18kg3BkWvQxDoZQqYNAjPk2Dsc0IbJ7lhwDO-LNemrj26aUSApqI5xpGY3xOZOml7-Jy-x4AHAXBAqauAs7w9L_ltkV4_SAgohMpva4KWbiNO720HmAn2U6z8kfK10kxffj0JzmasgWS2qHxgTBAyjTjmSLxY5Cmys9IqInOL6e1FwowZBVIa9XOajtXJpWTevsLDu3HX9OZecDsoaaFekhhvxNS33hM5lE0JQ_PZRmMi6ML0K2bLO9HntwTC8lM"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#07080f]/90 text-[#C9A84C] border border-[#C9A84C]/30 px-2 py-0.5">BESPOKE GMT</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">GMT DUAL-TIME</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">MAHARAJA GMT</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Dual timezone complication, hand-engraved gold bezel with astronomical hour markers.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$6,400</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+<!-- Watch Card 5 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="RAJPUTANA SKELETON" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High-end horological macro photograph of a rare skeletonized tourbillon watch showcasing openworked anthracite mainplate, heat-blued titanium screws, and gold balance spring, sharp clean reflections on polished bevels under dark studio illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7a-C-22jQINBCBH_KRZZe9soDS-wV5Hkc6n97FsTEAjs4RREAplkRDtxicStHyhsg9JHudtuEaBro9DqHdFMaALwdo3PGZ-Nk1N0NIaJBR9r6l6---fZHgZm6jJic_Ru0FTNoRwnxXQdgyGa0YOfEc0vvWgzyecNHGruoVaRmEzkXG7qRKRbUaxG00T5bJIcR0mqHWTn1RMPOSUeRrJKSSZJSAOW_z3T1LZHdg6spZoosCltaKplA-4r-XfvHr_YcWS01--b1ZtU"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#C9A84C] text-[#07080f] font-bold px-2 py-0.5">LIMITED EDITION</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">TOURBILLON</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">RAJPUTANA SKELETON</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Openworked anthracite dial, heat-blued titanium screws, 21,600 vph escapement.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$11,500</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+<!-- Watch Card 6 -->
+<div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-square overflow-hidden bg-[#0a0b10]">
+<img alt="THE PINK CITY DIVER" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Cinematic luxury divers watch photograph with terracotta pink-red ceramic rotating bezel, ruthenium textured dial with luminescent geometric markers, robust stainless steel case with helium escape valve, photographed on black volcanic rock with ambient golden light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbkom1RBNIe7upJyXfhqNE5hmpBhf3x3BwXAGcHuAl_6Jh_V54Of9vNcuGP6OWRrDz4KE-9JS6naAIkzeL6AdiPb_yqGlvdsOOX238ri9BBs512-dD0k6aqwBA5otQAN8ulnhvjZ_Mm2Ruu9kpcMVqRuJNMIpAx2jrSUm4L4XQZsBSwXw_NWFwJVVXyuqpBc3sSIMn3PrjJNCpl-6r4lh7aog0GJmH0_MZrmECgNA2JFATaj5gYPNmAchto92dFi--YOMvgz6j_ZA"/>
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest bg-[#07080f]/90 text-[#f0f0f0]/80 border border-white/20 px-2 py-0.5">300M DIVER</span>
+</div>
+<button aria-label="Quick View" class="absolute top-3 right-3 w-8 h-8 rounded-none bg-[#07080f]/80 backdrop-blur-sm border border-white/10 text-[#f0f0f0] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:text-[#C9A84C]">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="p-5 space-y-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#C9A84C]">AUTOMATIC</div>
+<h3 class="font-headline text-2xl uppercase tracking-wider text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors">THE PINK CITY DIVER</h3>
+<p class="text-xs text-[#f0f0f0]/60 line-clamp-2 font-light leading-relaxed">
+                    Terracotta ceramic unidirectional bezel, luminous ruthenium indices, helium escape valve.
+                  </p>
+</div>
+</div>
+<div class="p-5 pt-0 mt-2 flex items-center justify-between border-t border-white/[0.04]">
+<div class="pt-4">
+<span class="text-[10px] uppercase tracking-widest text-[#f0f0f0]/40 block">Price</span>
+<span class="text-lg font-headline tracking-wider text-[#C9A84C]">$4,200</span>
+</div>
+<div class="pt-4">
+<button class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#07080f] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 transition-all duration-200">
+                    ADD TO BAG
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More Pacing -->
+<div class="mt-12 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-xs tracking-wider uppercase text-[#f0f0f0]/50">
+              Viewing 6 of 12 Creations
+            </div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 border border-white/20 text-[#f0f0f0] hover:border-[#C9A84C] hover:text-[#C9A84C] text-xs uppercase tracking-widest transition-colors font-medium">
+                Load Remaining 6 Timepieces
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bespoke Concierge Callout Banner -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-10">
+<div class="relative border border-[#C9A84C]/30 bg-gradient-to-r from-[#0d0e14] via-[#12131c] to-[#0d0e14] p-8 md:p-14 overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.12)_0%,transparent_70%)] pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl">
+<span class="text-xs uppercase tracking-[0.25em] text-[#C9A84C] font-semibold block mb-2">JAIPUR PRIVATE ATELIER</span>
+<h2 class="font-headline text-3xl md:text-5xl uppercase tracking-wider text-[#f0f0f0] mb-4">
+            Seeking a Bespoke Commission?
+          </h2>
+<p class="text-xs md:text-sm text-[#f0f0f0]/70 font-light leading-relaxed mb-8">
+            Every year, the APEX master horologists accept only twelve bespoke private commissions. From custom miniature enamel dials inspired by Jantar Mantar observatory geometry to personalized movement engraving.
+          </p>
+<a class="inline-flex items-center gap-3 bg-[#C9A84C] text-[#07080f] font-bold text-xs uppercase tracking-widest px-8 py-3.5 hover:bg-[#e2c97e] transition-colors duration-200" href="#">
+<span>REQUEST PRIVATE ALLOCATION</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="bg-[#07080f] w-full border-t border-white/[0.08] flat no shadows">
+<div class="w-full px-6 md:px-12 py-16 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
+<!-- Brand Column -->
+<div class="space-y-4">
+<div class="font-headline text-3xl uppercase tracking-widest text-[#f0f0f0]">APEX</div>
+<p class="text-xs text-[#f0f0f0]/50 tracking-wider font-body leading-relaxed">
+            Architectural luxury timepieces hand-assembled by generational craftsmen in Jaipur, India.
+          </p>
+<div class="text-xs text-[#C9A84C] tracking-widest uppercase pt-2">
+            Haute Horlogerie • Jaipur
           </div>
-        </div>
-
-        <div class="product-grid" id="products-catalog-grid">
-          <!-- Injected via API -->
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="apex-container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo">
-            <svg class="brand-logo-mark" viewBox="0 0 24 24"><polygon points="12,2 2,22 22,22"/></svg>
-            <span class="brand-logo-text">APEX</span>
-          </a>
-          <p>Engineered at the summit. Crafted for those who understand that true luxury is not loud — it is unwavering precision.</p>
-        </div>
-        <div>
-          <h5 class="footer-col-title">Collections</h5>
-          <ul class="footer-links">
-            <li><a href="shop.html?cat=Signature">Signature</a></li>
-            <li><a href="shop.html?cat=Apex+Sport">Apex Sport</a></li>
-            <li><a href="shop.html?cat=Meridian">Meridian</a></li>
-            <li><a href="shop.html?cat=Heritage">Heritage</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-col-title">Atelier</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">Brand Story</a></li>
-            <li><a href="journal.html">Journal & Horology</a></li>
-            <li><a href="contact.html">Concierge & Boutique</a></li>
-            <li><a href="faq.html">FAQ & Movements</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-col-title">Customer Care</h5>
-          <ul class="footer-links">
-            <li><a href="shipping.html">Shipping & Returns</a></li>
-            <li><a href="account.html">My Orders</a></li>
-            <li><a href="wishlist.html">Saved Timepieces</a></li>
-            <li><a href="shipping.html#warranty">2-Year Warranty</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-col-title">VIP Newsletter</h5>
-          <p style="font-size:13px; color:var(--color-text-dim); margin-bottom:12px;">Receive private allocation invites for limited series drops.</p>
-          <div style="display:flex; gap:8px;">
-            <input type="email" placeholder="Enter your email" class="form-control" style="font-size:13px; padding:10px 12px;">
-            <button class="btn btn-primary btn-sm" onclick="ApexStore.toast('Subscribed to VIP dispatch', 'success')">Join</button>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 APEX Haute Horlogerie Pvt Ltd. All rights reserved.</span>
-        <span>Curated & Assembled in India • Worldwide Components</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/mock-data.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/store.js"></script>
-
-  <script>
-    let allProducts = [];
-
-    async function loadProducts() {
-      try {
-        const res = await API.products.list({ limit: 100 });
-        allProducts = res.products || [];
-        
-        // Check URL parameters for preset collection
-        const urlParams = new URLSearchParams(window.location.search);
-        const cat = urlParams.get('cat');
-        if (cat) {
-          const radio = document.querySelector(`input[name="collection"][value="${cat}"]`);
-          if (radio) radio.checked = true;
-        }
-
-        filterProducts();
-      } catch (err) {
-        document.getElementById('products-catalog-grid').innerHTML = `
-          <div style="grid-column:1/-1; text-align:center; padding:60px;">
-            <p style="color:var(--color-danger)">Unable to load products. Make sure the APEX server is running.</p>
-          </div>
-        `;
-      }
-    }
-
-    function filterProducts() {
-      const selectedCat = document.querySelector('input[name="collection"]:checked')?.value || '';
-      const selectedPrice = document.querySelector('input[name="pricerange"]:checked')?.value || 'all';
-      const sort = document.getElementById('sort-select').value;
-      const checkedMovements = Array.from(document.querySelectorAll('.movement-filter:checked')).map(cb => cb.value);
-
-      let filtered = [...allProducts];
-
-      // Filter by Collection
-      if (selectedCat) {
-        filtered = filtered.filter(p => p.category.toLowerCase() === selectedCat.toLowerCase());
-      }
-
-      // Filter by Price
-      if (selectedPrice === 'under-7k') {
-        filtered = filtered.filter(p => p.price < 7000);
-      } else if (selectedPrice === '7k-9k') {
-        filtered = filtered.filter(p => p.price >= 7000 && p.price <= 9000);
-      } else if (selectedPrice === 'above-9k') {
-        filtered = filtered.filter(p => p.price > 9000);
-      }
-
-      // Filter by Movement tags
-      if (checkedMovements.length > 0) {
-        filtered = filtered.filter(p => {
-          const tags = p.tags || [];
-          return checkedMovements.some(m => tags.includes(m));
-        });
-      }
-
-      // Sort
-      if (sort === 'price_asc') {
-        filtered.sort((a, b) => a.price - b.price);
-      } else if (sort === 'price_desc') {
-        filtered.sort((a, b) => b.price - a.price);
-      } else if (sort === 'name') {
-        filtered.sort((a, b) => a.name.localeCompare(b.name));
-      } else {
-        // Featured
-        filtered.sort((a, b) => (b.featured || 0) - (a.featured || 0));
-      }
-
-      // Render
-      const grid = document.getElementById('products-catalog-grid');
-      const counter = document.getElementById('shop-item-counter');
-      counter.textContent = `Showing ${filtered.length} of ${allProducts.length} Timepieces`;
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div style="grid-column:1/-1; text-align:center; padding:80px 20px;">
-            <h4 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">No timepieces match your criteria</h4>
-            <p style="color:var(--color-text-dim); margin-bottom:20px;">Try adjusting your collection or price filter options.</p>
-            <button class="btn btn-secondary btn-sm" onclick="resetFilters()">Reset All Filters</button>
-          </div>
-        `;
-      } else {
-        grid.innerHTML = filtered.map(p => ApexStore.renderProductCard(p)).join('');
-      }
-
-      ApexStore.updateWishlistIcons();
-    }
-
-    function resetFilters() {
-      document.querySelector('input[name="collection"][value=""]').checked = true;
-      document.querySelector('input[name="pricerange"][value="all"]').checked = true;
-      document.querySelectorAll('.movement-filter').forEach(cb => cb.checked = false);
-      document.getElementById('sort-select').value = 'featured';
-      filterProducts();
-    }
-
-    document.addEventListener('DOMContentLoaded', loadProducts);
-  </script>
-</body>
-</html>
+</div>
+<!-- Navigation Links -->
+<div class="space-y-3">
+<div class="font-headline uppercase text-sm tracking-widest text-[#f0f0f0]">Navigation</div>
+<ul class="space-y-2 text-xs text-[#f0f0f0]/50 tracking-wider font-body">
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Timepieces</a></li>
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Atelier Jaipur</a></li>
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Heritage</a></li>
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Private Concierge</a></li>
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Care &amp; Servicing</a></li>
+<li><a class="hover:text-[#C9A84C] transition-colors duration-200" href="#">Legal &amp; Privacy</a></li>
+</ul>
+</div>
+<!-- Atelier Boutique -->
+<div class="space-y-3">
+<div class="font-headline uppercase text-sm tracking-widest text-[#f0f0f0]">Atelier Locations</div>
+<p class="text-xs text-[#f0f0f0]/50 tracking-wider font-body leading-relaxed">
+            The Haveli Workshop<br/>
+            Civil Lines, Jaipur 302006<br/>
+            Rajasthan, India
+          </p>
+<p class="text-xs text-[#f0f0f0]/50 tracking-wider font-body pt-2">
+            Private salon viewings by appointment only.
+          </p>
+</div>
+<!-- Newsletter / Private Dispatch -->
+<div class="space-y-3">
+<div class="font-headline uppercase text-sm tracking-widest text-[#f0f0f0]">Private Dispatch</div>
+<p class="text-xs text-[#f0f0f0]/50 tracking-wider font-body">
+            Receive private allocations and previews of upcoming numbered editions.
+          </p>
+<form class="space-y-2 pt-1" onsubmit="event.preventDefault();">
+<div class="flex">
+<input class="w-full bg-[#0d0e14] border border-white/10 text-xs px-3 py-2 text-[#f0f0f0] placeholder-[#f0f0f0]/30 focus:border-[#C9A84C] focus:ring-0 rounded-none" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="bg-[#C9A84C] text-[#07080f] px-4 font-bold text-xs uppercase hover:bg-[#e2c97e] transition-colors" type="submit">
+                JOIN
+              </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Copyright & System Info -->
+<div class="pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between text-xs text-[#f0f0f0]/50 tracking-wider font-body gap-4">
+<div>© 2025 APEX HANDMADE HOROLOGY. JAIPUR, INDIA. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6 text-[11px] uppercase tracking-widest text-[#f0f0f0]/40">
+<a class="hover:text-[#C9A84C] transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-[#C9A84C] transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-[#C9A84C] transition-colors" href="#">Chronometric Certificate</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
