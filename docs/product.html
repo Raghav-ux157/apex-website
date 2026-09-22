@@ -7,9 +7,8 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet"/>
+
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Tailwind Theme Configuration Verbatim -->
@@ -87,34 +86,52 @@
 </div>
 <!-- Navigation Links -->
 <nav class="hidden md:flex items-center space-x-9 font-headline uppercase tracking-widest text-xs">
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Home</a>
-<a class="text-[#C9A84C] border-b border-[#C9A84C] pb-1" href="#">Collection</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Atelier</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Journal</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] transition-colors duration-200" href="#">Concierge</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] transition-colors duration-200" href="index.html">Home</a>
+<a class="text-[#C9A84C] border-b border-[#C9A84C] pb-1" href="shop.html">Collection</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] transition-colors duration-200" href="about.html">Atelier</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] transition-colors duration-200" href="journal.html">Journal</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] transition-colors duration-200" href="contact.html">Concierge</a>
 </nav>
+<!-- Mobile hamburger -->
+<button id="mob-toggle" class="md:hidden flex flex-col gap-1.5 p-2 text-[#f0f0f0]" aria-label="Open menu">
+  <span class="block w-5 h-px bg-current"></span>
+  <span class="block w-5 h-px bg-current"></span>
+  <span class="block w-5 h-px bg-current"></span>
+</button>
 <!-- Trailing Action Icons -->
 <div class="flex items-center space-x-6 text-[#f0f0f0]/80">
 <button aria-label="Search" class="hover:text-[#C9A84C] transition-colors duration-200">
-<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[20px]">search</span>
 </button>
 <button aria-label="Saved Items" class="hover:text-[#C9A84C] transition-colors duration-200">
-<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
 </button>
-<button aria-label="Shopping Bag" class="relative hover:text-[#C9A84C] transition-colors duration-200 flex items-center">
-<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
-<span class="absolute -top-1.5 -right-2 bg-[#C9A84C] text-[#07080f] text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-space">2</span>
-</button>
+<a href="index.html" aria-label="Shopping Bag" class="relative hover:text-[#C9A84C] transition-colors duration-200 flex items-center">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</a>
 </div>
 </div>
 </header>
+<!-- Mobile nav drawer -->
+<div id="mob-nav" class="hidden fixed inset-0 top-20 bg-[#07080f] z-40 flex flex-col gap-8 px-8 py-10 text-xl font-headline uppercase tracking-widest">
+  <a class="text-[#f0f0f0]" href="index.html">Home</a>
+  <a class="text-[#C9A84C]" href="shop.html">Collection</a>
+  <a class="text-[#f0f0f0]" href="about.html">Atelier</a>
+  <a class="text-[#f0f0f0]" href="journal.html">Journal</a>
+  <a class="text-[#f0f0f0]" href="contact.html">Concierge</a>
+</div>
+<script>
+  var t=document.getElementById('mob-toggle'),n=document.getElementById('mob-nav');
+  if(t&&n)t.addEventListener('click',function(){n.classList.toggle('hidden');n.classList.toggle('flex');});
+</script>
+
 <!-- MAIN CANVAS -->
 <main class="pt-28 pb-24 max-w-7xl mx-auto px-6 md:px-12">
 <!-- Breadcrumb Hierarchy -->
 <nav aria-label="Breadcrumb" class="py-4 mb-6 text-xs uppercase tracking-[0.2em] font-space text-[#f0f0f0]/40 flex items-center space-x-2">
-<a class="hover:text-[#C9A84C] transition-colors" href="#">Home</a>
+<a class="hover:text-[#C9A84C] transition-colors" href="index.html">Home</a>
 <span class="text-white/20">/</span>
-<a class="hover:text-[#C9A84C] transition-colors" href="#">Collection</a>
+<a class="hover:text-[#C9A84C] transition-colors" href="shop.html">Collection</a>
 <span class="text-white/20">/</span>
 <span class="text-[#C9A84C] font-medium">The Amber Chrono</span>
 </nav>
@@ -139,7 +156,7 @@
 </div>
 </div>
 <!-- Hero Watch Photography -->
-<img class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Cinematic macro studio photograph of a luxury dark horology chronograph watch named The Amber Chrono. Features an obsidian black dial with deep amber rose gold subdials, brushed 316L steel casing, and warm golden rim highlights against a pitch-black studio backdrop. Dramatic directional lighting catches polished hands, reflective double-domed sapphire crystal, and subtle gold hour indices with atmospheric luxury mood." id="mainHeroImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiPUYKHI0or8HElMwijhpdgE3vNt-fCTgM4jjfOyhPzQ37-g8jKXni60yyGKLkRUL2t68eaehSzF5ZLUGQeENnI4Ho2xhRlXPUcvFQACCLJZTdhPbu3FxrFGnEjad1Ac0OYZz7Re_4X1O5Ds4uPBASODlhRgft4-AUbuFu-60K31aAJ_rGDyh1Z1o3bkqj-0WXGCPS6CJkoiAMCQNMvKRYZf_n4vBkBGoUrK493n5aJrAT0wrFFw8nFDID58cJjiRkJkJ-Adglqeg"/>
+<img loading="lazy" class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" alt="Cinematic macro studio photograph of a luxury dark horology chronograph watch named The Amber Chrono. Features an obsidian black dial with deep amber rose gold subdials, brushed 316L steel casing, and warm golden rim highlights against a pitch-black studio backdrop. Dramatic directional lighting catches polished hands, reflective double-domed sapphire crystal, and subtle gold hour indices with atmospheric luxury mood." id="mainHeroImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiPUYKHI0or8HElMwijhpdgE3vNt-fCTgM4jjfOyhPzQ37-g8jKXni60yyGKLkRUL2t68eaehSzF5ZLUGQeENnI4Ho2xhRlXPUcvFQACCLJZTdhPbu3FxrFGnEjad1Ac0OYZz7Re_4X1O5Ds4uPBASODlhRgft4-AUbuFu-60K31aAJ_rGDyh1Z1o3bkqj-0WXGCPS6CJkoiAMCQNMvKRYZf_n4vBkBGoUrK493n5aJrAT0wrFFw8nFDID58cJjiRkJkJ-Adglqeg"/>
 <!-- Floating Inspect / Fullscreen Action -->
 <button aria-label="Zoom Timepiece" class="absolute bottom-5 right-5 z-20 bg-[#07080f]/80 border border-white/[0.1] text-[#f0f0f0]/80 p-3 hover:text-[#C9A84C] hover:border-[#C9A84C]/60 backdrop-blur-sm transition-all duration-200">
 <span class="material-symbols-outlined text-xl" data-icon="fullscreen">fullscreen</span>
@@ -153,22 +170,22 @@
 <!-- Thumbnail Gallery Strip -->
 <div class="grid grid-cols-4 gap-3 md:gap-4">
 <button class="relative bg-[#0d0e14] border-2 border-[#C9A84C] aspect-square overflow-hidden p-1 group transition-all" onclick="selectThumb(this)">
-<img class="w-full h-full object-cover" data-alt="Extreme macro close-up of The Amber Chrono obsidian dial face showing rose gold hands, circular graining on the sub-chronograph dials, and fine gold markers under high-contrast dramatic dark photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT28gRRaRea6tYQW_naXLYK7YL0xlI7hMVLdOAsQXXg-8j_ZxbsapSReHjT2nfYk0w5lAy6KyttpZUlxnT4osaLg53DyCfQVYh8DRdGWVm46h1wDA_E5m-34LXSy2_EBQppcs81b4ofAuqpzaNw7K5fxZLGbjjkgRg0YlrI0gQth4qnQ7HqwjSR2aNrX5tVDZDn25wHHxjWgETDWl5l9YdzorbasvoFjzGuzENL2NawjxvqwdOTYhNlPXuRaGHLyRe3J57ihY5tpk"/>
+<img loading="lazy" class="w-full h-full object-cover" alt="Extreme macro close-up of The Amber Chrono obsidian dial face showing rose gold hands, circular graining on the sub-chronograph dials, and fine gold markers under high-contrast dramatic dark photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT28gRRaRea6tYQW_naXLYK7YL0xlI7hMVLdOAsQXXg-8j_ZxbsapSReHjT2nfYk0w5lAy6KyttpZUlxnT4osaLg53DyCfQVYh8DRdGWVm46h1wDA_E5m-34LXSy2_EBQppcs81b4ofAuqpzaNw7K5fxZLGbjjkgRg0YlrI0gQth4qnQ7HqwjSR2aNrX5tVDZDn25wHHxjWgETDWl5l9YdzorbasvoFjzGuzENL2NawjxvqwdOTYhNlPXuRaGHLyRe3J57ihY5tpk"/>
 <span class="absolute inset-0 bg-[#07080f]/10 group-hover:bg-transparent transition-colors"></span>
 <span class="absolute bottom-1 left-1 right-1 text-[8px] tracking-wider uppercase text-center bg-[#07080f]/90 py-0.5 text-[#C9A84C] font-medium">Dial</span>
 </button>
 <button class="relative bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 aspect-square overflow-hidden p-1 group transition-all" onclick="selectThumb(this)">
-<img class="w-full h-full object-cover" data-alt="Detailed macro shot of the sapphire crystal exhibition caseback revealing an intricately engraved 22k gold winding rotor with traditional Jaipur architectural jali lattice patterns and Swiss mechanical movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw95xvsrIXBlAsXAqaXaCgHNLnR_fb1lsj5PJpZg8WgNq0Z52ObrPxYy-z-7SA2uLB4jH3V3ipmm9-1t6l01V67LZI_llD8G3J1wazCy6ebKeazwebjhVCfqQ5gUrJbdjNWhK3YYH6yZ9MmASnIcUca5EKoHovzObI3Qp-ew0ynqdVriUXb2QxmRyXeRPN2Mgp9yUFrTRxkTyOFuoK6huLXXHkXUE_EBhD7j7NvdPnVZP0_xv-CWYqrSXcy4u5ZlRGeV9X_eUebpE"/>
+<img loading="lazy" class="w-full h-full object-cover" alt="Detailed macro shot of the sapphire crystal exhibition caseback revealing an intricately engraved 22k gold winding rotor with traditional Jaipur architectural jali lattice patterns and Swiss mechanical movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw95xvsrIXBlAsXAqaXaCgHNLnR_fb1lsj5PJpZg8WgNq0Z52ObrPxYy-z-7SA2uLB4jH3V3ipmm9-1t6l01V67LZI_llD8G3J1wazCy6ebKeazwebjhVCfqQ5gUrJbdjNWhK3YYH6yZ9MmASnIcUca5EKoHovzObI3Qp-ew0ynqdVriUXb2QxmRyXeRPN2Mgp9yUFrTRxkTyOFuoK6huLXXHkXUE_EBhD7j7NvdPnVZP0_xv-CWYqrSXcy4u5ZlRGeV9X_eUebpE"/>
 <span class="absolute inset-0 bg-[#07080f]/10 group-hover:bg-transparent transition-colors"></span>
 <span class="absolute bottom-1 left-1 right-1 text-[8px] tracking-wider uppercase text-center bg-[#07080f]/90 py-0.5 text-[#f0f0f0]/60 font-medium">Calibre</span>
 </button>
 <button class="relative bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 aspect-square overflow-hidden p-1 group transition-all" onclick="selectThumb(this)">
-<img class="w-full h-full object-cover" data-alt="Sculptural side profile shot of the luxury 316L stainless steel watch case showing fluted amber gold crown inset with raw unheated Jaipur garnet gemstone, chamfered lugs, and sleek bezel profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIqgCHDwSWinJ1dQSdxFt1l6nSwhUhg_240dSZh9gvHzipAaKM3EQMos4lVRJAX_N_8EYnHiodm3tZ5wfhcc889as9FM38lUdnZpArEgTLqhr3g6RI3YXZwu6PVLBB1idAkOsoD5ApCkn5ze6sxcJLaNL1ZTUn7uK8xZ8b9YcW7x099zTNvNbL4cMcnfIyJzpTPBvhwAR1mbDljoqsCLYTAByN1gMWtBq-wZb7eESrwLBHUUeytXSzRMoNwdQl5nGaqM1z5PO1ZUE"/>
+<img loading="lazy" class="w-full h-full object-cover" alt="Sculptural side profile shot of the luxury 316L stainless steel watch case showing fluted amber gold crown inset with raw unheated Jaipur garnet gemstone, chamfered lugs, and sleek bezel profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIqgCHDwSWinJ1dQSdxFt1l6nSwhUhg_240dSZh9gvHzipAaKM3EQMos4lVRJAX_N_8EYnHiodm3tZ5wfhcc889as9FM38lUdnZpArEgTLqhr3g6RI3YXZwu6PVLBB1idAkOsoD5ApCkn5ze6sxcJLaNL1ZTUn7uK8xZ8b9YcW7x099zTNvNbL4cMcnfIyJzpTPBvhwAR1mbDljoqsCLYTAByN1gMWtBq-wZb7eESrwLBHUUeytXSzRMoNwdQl5nGaqM1z5PO1ZUE"/>
 <span class="absolute inset-0 bg-[#07080f]/10 group-hover:bg-transparent transition-colors"></span>
 <span class="absolute bottom-1 left-1 right-1 text-[8px] tracking-wider uppercase text-center bg-[#07080f]/90 py-0.5 text-[#f0f0f0]/60 font-medium">Profile</span>
 </button>
 <button class="relative bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 aspect-square overflow-hidden p-1 group transition-all" onclick="selectThumb(this)">
-<img class="w-full h-full object-cover" data-alt="Editorial lifestyle close-up of The Amber Chrono timepiece worn on a tailored dark charcoal cashmere suit wrist, highlighting the textured hand-stitched Tuscan matte black leather strap and gold deployant clasp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRYwXFWkviXBak028Kee4oXpFOJOSLeWFr9-suua6mDFyw-UZDWXoWo0zJR1IVVkkJYtEy6TdoTAhFspM8MZuHOEMgLl-owV8k0wcARMfjtqL4fN1bofjFm8eNDDlAS7Vq5nmwh-sD7JbstPfufyw6UCWpplz2R9E-VE619v9cv3m-XrWrG9d1bW8ZI3tzA2sduaSNYCHg_ne9Gg3AovIcBkBslSlGPm2qW-e19Xw7zrWHiMwhVnwh9Bgys5egMUyTpKVhRc87Ea4"/>
+<img loading="lazy" class="w-full h-full object-cover" alt="Editorial lifestyle close-up of The Amber Chrono timepiece worn on a tailored dark charcoal cashmere suit wrist, highlighting the textured hand-stitched Tuscan matte black leather strap and gold deployant clasp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRYwXFWkviXBak028Kee4oXpFOJOSLeWFr9-suua6mDFyw-UZDWXoWo0zJR1IVVkkJYtEy6TdoTAhFspM8MZuHOEMgLl-owV8k0wcARMfjtqL4fN1bofjFm8eNDDlAS7Vq5nmwh-sD7JbstPfufyw6UCWpplz2R9E-VE619v9cv3m-XrWrG9d1bW8ZI3tzA2sduaSNYCHg_ne9Gg3AovIcBkBslSlGPm2qW-e19Xw7zrWHiMwhVnwh9Bgys5egMUyTpKVhRc87Ea4"/>
 <span class="absolute inset-0 bg-[#07080f]/10 group-hover:bg-transparent transition-colors"></span>
 <span class="absolute bottom-1 left-1 right-1 text-[8px] tracking-wider uppercase text-center bg-[#07080f]/90 py-0.5 text-[#f0f0f0]/60 font-medium">On Wrist</span>
 </button>
@@ -317,7 +334,7 @@
 </div>
 </div>
 <div class="md:col-span-5 bg-[#0d0e14] border border-white/[0.08] aspect-square overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Intimate artisan workshop photograph in Jaipur India showing a master horologist using precision brass loupe and tweezers to calibrate delicate balance wheel springs of a mechanical watch calibre under warm low-key dramatic spotlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYCNjZr0Jv9-3_ftbDVmCkG8TB8i8aXEipHACCrP4X7QqM3Ro64EwnMqLzwFETdcSPOqy55BAFBW611aJfa98EAoW3yNg_7j65urmrHsJVtQe7xfE-A2yB5Eoy8v1LL4_GEwhnIjhfvKVNo4-BTcE-h8UkOhHDs53SXDMKFTSBi-Z11kRMK3t9WXxusUXChnQUMtJKqczTsX5-QHIS5qStr6TzzQSAYC84URfII241-t52jgy2RHtwpLgUQ-S69swv09w557E9f0"/>
+<img loading="lazy" class="w-full h-full object-cover" alt="Intimate artisan workshop photograph in Jaipur India showing a master horologist using precision brass loupe and tweezers to calibrate delicate balance wheel springs of a mechanical watch calibre under warm low-key dramatic spotlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYCNjZr0Jv9-3_ftbDVmCkG8TB8i8aXEipHACCrP4X7QqM3Ro64EwnMqLzwFETdcSPOqy55BAFBW611aJfa98EAoW3yNg_7j65urmrHsJVtQe7xfE-A2yB5Eoy8v1LL4_GEwhnIjhfvKVNo4-BTcE-h8UkOhHDs53SXDMKFTSBi-Z11kRMK3t9WXxusUXChnQUMtJKqczTsX5-QHIS5qStr6TzzQSAYC84URfII241-t52jgy2RHtwpLgUQ-S69swv09w557E9f0"/>
 </div>
 </div>
 </div>
@@ -463,7 +480,7 @@
 <span class="absolute top-3 left-3 z-10 text-[9px] uppercase tracking-[0.2em] bg-[#07080f]/80 backdrop-blur-md px-2.5 py-1 text-[#C9A84C] border border-[#C9A84C]/30 font-medium">
               HIGH COMPLICATION
             </span>
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Striking luxury skeleton mechanical tourbillon watch named Haveli Tourbillon featuring hand-forged Damascus steel case, intricate openwork gear trains in dark gold and gunmetal, showcased against a dramatic dark studio background with soft amber edge lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnLCCYP3te-mEwnV8lgBHbO5D8fjOCNQ-Lb5xh7zQpnlRrismRhibaWq7aJhCRAHh6yiEyFW7HOqjJuFYKpfc5f_pCpXfMyQ6uob-75cMSvFHuvtr-mOzpbKxgs31-oeBHoYIWATEuntsxKvBBMV-s4WcxSJThkEMALfhFe0wT2zPx9XWLAgYEWffj9u61jS2DFoGAoMreobMQTjSV-1KyDO7Ssx-7X_Qf7E7jlbGi4M8iHztt_49X6BqTJBK6Wexd3Cvk16aHIN4"/>
+<img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Striking luxury skeleton mechanical tourbillon watch named Haveli Tourbillon featuring hand-forged Damascus steel case, intricate openwork gear trains in dark gold and gunmetal, showcased against a dramatic dark studio background with soft amber edge lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnLCCYP3te-mEwnV8lgBHbO5D8fjOCNQ-Lb5xh7zQpnlRrismRhibaWq7aJhCRAHh6yiEyFW7HOqjJuFYKpfc5f_pCpXfMyQ6uob-75cMSvFHuvtr-mOzpbKxgs31-oeBHoYIWATEuntsxKvBBMV-s4WcxSJThkEMALfhFe0wT2zPx9XWLAgYEWffj9u61jS2DFoGAoMreobMQTjSV-1KyDO7Ssx-7X_Qf7E7jlbGi4M8iHztt_49X6BqTJBK6Wexd3Cvk16aHIN4"/>
 </div>
 <div class="p-6 flex flex-col flex-grow justify-between">
 <div>
@@ -486,7 +503,7 @@
 <span class="absolute top-3 left-3 z-10 text-[9px] uppercase tracking-[0.2em] bg-[#07080f]/80 backdrop-blur-md px-2.5 py-1 text-[#C9A84C] border border-[#C9A84C]/30 font-medium">
               GRAND FEU ENAMEL
             </span>
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial close-up of Jai Sector Automatic luxury watch featuring deep cobalt blue grand feu enamel dial with concentric circular track markings, polished marine steel case, and midnight blue alligator leather strap in high contrast dark studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-1sbL2bG3bhdEUy828r4qGFcyz9VIh1LDFZFdb8erRhvNAh-eyDnK6IMdn97aLVAuuYf0XAGmV9FzQ1-c9gM63cogyglTE8irJ7H5q46mgsXrcnGM6UPOdM77lrgrxwbNbogbnhjy0dtd6pwSq3vQbrdJmoMuBsQlt_RU9YsNMGEnzxkJNs-4szvEn__ZftcYVEULS5U0OUv_VsXbI_Fe9iTH-Ymy3hFp-jwb1whXrSIQzwcoN7hlHosKLmg1EWxc4lHModLEhMc"/>
+<img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Editorial close-up of Jai Sector Automatic luxury watch featuring deep cobalt blue grand feu enamel dial with concentric circular track markings, polished marine steel case, and midnight blue alligator leather strap in high contrast dark studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-1sbL2bG3bhdEUy828r4qGFcyz9VIh1LDFZFdb8erRhvNAh-eyDnK6IMdn97aLVAuuYf0XAGmV9FzQ1-c9gM63cogyglTE8irJ7H5q46mgsXrcnGM6UPOdM77lrgrxwbNbogbnhjy0dtd6pwSq3vQbrdJmoMuBsQlt_RU9YsNMGEnzxkJNs-4szvEn__ZftcYVEULS5U0OUv_VsXbI_Fe9iTH-Ymy3hFp-jwb1whXrSIQzwcoN7hlHosKLmg1EWxc4lHModLEhMc"/>
 </div>
 <div class="p-6 flex flex-col flex-grow justify-between">
 <div>
@@ -509,7 +526,7 @@
 <span class="absolute top-3 left-3 z-10 text-[9px] uppercase tracking-[0.2em] bg-[#07080f]/80 backdrop-blur-md px-2.5 py-1 text-[#C9A84C] border border-[#C9A84C]/30 font-medium">
               ASTRONOMICAL GMT
             </span>
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro studio photograph of the Maharaja GMT timepiece featuring dual timezone complication, deep matte black dial, bi-directional astronomical bezel engraved with 24-hour markers in gold, resting on dark basalt slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcfq07kfTY4u54QJ5FaJyS0AkMAY-g5wH5rwnwyBnZNApb4lwPK_4ThA4Oj2jjpH0L1v11c6LtK2lvNXzr1XdkHhsExNGF72LVX2DqmzcBW-fs2lJwFWzCr81bKWeJkYZQyeUkxO89cM9JsdzUXUNBIf05w5Mgke7XWI-Pl7mcW4pJ8VN7fWRi6y9VPo6LwdhKjldHwBhTn3NWyrl4zKvle71i8VsPD1h432q0RfXzCVMomgPmKuN4YOG2Gbj1pgWL2peweZd68U"/>
+<img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Macro studio photograph of the Maharaja GMT timepiece featuring dual timezone complication, deep matte black dial, bi-directional astronomical bezel engraved with 24-hour markers in gold, resting on dark basalt slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcfq07kfTY4u54QJ5FaJyS0AkMAY-g5wH5rwnwyBnZNApb4lwPK_4ThA4Oj2jjpH0L1v11c6LtK2lvNXzr1XdkHhsExNGF72LVX2DqmzcBW-fs2lJwFWzCr81bKWeJkYZQyeUkxO89cM9JsdzUXUNBIf05w5Mgke7XWI-Pl7mcW4pJ8VN7fWRi6y9VPo6LwdhKjldHwBhTn3NWyrl4zKvle71i8VsPD1h432q0RfXzCVMomgPmKuN4YOG2Gbj1pgWL2peweZd68U"/>
 </div>
 <div class="p-6 flex flex-col flex-grow justify-between">
 <div>

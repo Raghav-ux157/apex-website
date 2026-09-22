@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>APEX — Luxury Handmade Horology | Jaipur</title>
-<!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts: Space Grotesk & Bebas Neue & Public Sans -->
+<!-- Preconnect for faster font loading -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Public+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Bebas Neue + Space Grotesk (combined, font-display:swap) -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet"/>
+
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -66,18 +64,26 @@
 <header class="bg-[#07080f]/90 backdrop-blur-md text-[#C9A84C] font-headline uppercase tracking-widest text-xs docked full-width top-0 fixed z-50 border-b border-white/[0.08] transition-all duration-300 ease-out">
 <div class="w-full px-6 md:px-12 flex justify-between items-center h-20 max-w-7xl mx-auto">
 <!-- Brand Logo Anchor -->
-<a class="flex flex-col items-start group" href="#">
+<a class="flex flex-col items-start group" href="index.html">
 <span class="font-headline tracking-[0.35em] text-2xl uppercase text-[#f0f0f0] group-hover:text-[#C9A84C] transition-colors duration-200">A P E X</span>
 <span class="font-body text-[9px] tracking-[0.25em] text-[#C9A84C] uppercase mt-0.5">JAIPUR • HANDMADE HOROLOGY</span>
 </a>
 <!-- Center Desktop Nav Links -->
+<!-- Center Desktop Nav Links -->
 <nav class="hidden md:flex items-center space-x-10 text-xs font-label tracking-widest">
-<a class="text-[#C9A84C] border-b border-[#C9A84C] pb-1 uppercase transition-colors duration-200" href="#hero">Home</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="#collection">Collection</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="#atelier">Atelier</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="#heritage">Journal</a>
-<a class="text-[#f0f0f0]/60 hover:text-[#f0f0f0] hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="#concierge">Concierge</a>
+<a class="text-[#C9A84C] border-b border-[#C9A84C] pb-1 uppercase transition-colors duration-200" href="index.html">Home</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="shop.html">Collection</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="about.html">Atelier</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="journal.html">Journal</a>
+<a class="text-[#f0f0f0]/60 hover:text-[#C9A84C] pb-1 transition-colors duration-200 uppercase" href="contact.html">Concierge</a>
 </nav>
+<!-- Mobile hamburger -->
+<button id="mob-toggle" class="md:hidden flex flex-col gap-1.5 p-2 text-[#f0f0f0]" aria-label="Open menu">
+  <span class="block w-5 h-px bg-current"></span>
+  <span class="block w-5 h-px bg-current"></span>
+  <span class="block w-5 h-px bg-current"></span>
+</button>
+
 <!-- Right Action Cluster -->
 <div class="flex items-center space-x-6 text-[#f0f0f0]/70">
 <button aria-label="Search" class="hover:text-[#C9A84C] transition-colors duration-200">
@@ -93,11 +99,23 @@
 </div>
 </div>
 </header>
+<!-- Mobile nav drawer -->
+<div id="mob-nav" class="hidden fixed inset-0 top-20 bg-[#07080f] z-40 flex flex-col gap-8 px-8 py-10 text-xl font-headline uppercase tracking-widest">
+  <a class="text-[#C9A84C]" href="index.html">Home</a>
+  <a class="text-[#f0f0f0]" href="shop.html">Collection</a>
+  <a class="text-[#f0f0f0]" href="about.html">Atelier</a>
+  <a class="text-[#f0f0f0]" href="journal.html">Journal</a>
+  <a class="text-[#f0f0f0]" href="contact.html">Concierge</a>
+</div>
+<script>
+  var t=document.getElementById('mob-toggle'),n=document.getElementById('mob-nav');
+  if(t&&n)t.addEventListener('click',function(){n.classList.toggle('hidden');n.classList.toggle('flex');});
+</script>
 <!-- ==================== HERO SECTION ==================== -->
 <section class="relative min-h-screen pt-24 pb-16 flex flex-col justify-between hero-glow border-b border-white/[0.08] overflow-hidden" id="hero">
 <!-- Hero Background Centerpiece Watch Graphic -->
 <div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30 md:opacity-40 mix-blend-screen scale-105">
-<img class="w-full h-full object-cover object-center max-w-5xl mx-auto" data-alt="Exquisite cinematic macro studio photograph of an APEX luxury mechanical chronometer watch dial resting on black obsidian stone in deep dark atmosphere. Pure brushed gold hands glint beneath beveled sapphire crystal glass with exposed high-beat escapement and fine Jaipuri damascened engravings. Subtle dramatic warm gold side rim light illuminating fine hand-finished perlage textures against pure jet black darkness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxLsEYNvMKVs6kEp90RcHFOlSvrqevwuziFU8ydRpEAZabGgflv7qnnWeMYep6cvMKZn5rgI5LLnH8NqV36Pd6-vTn_shcRUmUK5dWsYKJ2XHKWNVhyD82xT_-7IJUL-Qr_nfudbReRjpY1wfAwWlDSaog31PS5rJYMV4PJM_VIzBzQZcVEJJrMxS6OI_RBj78zQXGEErbl33gUDkW7kYzCJqmYMRp4SnbspLrVLUCzSu0IlU_759qJK7HupfeZaUVz8V8O7hKQE"/>
+<img loading="eager" fetchpriority="high" class="w-full h-full object-cover object-center max-w-5xl mx-auto" alt="Exquisite cinematic macro studio photograph of an APEX luxury mechanical chronometer watch dial resting on black obsidian stone in deep dark atmosphere. Pure brushed gold hands glint beneath beveled sapphire crystal glass with exposed high-beat escapement and fine Jaipuri damascened engravings. Subtle dramatic warm gold side rim light illuminating fine hand-finished perlage textures against pure jet black darkness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxLsEYNvMKVs6kEp90RcHFOlSvrqevwuziFU8ydRpEAZabGgflv7qnnWeMYep6cvMKZn5rgI5LLnH8NqV36Pd6-vTn_shcRUmUK5dWsYKJ2XHKWNVhyD82xT_-7IJUL-Qr_nfudbReRjpY1wfAwWlDSaog31PS5rJYMV4PJM_VIzBzQZcVEJJrMxS6OI_RBj78zQXGEErbl33gUDkW7kYzCJqmYMRp4SnbspLrVLUCzSu0IlU_759qJK7HupfeZaUVz8V8O7hKQE"/>
 </div>
 <!-- Centered Editorial Content -->
 <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex flex-col justify-center items-center text-center mt-8">
@@ -160,7 +178,7 @@
 <!-- Card 1 -->
 <div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 transition-all duration-300 flex flex-col">
 <div class="relative aspect-square overflow-hidden bg-[#07080f] p-4 flex items-center justify-center">
-<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" data-alt="Close up dark editorial photography of APEX Amber Chrono luxury watch. Features hand-polished rose gold bevels, deep obsidian dial, double subdials, and brushed crown sitting on dark charcoal slate. Subtle warm studio key lighting creating specular glints on the sapphire edge against deep black tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS9KyXzkf1uW2jiyK0wDzU5IttNATrPaUi2_JMz1Y5BnXCUBG05oxgTqjGwWiZzxkcFt7az_pth4FQ6pEFd7qyRSjn8CByKiA2CSU5jXrRzOnubZ8NY9TU7CDRmEwVQw06PPRhXHcZshC_ptCRadFfMTj2Ql0JxFET1au7Uelzkp6Rnsao92o-ksCl5z9Grb1IubP3pxFc-QcNhReanGtA-RRlxok-ltyj2hgDyZ_2Sw_oljwaGIY1bOVxNWh8d60LxHk2-vpgzD4"/>
+<img loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Close up dark editorial photography of APEX Amber Chrono luxury watch. Features hand-polished rose gold bevels, deep obsidian dial, double subdials, and brushed crown sitting on dark charcoal slate. Subtle warm studio key lighting creating specular glints on the sapphire edge against deep black tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS9KyXzkf1uW2jiyK0wDzU5IttNATrPaUi2_JMz1Y5BnXCUBG05oxgTqjGwWiZzxkcFt7az_pth4FQ6pEFd7qyRSjn8CByKiA2CSU5jXrRzOnubZ8NY9TU7CDRmEwVQw06PPRhXHcZshC_ptCRadFfMTj2Ql0JxFET1au7Uelzkp6Rnsao92o-ksCl5z9Grb1IubP3pxFc-QcNhReanGtA-RRlxok-ltyj2hgDyZ_2Sw_oljwaGIY1bOVxNWh8d60LxHk2-vpgzD4"/>
 <span class="absolute top-3 right-3 text-[10px] font-label tracking-widest text-[#C9A84C] bg-[#07080f]/90 px-2 py-1 border border-white/[0.08]">EDITION 01</span>
 </div>
 <div class="p-6 flex flex-col flex-1 justify-between bg-[#0d0e14]">
@@ -179,7 +197,7 @@
 <!-- Card 2 -->
 <div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 transition-all duration-300 flex flex-col">
 <div class="relative aspect-square overflow-hidden bg-[#07080f] p-4 flex items-center justify-center">
-<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" data-alt="Editorial horology photograph of the Haveli Tourbillon watch with Damascus steel etched case and openwork skeleton movement showcasing brass balance wheel and rubies. Lit with dramatic low-key rim light against dark midnight background creating high contrast reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2PAngHUbndCPgouLbUIlsMhYPdOft65DhXwEc8Iy4saaSMjUc__Yg4OZdscrbyWq7w9aDVF8IebewoHAfifiKfZfAc_Zmz7oZZkvh9xTJ4SvWito57N-JrcyYNdMWgQ_m_xNmKWIj1eh69BhXBpf5wAn2ADCuRRFdxx9rxJotobkiPYpQnMSsZyuGdaPiqLt4XuwkKfFBzNRLPtIXDqMK4A8v4auOO6Y4BNjFQWlK-AXe7twqUhTP03BJlVEYjEOTuLZwlfLg3U"/>
+<img loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Editorial horology photograph of the Haveli Tourbillon watch with Damascus steel etched case and openwork skeleton movement showcasing brass balance wheel and rubies. Lit with dramatic low-key rim light against dark midnight background creating high contrast reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2PAngHUbndCPgouLbUIlsMhYPdOft65DhXwEc8Iy4saaSMjUc__Yg4OZdscrbyWq7w9aDVF8IebewoHAfifiKfZfAc_Zmz7oZZkvh9xTJ4SvWito57N-JrcyYNdMWgQ_m_xNmKWIj1eh69BhXBpf5wAn2ADCuRRFdxx9rxJotobkiPYpQnMSsZyuGdaPiqLt4XuwkKfFBzNRLPtIXDqMK4A8v4auOO6Y4BNjFQWlK-AXe7twqUhTP03BJlVEYjEOTuLZwlfLg3U"/>
 <span class="absolute top-3 right-3 text-[10px] font-label tracking-widest text-[#C9A84C] bg-[#07080f]/90 px-2 py-1 border border-white/[0.08]">HAUTE PIECE</span>
 </div>
 <div class="p-6 flex flex-col flex-1 justify-between bg-[#0d0e14]">
@@ -198,7 +216,7 @@
 <!-- Card 3 -->
 <div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 transition-all duration-300 flex flex-col">
 <div class="relative aspect-square overflow-hidden bg-[#07080f] p-4 flex items-center justify-center">
-<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" data-alt="Striking still life watch photography of the Jai Sector Automatic timepiece with deep cobalt blue grand feu enamel dial and crisp surgical steel indices. Angled perspective highlighting ultra-thin case and polished gold second hand against dark textured midnight backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEpWR-yPZbnWeC8ukcQI4DFgSDkCa3aERquxLx8UG2a1CVd4GZa7A7IGjFyI5ZWobWMFhzrS0zCmAzfIwa65RUmvU0zYJ7Ul-2LAdd_7EP07Drog0CDxKsbOEstDvC61s3asQnO85j1FH40IRP7PxcucHHRs6746FJVxBcms7D8ubyeVIq-cZUxLv7c2Nt8yMjFwtJBcXf6FawJoZUpCai-wHxbz8QTzJKCIVWEKfPYX5eOKGP_ws0h7Dzq92ASrhMv6-v7u5GOs4"/>
+<img loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Striking still life watch photography of the Jai Sector Automatic timepiece with deep cobalt blue grand feu enamel dial and crisp surgical steel indices. Angled perspective highlighting ultra-thin case and polished gold second hand against dark textured midnight backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEpWR-yPZbnWeC8ukcQI4DFgSDkCa3aERquxLx8UG2a1CVd4GZa7A7IGjFyI5ZWobWMFhzrS0zCmAzfIwa65RUmvU0zYJ7Ul-2LAdd_7EP07Drog0CDxKsbOEstDvC61s3asQnO85j1FH40IRP7PxcucHHRs6746FJVxBcms7D8ubyeVIq-cZUxLv7c2Nt8yMjFwtJBcXf6FawJoZUpCai-wHxbz8QTzJKCIVWEKfPYX5eOKGP_ws0h7Dzq92ASrhMv6-v7u5GOs4"/>
 <span class="absolute top-3 right-3 text-[10px] font-label tracking-widest text-[#C9A84C] bg-[#07080f]/90 px-2 py-1 border border-white/[0.08]">AUTOMATIC</span>
 </div>
 <div class="p-6 flex flex-col flex-1 justify-between bg-[#0d0e14]">
@@ -217,7 +235,7 @@
 <!-- Card 4 -->
 <div class="group bg-[#0d0e14] border border-white/[0.08] hover:border-[#C9A84C]/50 transition-all duration-300 flex flex-col">
 <div class="relative aspect-square overflow-hidden bg-[#07080f] p-4 flex items-center justify-center">
-<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" data-alt="Editorial watch portrait of Maharaja GMT watch with dual timezone hand-carved gold rotating bezel and matte slate gray dial. Elegant reflection on sapphire glass and hand-stitched alligator strap resting on dark basalt stone under moody atmospheric warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFADCJ1gP2B9twsJVN3Nsyu9KVoUT06zKnLuQHVCbaAnZwhVMZi-fP0_Gx1Nlqq1Q_p_ChjGB0efsZBxe85do5WS9aSxBPsQQ9dlPsz_W3e9yb0LPZ5Fh4N_4xwWGjoSr4pi9wN1kB-WyrLq6xR9hGSwT5izZUlGjE3FEh-ldZtIaExiUyRD8Gb-CyxkBqot8filfb_ICdZhc4gtp9KQrGvpZB1KjjfQKExF-uvcApI-Wm6zzmZlDmEn7feGCz_4oZbrv7SwwLpx4"/>
+<img loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Editorial watch portrait of Maharaja GMT watch with dual timezone hand-carved gold rotating bezel and matte slate gray dial. Elegant reflection on sapphire glass and hand-stitched alligator strap resting on dark basalt stone under moody atmospheric warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFADCJ1gP2B9twsJVN3Nsyu9KVoUT06zKnLuQHVCbaAnZwhVMZi-fP0_Gx1Nlqq1Q_p_ChjGB0efsZBxe85do5WS9aSxBPsQQ9dlPsz_W3e9yb0LPZ5Fh4N_4xwWGjoSr4pi9wN1kB-WyrLq6xR9hGSwT5izZUlGjE3FEh-ldZtIaExiUyRD8Gb-CyxkBqot8filfb_ICdZhc4gtp9KQrGvpZB1KjjfQKExF-uvcApI-Wm6zzmZlDmEn7feGCz_4oZbrv7SwwLpx4"/>
 <span class="absolute top-3 right-3 text-[10px] font-label tracking-widest text-[#C9A84C] bg-[#07080f]/90 px-2 py-1 border border-white/[0.08]">BESPOKE GMT</span>
 </div>
 <div class="p-6 flex flex-col flex-1 justify-between bg-[#0d0e14]">
@@ -241,7 +259,7 @@
 <!-- Left Column: Workshop Imagery Bento -->
 <div class="lg:col-span-6 relative">
 <div class="relative border border-white/[0.08] bg-[#07080f] p-2 overflow-hidden shadow-2xl">
-<img class="w-full h-[460px] object-cover object-center" data-alt="Atmospheric macro documentary photograph of a master artisan horologist at work inside the Jaipur watchmaker atelier. Fine titanium tweezers delicately holding a tiny gilded balance wheel under an eye loupe magnification. Warm brass tools, perlage plates, and watch oil reservoirs arranged neatly on aged dark walnut workbench." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD73oCCOm5UFt2ot8J28KO_kXuuTAIgbmwkvIgxMpqxaRCeBM_rOpSvFfaUZYa9mnzPpebCONhFyb32rAZ4Pz0HZtWHXbXioMgi1Up3T6XRSqP3jalJanHhWwA1b6krNmOYj6iZB3sdTi5xunCFMtycNP9NB6M-GMt-lDiyuqurohy350WTjccD7r0rdHMK0BIuEblMfaMKNmfe_iMOKJCIbIKeQTn7KCrhVEoJ68IXsN_0cm8ZTUaAswdNa5E7P5nfJBUhbCh1KJw"/>
+<img loading="lazy" class="w-full h-[460px] object-cover object-center" alt="Atmospheric macro documentary photograph of a master artisan horologist at work inside the Jaipur watchmaker atelier. Fine titanium tweezers delicately holding a tiny gilded balance wheel under an eye loupe magnification. Warm brass tools, perlage plates, and watch oil reservoirs arranged neatly on aged dark walnut workbench." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD73oCCOm5UFt2ot8J28KO_kXuuTAIgbmwkvIgxMpqxaRCeBM_rOpSvFfaUZYa9mnzPpebCONhFyb32rAZ4Pz0HZtWHXbXioMgi1Up3T6XRSqP3jalJanHhWwA1b6krNmOYj6iZB3sdTi5xunCFMtycNP9NB6M-GMt-lDiyuqurohy350WTjccD7r0rdHMK0BIuEblMfaMKNmfe_iMOKJCIbIKeQTn7KCrhVEoJ68IXsN_0cm8ZTUaAswdNa5E7P5nfJBUhbCh1KJw"/>
 <div class="absolute bottom-6 left-6 right-6 p-4 bg-[#07080f]/90 backdrop-blur-md border border-white/[0.08] flex items-center justify-between">
 <div>
 <p class="font-headline text-lg tracking-widest text-[#f0f0f0] uppercase">JAIPUR ATELIER • BENCH NO. 04</p>
